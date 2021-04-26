@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>MOMRA-e2e-ui-testing</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <testEnv>${app-host}</testEnv>
+        <envName>${env-name}</envName>
+        <emailProperties>liveMailConfig</emailProperties>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>7</source>
+                    <target>7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <env-name>Development Environment</env-name>
+                <app-host>http://10.0.200.73:60163/</app-host>
+                <MongoDB-URL>10.0.10.59</MongoDB-URL>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>testing</id>
+            <properties>
+                <env-name>Testing Environment</env-name>
+                <app-host>http://10.0.200.73:60163/</app-host>
+                <MongoDB-URL>10.0.10.55</MongoDB-URL>
+                <Upload-Docs-CE>https://mff-ce-test:8893</Upload-Docs-CE>
+                <CE-Token>Bearer eyJraWQiOiIvcHJpdmF0ZUtleS5wZW0iLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzeXN0ZW0iLCJncm91cHMiOlsic3lzdGVtIl0sInN0ZXBzIjpbXSwiaXNzIjoibWZmLXRlc3QiLCJpYXQiOjE1OTEzMTMxMjQsImF1dGhfdGltZSI6MTU5MTMxMzEyNCwiZXhwIjo0NDM4MzIxMzQ1LCJqdGkiOiItQWJZOWV3WV9LZnRyeHpHWUtQeV9RIn0.gYn18qoOGJgv3-rA5l1BHRlpoKs7LadItiaePVizBk0o03szr1EPGakhrlbsqVrAzFEAPdiAo03aHF2KA_xkpPapIYmlmHB98pIFTNwzfCBikIxGoLlwHtOXbjXypWeFN0G4kgLiggoTemTamrTtg8ml569vhlU6zlugcjvrSDANCdONQyvwd1N6YCy6ftPEjU1GT3n50aCfy4AZvf6Q3InHeWKenBGS3gddrkQJpxcwtRKCG7vvpKueoq4xRaywn9hYJh0L5jF2Xc5wxzBTmKMez5lgaENFXjah6MPf7QcNsO1YrWcWoRKk6ZNf1IZnzHuYt6eHpkU-7wfpJ9Fm0dwlDH6d2jKwVdjgRc8fyWzIMPk5r_1qvrY0oxi7_RKLJa0mZWTa5jXbV9AE96U4hXKzvB7MAFIEspT_nfgJRhnZ5gtA-3j1DC_rhfw9-ATVBYVToVZEC_nb-I4-HrdCNJRPjYqs3BUeLSbr3193rwzWjjdYSPwXZdgyjYMVL0eN4EuNkbxQGAlGt4rkZ5g-umij_v9z-TTm_GWF17nSPpumlhyKAeBZq971RGlBjLu5vLNXZvY2PRRZanX2yPtAXM-tYEFZTvNb7Ned9RgbV0FHINwkp2uQEoC7Db_eFlH4XMOQQEFXv_HjEAC-t-QnygnTj7YbAjnQznslu6UoifI</CE-Token>
+            </properties>
+            <!--            <activation>-->
+            <!--                <activeByDefault>true</activeByDefault>-->
+            <!--            </activation>-->
+        </profile>
+
+        <profile>
+            <id>staging</id>
+            <properties>
+                <env-name>Staging Environment</env-name>
+                <app-host>https://41.33.113.198/</app-host>
+                <Upload-Docs-CE>https://mff-ce-stg:8893</Upload-Docs-CE>
+                <CE-Token></CE-Token>
+                <MongoDB-URL></MongoDB-URL>
+            </properties>
+            <!--            <activation>-->
+            <!--        <activeByDefault>true</activeByDefault>-->
+            <!--    </activation>-->
+        </profile>
+    </profiles>
+
+    <dependencies>
+
+    <dependency>
+        <groupId>io.rest-assured</groupId>
+        <artifactId>rest-assured</artifactId>
+        <version>4.3.1</version>
+    </dependency>
+
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.0.1</version>
+        </dependency>
+    </dependencies>
+</project>
