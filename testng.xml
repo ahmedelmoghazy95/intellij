@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Tests" configfailurepolicy="continue">
+
+    <listeners>
+        <listener class-name="com.sumerge.momra.listeners.TestListener"/>
+    </listeners>
+
+<!--    <suite-files>-->
+<!--        <suite-file path="login.xml" />-->
+<!--        <suite-file path="logout.xml" />-->
+<!--    </suite-files>-->
+
+    <test parallel="classes" thread-count="24" name="Selenium UI Tests">
+        <packages>
+            <package name="com.sumerge.momra.tests.sidebar"/>
+            <package name="com.sumerge.momra.tests.inbasket"/>
+            <package name="com.sumerge.momra.tests.login"/>
+            <package name="com.sumerge.momra.tests.logout"/>
+            <package name="com.sumerge.momra.tests.search"/>
+            <package name="com.sumerge.momra.tests.lockcase"/>
+            <package name="com.sumerge.momra.tests.summary"/>
+            <package name="com.sumerge.momra.tests.farz"/>
+            <package name="com.sumerge.momra.tests.suspension"/>
+            <package name="com.sumerge.momra.tests.rejection"/>
+            <package name="com.sumerge.momra.tests.lenders"/>
+            <package name="com.sumerge.momra.tests.tazalomat"/>
+        </packages>
+    </test> <!-- Test -->
+
+</suite> <!-- Suite -->
