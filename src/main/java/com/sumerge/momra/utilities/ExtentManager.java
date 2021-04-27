@@ -3,6 +3,7 @@ package com.sumerge.momra.utilities;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import org.openqa.selenium.Platform;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -12,8 +13,8 @@ import java.util.Date;
 
 public class ExtentManager {
     private static ExtentReports extent;
-    private static String platform;
-    public static String reportFileName = "MOMRA_ExecutionReport" + "_"
+    private static Platform platform;
+    public static String reportFileName = "MFF_ExecutionReport" + "_"
             + new SimpleDateFormat("dd-MM-yyyy hh-mm-ss-ms").format(new Date()) + ".html";
     private static String macPath = System.getProperty("user.dir") + "/TestReport";
     private static String linuxPath = System.getProperty("user.dir") + "/TestReport";
@@ -38,9 +39,9 @@ public class ExtentManager {
 //		htmlReporter.config().setTestViewChartLocation(ChartLocation.BOTTOM);
 //		htmlReporter.config().setChartVisibilityOnOpen(true);
         htmlReporter.config().setTheme(Theme.DARK);
-        htmlReporter.config().setDocumentTitle("MOMRA Execution Report on " + Constants.ENVIRONMENT_NAME);
+        htmlReporter.config().setDocumentTitle("MFF Execution Report on " + Constants.ENVIRONMENT_NAME);
         htmlReporter.config().setEncoding("utf-8");
-        htmlReporter.config().setReportName("MOMRA Execution Report on " + Constants.ENVIRONMENT_NAME);
+        htmlReporter.config().setReportName("MFF Execution Report on " + Constants.ENVIRONMENT_NAME);
         htmlReporter.config().setTimelineEnabled(true);
 
         extent = new ExtentReports();
@@ -51,20 +52,20 @@ public class ExtentManager {
     }
 
     // Select the extent report file location based on platform
-    private static String getReportFileLocation(String platform) {
+    private static String getReportFileLocation(Platform platform) {
         String reportFileLocation = null;
         switch (platform) {
-            case "MAC":
+            case MAC:
                 reportFileLocation = macReportFileLoc;
                 createReportPath(macPath);
                 System.out.println("ExtentReport Path for MAC: " + macPath + "\n");
                 break;
-            case "WINDOWS":
+            case WINDOWS:
                 reportFileLocation = winReportFileLoc;
                 createReportPath(windowsPath);
                 System.out.println("ExtentReport Path for WINDOWS: " + windowsPath + "\n");
                 break;
-            case "LINUX":
+            case LINUX:
                 reportFileLocation = linuxReportFileLoc;
                 createReportPath(linuxPath);
                 System.out.println("ExtentReport Path for LINUX: " + linuxPath + "\n");
@@ -91,15 +92,15 @@ public class ExtentManager {
     }
 
     // Get current platform
-    public static String getCurrentPlatform() {
+    public static Platform getCurrentPlatform() {
         if (platform == null) {
             String operSys = System.getProperty("os.name").toLowerCase();
             if (operSys.contains("win")) {
-                platform = "WINDOWS";
+                platform = Platform.WINDOWS;
             } else if (operSys.contains("nix") || operSys.contains("nux") || operSys.contains("aix")) {
-                platform = "LINUX";
+                platform = Platform.LINUX;
             } else if (operSys.contains("mac")) {
-                platform = "MAC";
+                platform = Platform.MAC;
             }
         }
         return platform;

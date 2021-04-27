@@ -7,7 +7,6 @@ import com.sumerge.momra.utilities.Constants;
 import com.sumerge.momra.utilities.DriverHandler;
 import com.sumerge.momra.utilities.EmailUtils;
 import com.sumerge.momra.utilities.EncodeToBase64Utils;
-import com.sumerge.momra.utilities.ExtentManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
