@@ -19,6 +19,7 @@ public class Utilities {
             return element.getText();
     }
 
+
     public static void waitAndClickOnWebElement(WebElement webElement, WebDriverWait wait, WebDriver driver) {
         try {
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", webElement);

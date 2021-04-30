@@ -9,5 +9,5 @@ public class Constants {
     public static final String ENVIRONMENT_NAME = ENVIRONMENT_RN.getString("env.name");
     public static final String PERFORMANCE_PROJECT_ID = ENVIRONMENT_RN.getString("performance.project.Id");
     public static final String APPLICATION_HOST = ENVIRONMENT_RN.getString("app.host");
-    
+
 }

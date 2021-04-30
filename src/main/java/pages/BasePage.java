@@ -1,4 +1,4 @@
-package com.sumerge.momra.pages;
+package pages;
 
 import com.sumerge.momra.utilities.Constants;
 import com.sumerge.momra.utilities.Utilities;
@@ -192,11 +192,7 @@ public abstract class BasePage {
         waitUntilSearchLoadingSpinner();
     }
 
-    public SearchResultsPage searchWithResults(String searchValue) {
-        search(searchValue);
-        waitUnitlAdNameIsDisplayedInSearchResultsPage();
-        return new SearchResultsPage(driver);
-    }
+
 
     public boolean isSearchErrorMsgCorrect(String errorMsg) {
         String elementSource = searchErrorMsg.getAttribute("innerHTML");
@@ -216,17 +212,7 @@ public abstract class BasePage {
         Utilities.waitAndClickOnWebElement(loggedInUsername, wait, driver);
     }
 
-    public LoginPage clickOnLogoutBtn() {
-        PageFactory.initElements(driver, this);
-        Utilities.waitAndClickOnWebElement(logoutBtn, wait, driver);
-        LoginPage loginPage = new LoginPage(driver);
-        return loginPage;
-    }
 
-    public LoginPage logout() {
-        clickOnLoggedInUsername();
-        return clickOnLogoutBtn();
-    }
 
     public boolean isLoggedInUsernameCorrect(String username) {
         String elementSource = loggedInUsername.getAttribute("innerHTML");
@@ -237,11 +223,7 @@ public abstract class BasePage {
         }
     }
 
-    public HomePage clickOnHomepageLogoBtn() {
-        waitUntilSuccessToastPopupIsNotDisplayed();
-        Utilities.waitAndClickOnWebElement(homepageLogoBtn, wait, driver);
-        return new HomePage(driver);
-    }
+
 
     /**********Side Bar Elements**********/
 
@@ -304,12 +286,7 @@ public abstract class BasePage {
         Utilities.waitAndClickOnWebElement(roleElement, wait, driver);
     }
 
-    public InBasketPage clickOnInBasketName(String inBasketId) {
-        WebElement inBasketNameElement = driver.findElement(By.id(inBasketNameId + inBasketId));
-        wait.until(ExpectedConditions.visibilityOf(inBasketNameElement));
-        Utilities.waitAndClickOnWebElement(inBasketNameElement, wait, driver);
-        return new InBasketPage(driver);
-    }
+
 
     public boolean checkInBasketNameExist(String inBasketName) {
         try {
@@ -369,16 +346,7 @@ public abstract class BasePage {
         return inbaskets.split(";");
     }
 
-    public InBasketPage clickOnPrivateCount() {
-        Utilities.waitAndClickOnWebElement(privateCount, wait, driver);
-        waitUnitlAdNameIsDisplayedInInBasketPage();
-        return new InBasketPage(driver);
-    }
 
-    public InBasketPage goToFarzPublicInBasket() {
-        clickOnRole(Constants.ROLE_MOMRA_AGENT);
-        return clickOnInBasketName(Constants.PS_FARZ_STEP);
-    }
 
     public boolean checkPublicInBasketIsSelected(String inBasketId) {
         WebElement inBasketNameElement = driver.findElement(By.id(inBasketNameId + inBasketId));
