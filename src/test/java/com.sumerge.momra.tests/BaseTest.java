@@ -7,6 +7,8 @@ import com.sumerge.momra.listeners.TestListener;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
+import pages.HomePage;
+import pages.LoginPage;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -35,8 +37,10 @@ public class BaseTest extends TestListener {
         driverHandler.gotoApplicationHomePage();
 
     }
-
-
+//********************Ask Amr about difference bet this & login method in login page************************
+//    public HomePage logIn(String username, String password) {
+//        return loginPage.login(username, password);
+//    }
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {

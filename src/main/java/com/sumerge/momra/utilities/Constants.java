@@ -10,4 +10,15 @@ public class Constants {
     public static final String PERFORMANCE_PROJECT_ID = ENVIRONMENT_RN.getString("performance.project.Id");
     public static final String APPLICATION_HOST = ENVIRONMENT_RN.getString("app.host");
 
+
+    /***********Search Users***********/
+    public static final String SEARCH_OFFICES_WORKBOOK = "SearchOfficesData.xlsx";
+    public static final String SEARCH_OFFICES_ENV_SHEET = ENVIRONMENT_RN.getString("env.data.provider");
+
+
+    /***********ENGINEERING OFFICES Users***********/
+    public static final String ENGINEERING_OFFICES_WORKBOOK = "EngineeringOfficesData.xlsx";
+    public static final String ENGINEERING_OFFICES_ENV_SHEET = ENVIRONMENT_RN.getString("env.data.provider");
+
+
 }
