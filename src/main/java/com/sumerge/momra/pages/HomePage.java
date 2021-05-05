@@ -1,4 +1,4 @@
-package pages;
+package com.sumerge.momra.pages;
 
 import com.sumerge.momra.utilities.Utilities;
 import org.openqa.selenium.WebDriver;

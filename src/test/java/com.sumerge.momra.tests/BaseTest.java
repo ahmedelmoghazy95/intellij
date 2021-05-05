@@ -1,16 +1,12 @@
 package com.sumerge.momra.tests;
 
-import com.sumerge.momra.utilities.Constants;
 import com.sumerge.momra.utilities.DriverHandler;
 
 import com.sumerge.momra.listeners.TestListener;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
-import pages.HomePage;
-import pages.LoginPage;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
 
 public class BaseTest extends TestListener {

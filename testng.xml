@@ -13,18 +13,7 @@
 
     <test parallel="classes" thread-count="24" name="Selenium UI Tests">
         <packages>
-            <package name="com.sumerge.momra.tests.sidebar"/>
-            <package name="com.sumerge.momra.tests.inbasket"/>
-            <package name="com.sumerge.momra.tests.login"/>
-            <package name="com.sumerge.momra.tests.logout"/>
-            <package name="com.sumerge.momra.tests.search"/>
-            <package name="com.sumerge.momra.tests.lockcase"/>
-            <package name="com.sumerge.momra.tests.summary"/>
-            <package name="com.sumerge.momra.tests.farz"/>
-            <package name="com.sumerge.momra.tests.suspension"/>
-            <package name="com.sumerge.momra.tests.rejection"/>
-            <package name="com.sumerge.momra.tests.lenders"/>
-            <package name="com.sumerge.momra.tests.tazalomat"/>
+            <package name="com.sumerge.momra.tests.engineeringoffices"/>
         </packages>
     </test> <!-- Test -->
 

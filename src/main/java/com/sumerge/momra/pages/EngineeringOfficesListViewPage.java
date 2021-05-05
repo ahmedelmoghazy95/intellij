@@ -1,14 +1,17 @@
-package pages;
+package com.sumerge.momra.pages;
 
 import com.sumerge.momra.utilities.Utilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class EngineeringOfficesListViewPage extends BasePage {
 
-    public EngineeringOfficesListViewPage(WebDriver driver) {
+    public EngineeringOfficesListViewPage (WebDriver driver) {
         super(driver);
+        checkCorrectPage("offices-viewList-refreshOfficesBtn", "This is Not the Correct Login Page!");
+        PageFactory.initElements(driver, this);
     }
 
 
@@ -49,6 +52,11 @@ public class EngineeringOfficesListViewPage extends BasePage {
     WebElement search;
     public static final String SEARCH = "Search Field";
 
+    @FindBy(id = "offices-viewList-refreshOfficesBtn")
+    WebElement refreshOfficesBtn;
+    public static final String REFRESH_OFFICES_BTN  = "Refresh Offices Btn";
+
+
     /*************Getters For Offices List View Page**************/
 
     public WebElement getOfficeName() {
@@ -72,11 +80,6 @@ public class EngineeringOfficesListViewPage extends BasePage {
         officeName.sendKeys(officeNameValue);
     }
 
-    public String getEditableFieldClass() {
-        if (Utilities.isClassPresent(officeCapacityEditable, ""))
-            return "Yes";
-        else return "Field are not Editable";
-    }
     /**************Table Headers(Labels) IDs **************/
 
     @FindBy(id = "")
@@ -170,6 +173,9 @@ public class EngineeringOfficesListViewPage extends BasePage {
     }
 
     public void clickInlineEditBtn() {Utilities.waitAndClickOnWebElement(inlineEditBtn, wait, driver);
+    }
+
+    public void clickRefreshOfficesBtn() {Utilities.waitAndClickOnWebElement(refreshOfficesBtn, wait, driver);
     }
 
     public boolean checkFieldIsDisplayed(WebElement element) {
