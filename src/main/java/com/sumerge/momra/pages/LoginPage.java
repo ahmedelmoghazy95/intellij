@@ -11,7 +11,7 @@ public class LoginPage extends BasePage {
 
     public LoginPage(WebDriver driver) {
         super(driver);
-        checkCorrectPage("login-btn", "This is Not the Correct Login Page!");
+        checkCorrectPage("", "This is Not the Correct Login Page!");
         PageFactory.initElements(driver, this);
     }
 

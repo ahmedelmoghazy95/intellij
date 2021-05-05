@@ -95,7 +95,7 @@
             <id>dev</id>
             <properties>
                 <env-name></env-name>
-                <app-host></app-host>
+                <app-host>http://10.0.11.6/</app-host>
                 <MongoDB-URL></MongoDB-URL>
             </properties>
             <activation>

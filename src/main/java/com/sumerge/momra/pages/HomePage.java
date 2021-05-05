@@ -13,7 +13,7 @@ public class HomePage extends BasePage {
         super(driver);
         // Need to Change this Once InBasket Page is Done, Including Search-bar ID
         wait.until(ExpectedConditions.urlContains("Add here URL"));
-        checkCorrectPage("search-bar", "This is Not the Correct Home Page!");
+        checkCorrectPage("", "This is Not the Correct Home Page!");
         PageFactory.initElements(driver, this);
     }
 

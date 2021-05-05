@@ -10,7 +10,7 @@ public class EngineeringOfficesListViewPage extends BasePage {
 
     public EngineeringOfficesListViewPage (WebDriver driver) {
         super(driver);
-        checkCorrectPage("offices-viewList-refreshOfficesBtn", "This is Not the Correct Login Page!");
+        checkCorrectPage("offices-viewList-refreshOfficesBtn", "This is Not the Correct Engineering Offices Page!");
         PageFactory.initElements(driver, this);
     }
 
