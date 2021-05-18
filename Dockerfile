@@ -17,7 +17,7 @@ ADD src/main/resources/testdata src/main/resources/testdata/
 ADD src/main/resources/*.properties src/main/resources/
 
 # Add Test Docs Folder
-ADD src/main/resources/testdocs src/main/resources/testdocs/
+#ADD src/main/resources/testdocs src/main/resources/testdocs/
 
 # Command line to execute the test
 # Expects below ennvironment variables
