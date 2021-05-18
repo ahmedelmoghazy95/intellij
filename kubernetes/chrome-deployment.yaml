@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: chrome
+    app: "selenium-chrome"
+    group: "momra"
+  name: chrome
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: chrome
+      app: "selenium-chrome"
+      group: "momra"
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        io.kompose.service: chrome
+        app: "selenium-chrome"
+        group: "momra"
+    spec:
+      hostAliases:
+      containers:
+        - env:
+            - name: HUB_PORT_4444_TCP_ADDR
+              value: seleniumhub
+            - name: HUB_PORT_4444_TCP_PORT
+              value: "4444"
+            - name: NODE_MAX_INSTANCES
+              value: "2"
+            - name: NODE_MAX_SESSION
+              value: "2"
+          image: selenium/node-chrome-debug
+          imagePullPolicy: "Always"
+          name: chrome
+          resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}

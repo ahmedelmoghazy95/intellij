@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.sumerge.momra</groupId>
-    <artifactId>momra-e2e-ui-testing</artifactId>
+    <artifactId>momra-e2e-tests</artifactId>
     <version>0.0.1</version>
 
     <properties>
