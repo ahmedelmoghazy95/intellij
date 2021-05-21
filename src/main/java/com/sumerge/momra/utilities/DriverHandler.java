@@ -68,7 +68,7 @@ public class DriverHandler {
 	}*/
 
     public void gotoApplicationHomePage() {
-        driverThread.get().get(Constants.APPLICATION_HOST);
+        driverThread.get().get(Constants.APPLICATION_HOST + "engineering-offices-ui");
     }
 
     public WebDriver getDriver() {

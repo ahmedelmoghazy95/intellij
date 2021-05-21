@@ -45,7 +45,7 @@ public class DataProviderSource {
     /***************************Fetch Data From Excel Sheet****************************************/
     public Iterator<Object> fetchDataFromSheet(Object obj, String workBookName, String sheetName, String testCaseName) {
         ExcelUtils config = new ExcelUtils();
-        config.setTestDataExcelPath("src/main/resources/testData/" + workBookName);
+        config.setTestDataExcelPath("src/main/resources/testdata/" + workBookName);
         config.setExcelFileSheet(sheetName);
         int row = config.getLastRow();
         List<Object> recordsList = new ArrayList<>();

@@ -36,11 +36,12 @@ public class ValidateOnSearchFunctionalityTest extends BaseTest {
     @Test(alwaysRun = true, dataProvider = "SearchOfficesDataFeed", dataProviderClass = DataProviderSource.class)
     public void ValidateOnSearchFunctionality (SearchOfficesData data) {
          softAssert = new SoftAssert();
-        loginPage = new LoginPage(driver);
-
-        homePage = loginPage.login(data.getUsername(), data.getPassword());
-        engineeringOfficesListViewPage = homePage.clickOnOpenEngineeringOfficesSideMenuBtn();
-        engineeringOfficesListViewPage.searchWithOfficeName("Testing Tests");
+//        loginPage = new LoginPage(driver);
+        engineeringOfficesListViewPage = new EngineeringOfficesListViewPage (driver);
+//
+//        homePage = loginPage.login(data.getUsername(), data.getPassword());
+//        engineeringOfficesListViewPage = homePage.clickOnOpenEngineeringOfficesSideMenuBtn();
+        engineeringOfficesListViewPage.searchWithOfficeName("Testing 2");
         softAssert.assertEquals(engineeringOfficesListViewPage.getFirstOfficeName(), data.getOfficeName(),
                 "The Office Name Displayed in search results is Not Correct!");
         softAssert.assertEquals(engineeringOfficesListViewPage.getFirstOfficeNumber(), data.getOfficeNumber(),

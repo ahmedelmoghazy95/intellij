@@ -36,10 +36,12 @@ public class ValidateOnEditAllFieldButtonFunctionalityTest extends BaseTest {
     @Test(alwaysRun = true, dataProvider = "SearchOfficesDataFeed", dataProviderClass = DataProviderSource.class)
     public void ValidateOnEditAllFieldButtonFunctionality (SearchOfficesData data) {
         softAssert = new SoftAssert();
-        loginPage = new LoginPage(driver);
+//        loginPage = new LoginPage(driver);
 
-        homePage = loginPage.login(data.getUsername(), data.getPassword());
-        engineeringOfficesListViewPage = homePage.clickOnOpenEngineeringOfficesSideMenuBtn();
+        engineeringOfficesListViewPage = new EngineeringOfficesListViewPage (driver);
+
+//        homePage = loginPage.login(data.getUsername(), data.getPassword());
+//        engineeringOfficesListViewPage = homePage.clickOnOpenEngineeringOfficesSideMenuBtn();
 
         softAssert.assertTrue(engineeringOfficesListViewPage.checkFieldIsDisplayed(engineeringOfficesListViewPage.getOfficeCapacityReadOnly()));
         softAssert.assertTrue(engineeringOfficesListViewPage.checkFieldIsDisplayed(engineeringOfficesListViewPage.getOfficeNumberOfInspectorReadOnly()));

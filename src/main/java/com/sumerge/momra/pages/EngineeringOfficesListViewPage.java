@@ -40,7 +40,7 @@ public class EngineeringOfficesListViewPage extends BasePage {
     WebElement officeCapacityReadOnly;
     public static final String OFFICE_CAPACITY_READ_ONLY  = "Office Capacity Read Only";
 
-    @FindBy(id = "")
+    @FindBy(id = "offices-viewList-numberOfInspectorsInput")
     WebElement officeNumberOfInspectorsEditable;
     public static final String OFFICE_NUMBER_OF_INSPECTOR_EDITABLE = "Office Number Of Inspectors Editable Field";
 
@@ -77,7 +77,7 @@ public class EngineeringOfficesListViewPage extends BasePage {
     public WebElement getOfficeNumberOfInspectorEditable () { return officeNumberOfInspectorsEditable;}
 
     public void searchWithOfficeName (String officeNameValue) {
-        officeName.sendKeys(officeNameValue);
+        search.sendKeys(officeNameValue);
     }
 
     /**************Table Headers(Labels) IDs **************/
@@ -117,22 +117,22 @@ public class EngineeringOfficesListViewPage extends BasePage {
 
     /************** 1st Row data IDs **************/
 
-    @FindBy(id = "")
+    @FindBy(id = "offices-viewList-officeName")
     WebElement firstOfficeName;
 
-    @FindBy(id = "")
+    @FindBy(id = "offices-viewList-officeNumber")
     WebElement firstOfficeNumber;
 
-    @FindBy(id = "")
+    @FindBy(id = "offices-viewList-secretariat")
     WebElement firstOfficeSecretariat;
 
-    @FindBy(id = "")
+    @FindBy(id = "offices-viewList-municipial")
     WebElement firstOfficeMunicipial;
 
-    @FindBy(id = "")
+    @FindBy(id = "offices-viewList-numberOfInspectors")
     WebElement firstOfficeNumberOfInspectors;
 
-    @FindBy(id = "")
+    @FindBy(id = "offices-viewList-capacity")
     WebElement firstOfficeCapacity;
 
     /*************Getters For 1st Row data**************/

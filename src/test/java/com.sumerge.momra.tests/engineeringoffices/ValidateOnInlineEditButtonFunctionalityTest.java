@@ -35,10 +35,11 @@ public class ValidateOnInlineEditButtonFunctionalityTest extends BaseTest {
     @Test(alwaysRun = true, dataProvider = "SearchOfficesDataFeed", dataProviderClass = DataProviderSource.class)
     public void ValidateOnInlineEditButtonFunctionality (SearchOfficesData data) {
         softAssert = new SoftAssert();
-        loginPage = new LoginPage(driver);
+//        loginPage = new LoginPage(driver);
+        engineeringOfficesListViewPage = new EngineeringOfficesListViewPage (driver);
 
-        homePage = loginPage.login(data.getUsername(), data.getPassword());
-        engineeringOfficesListViewPage = homePage.clickOnOpenEngineeringOfficesSideMenuBtn();
+//        homePage = loginPage.login(data.getUsername(), data.getPassword());
+//        engineeringOfficesListViewPage = homePage.clickOnOpenEngineeringOfficesSideMenuBtn();
 //       ***********ValidateOnEditableAndReadOnlyFields***********
 //        ***********ValidateOnInlineEditButtonFunctionality***********
         softAssert.assertTrue(engineeringOfficesListViewPage.checkFieldIsDisplayed(engineeringOfficesListViewPage.getOfficeCapacityReadOnly()));
