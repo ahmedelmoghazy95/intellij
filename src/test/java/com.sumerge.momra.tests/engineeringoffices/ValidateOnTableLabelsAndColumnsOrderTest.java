@@ -37,10 +37,12 @@ public class ValidateOnTableLabelsAndColumnsOrderTest extends BaseTest {
     @Test(alwaysRun = true, dataProvider = "EngineeringOfficesDataFeed", dataProviderClass = DataProviderSource.class)
     public void ValidateOnTableLabelsAndColumnsOrder (EngineeringOfficesData data) {
          softAssert = new SoftAssert();
-        loginPage = new LoginPage(driver);
+//        loginPage = new LoginPage(driver);
+//
+//        homePage = loginPage.login(data.getUsername(), data.getPassword());
+//        engineeringOfficesListViewPage = homePage.clickOnOpenEngineeringOfficesSideMenuBtn();
 
-        homePage = loginPage.login(data.getUsername(), data.getPassword());
-        engineeringOfficesListViewPage = homePage.clickOnOpenEngineeringOfficesSideMenuBtn();
+        engineeringOfficesListViewPage = new EngineeringOfficesListViewPage (driver);
 
         softAssert.assertEquals(engineeringOfficesListViewPage.getOfficeNameLabel(),
                 data.getOfficeNameLabel(),

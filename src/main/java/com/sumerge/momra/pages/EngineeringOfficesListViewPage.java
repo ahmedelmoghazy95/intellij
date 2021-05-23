@@ -160,7 +160,7 @@ public class EngineeringOfficesListViewPage extends BasePage {
     WebElement editAllBtn;
     public static final String EDIT_ALL_BTN = "Offices Edit All Button";
 
-    @FindBy(id = "")
+    @FindBy(id = "offices-viewList-editBtn")
     WebElement inlineEditBtn;
     public static final String INLINE_EDIT_BTN = "Offices Inline Edit Button";
 
@@ -178,7 +178,7 @@ public class EngineeringOfficesListViewPage extends BasePage {
     public void clickRefreshOfficesBtn() {Utilities.waitAndClickOnWebElement(refreshOfficesBtn, wait, driver);
     }
 
-    public boolean checkFieldIsDisplayed(WebElement element) {
+    public boolean checkFieldIsDisplayed (WebElement element) {
         return Utilities.isFieldDisplayed(element, wait);
     }
 
