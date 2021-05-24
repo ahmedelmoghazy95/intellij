@@ -34,7 +34,7 @@ public class ValidateOnDisplayBtnFunctionalityTest extends BaseTest {
         driver = getDriver();
     }
 
-    @Test(alwaysRun = true, dataProvider = "", dataProviderClass = DataProviderSource.class)
+    @Test(alwaysRun = true, dataProvider = "VisitsReportDataFeed", dataProviderClass = DataProviderSource.class)
     public void ValidateOnDisplayBtnFunctionality (VisitsReportData data) {
         softAssert = new SoftAssert();
         visitsReportPage = new VisitsReportPage(driver);
@@ -44,13 +44,68 @@ public class ValidateOnDisplayBtnFunctionalityTest extends BaseTest {
         visitsReportPage.clickOnFilterAndSelectOfficeNames("");
         visitsReportPage.clickOnFilterAndSelectStatuses("");
         visitsReportPage.clickReportsSubmitFilterBtn();
-        softAssert.assertEquals(visitsReportPage.getVisitsReportsHeaders(),
-                data.getVisitsReportsHeaders(),
-                "The Visits Report Headers are Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getVisitNumberHeader(),
+               "رقم الزيارة" ,
+                "The Visits Number Header is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getVisitOfficeNameHeader(),
+                "اسم المكتب" ,
+                "The Visit Office Name Header is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getVisitOfficePhoneHeader(),
+                "رقم هاتف المكتب" ,
+                "The Visit Office Phone Header is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getVisitLicenseOwnerNameHeader(),
+                "إسم مالك السكن" ,
+                "The Visit License Owner Name Header is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getVisitLicensePhoneHeader(),
+                "رقم الهاتف/ الجوال" ,
+                "The Visit License Phone Header is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getVisitAddressHeader(),
+                "العنوان" ,
+                "The Visit Address Header is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getVisitActivityHeader(),
+                "النطاق" ,
+                "The Visit Activity Header are is Correct!");
+        softAssert.assertEquals(visitsReportPage.getVisitAssignDateHeader(),
+                "تاريخ استلام الزيارة" ,
+                "The Visit Assign Date Header is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getVisitDateHeader(),
+                "تاريخ تنفيذ الزيارة" ,
+                "The Visit Date Header is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getVisitStatusHeader(),
+                "الحالة" ,
+                "The Visit Status Header is Not Correct!");
 
-        softAssert.assertEquals(visitsReportPage.getVisitsReportsBody(),
-                data.getVisitsReportsBody(),
-                "The Visits Report Results are Not Correct!");
+
+        softAssert.assertEquals(visitsReportPage.getFirstVisitNumber(),
+                data.getVisitNumber(),
+                "The First Visit Number is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getFirstVisitOfficeName(),
+                data.getVisitOfficeName(),
+                "The First Visit Office Name is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getFirstVisitOfficePhone(),
+                data.getVisitOfficePhone(),
+                "The First Visit Office Phone is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getFirstVisitLicenseOwnerName(),
+                data.getVisitLicenseOwnerName(),
+                "The First Visit License Owner Name is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getFirstVisitLicensePhone(),
+                data.getVisitLicensePhone(),
+                "The First Visit License Phone is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getFirstVisitAddress(),
+                data.getVisitAddress(),
+                "The First Visit Address is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getFirstVisitActivity(),
+                data.getVisitActivity(),
+                "The First Visit Activity is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getFirstVisitAssignDate(),
+                data.getVisitAssignDate(),
+                "The First Visit Assign Date is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getFirstVisitDate(),
+                data.getVisitDate(),
+                "The First Visit Date is Not Correct!");
+        softAssert.assertEquals(visitsReportPage.getFirstVisitStatus(),
+                data.getVisitStatus(),
+                "The First Visit Status is Not Correct!");
 
         softAssert.assertAll();
 

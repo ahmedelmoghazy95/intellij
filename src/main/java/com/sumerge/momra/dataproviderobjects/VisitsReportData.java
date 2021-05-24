@@ -7,35 +7,46 @@ public class VisitsReportData {
 
 
     @CustomAnnotations.ExcelColumn(1)
-    String visitNumber;
+    String testCaseName;
 
     @CustomAnnotations.ExcelColumn(2)
-    String visitOfficeName;
+    String visitNumber;
 
     @CustomAnnotations.ExcelColumn(3)
-    String visitOfficePhone;
+    String visitOfficeName;
 
     @CustomAnnotations.ExcelColumn(4)
-    String visitLicenseOwnerName;
+    String visitOfficePhone;
 
     @CustomAnnotations.ExcelColumn(5)
-    String visitLicensePhone;
+    String visitLicenseOwnerName;
 
     @CustomAnnotations.ExcelColumn(6)
-    String visitActivity;
+    String visitLicensePhone;
 
     @CustomAnnotations.ExcelColumn(7)
-    String visitAddress;
+    String visitActivity;
 
     @CustomAnnotations.ExcelColumn(8)
-    String visitAssignDate;
+    String visitAddress;
 
     @CustomAnnotations.ExcelColumn(9)
-    String visitDate;
+    String visitAssignDate;
 
     @CustomAnnotations.ExcelColumn(10)
+    String visitDate;
+
+    @CustomAnnotations.ExcelColumn(11)
     String visitStatus;
 
+
+    public String getTestCaseName() {
+        return testCaseName;
+    }
+
+    public void setTestCaseName(String testCaseName) {
+        this.testCaseName = testCaseName;
+    }
 
     public String getVisitNumber() {
         return visitNumber;

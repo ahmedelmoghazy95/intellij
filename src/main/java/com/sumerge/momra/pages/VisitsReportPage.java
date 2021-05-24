@@ -62,51 +62,124 @@ public class VisitsReportPage extends BasePage {
 
     /**************Visits Report's Results Table Headers**************/
 
-    @FindBy(id = "reports-table-view")
-    WebElement visitsReportHeaders;
-    public static final String VISITS_REPORTS_HEADERS = "Visits Report Headers";
+    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'رقم الزيارة')]")
+    WebElement visitNumberHeader;
+    public static final String VISIT_NUMBER_HEADER = "Visit Number Header";
 
-    /**************Visits Report's Results Table Body**************/
+    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'اسم المكتب')]")
+    WebElement visitOfficeNameHeader;
+    public static final String VISIT_OFFICE_NAME_HEADER = "Visit Office Name Header";
 
-    @FindBy(id = "reports-table-body")
-    WebElement visitsReportBody;
-    public static final String VISITS_REPORTS_BODY = "Visits Report Body";
+    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'رقم هاتف المكتب')]")
+    WebElement visitOfficePhoneHeader;
+    public static final String VISIT_OFFICE_PHONE_HEADER = "Visit Office Phone Header";
+
+    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'إسم مالك السكن')]")
+    WebElement visitLicenseOwnerNameHeader;
+    public static final String VISIT_LICENSE_OWNER_NAME_HEADER = "Visit License Owner Name Header";
+
+    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'رقم الهاتف/ الجوال')]")
+    WebElement visitLicensePhoneHeader;
+    public static final String VISIT_LICENSE_PHONE_HEADER = "Visit License Phone Header";
+
+    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'النطاق')]")
+    WebElement visitActivityHeader;
+    public static final String VISIT_ACTIVITY_HEADER = "Visit Activity Header";
+
+    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'العنوان')]")
+    WebElement visitAddressHeader;
+    public static final String VISIT_ADDRESS_HEADER = "Visit Address Header";
+
+    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'تاريخ توزيع الزيارة')]")
+    WebElement visitAssignDateHeader;
+    public static final String VISIT_ASSIGN_DATE_HEADER = "Visit Assign Dates Header";
+
+    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'تاريخ تنفيذ الزيارة')]")
+    WebElement visitDateHeader;
+    public static final String VISIT_DATE_HEADER = "Visit Date Header";
+
+    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'الحالة')]")
+    WebElement visitStatusHeader;
+    public static final String VISIT_STATUS_HEADER = "Visit Status Header";
+
+    /**************Visits Report's Results Table 1st Row IDs**************/
+
+    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.id')]")
+    WebElement firstVisitNumber;
+    public static final String FIRST_VISIT_NUMBER = "First Visit Number";
+
+    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.officeName')]")
+    WebElement firstVisitOfficeName;
+    public static final String FIRST_VISIT_OFFICE_NAME = "First Visit Office Name";
+
+    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.officePhone')]")
+    WebElement firstVisitOfficePhone;
+    public static final String FIRST_VISIT_OFFICE_PHONE = "First Visit Office Phone";
+
+    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.licenseOwnerName')]")
+    WebElement firstVisitLicenseOwnerName;
+    public static final String FIRST_VISIT_LICENSE_OWNER = "First Visit License Owner Name";
+
+    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.licensePhone')]")
+    WebElement firstVisitLicensePhone;
+    public static final String FIRST_VISIT_LICENSE_PHONE = "First Visit License Phone";
+
+    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.activity')]")
+    WebElement firstVisitActivity;
+    public static final String FIRST_VISIT_ACTIVITY = "First Visit Activity";
+
+    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.address')]")
+    WebElement firstVisitAddress;
+    public static final String FIRST_VISIT_ADDRESS = "First Visit Address";
+
+    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.assignDate')]")
+    WebElement firstVisitAssignDate;
+    public static final String FIRST_VISIT_ASSIGN_DATE = "First Visit Assign Dates";
+
+    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.visitDate')]")
+    WebElement firstVisitDate;
+    public static final String FIRST_VISIT_DATE = "First Visit Date";
+
+    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.status')]")
+    WebElement firstVisitStatus;
+    public static final String FIRST_VISIT_STATUS= "First Visit Status";
 
     /**************Click on Action Buttons**************/
 
     public void clickReportsSubmitFilterBtn() {
         Utilities.waitAndClickOnWebElement(reportsSubmitFilterBtn, wait, driver);
     }
+    /**************Getters for page filters**************/
 
-    public void clickOnFilterAndSelectSecretariat (String secretariatsSelectionId) {
+    public void clickOnFilterAndSelectSecretariat (String secretariatsSelection) {
         Utilities.waitAndClickOnWebElement(reportsSecretariats, wait, driver);
-            Select secretariats = new Select(driver.findElement(By.id("Add here selection Id")));
-            secretariats.selectByVisibleText(secretariatsSelectionId);
+            Select secretariats = new Select(reportsSecretariats);
+            secretariats.selectByVisibleText(secretariatsSelection);
 
     }
 
-    public void clickOnFilterAndSelectMunicipials(String municipialsSelectionId) {
+    public void clickOnFilterAndSelectMunicipials(String municipialsSelection) {
         Utilities.waitAndClickOnWebElement(reportsMunicipials, wait, driver);
-        Select municipials = new Select(driver.findElement(By.id("Add here selection Id")));
-        municipials.selectByVisibleText(municipialsSelectionId);
+        Select municipials = new Select(reportsMunicipials);
+        municipials.selectByVisibleText(municipialsSelection);
     }
 
-    public void clickOnFilterAndSelectActivities(String activitiesSelectionId) {
+    public void clickOnFilterAndSelectActivities(String activitiesSelection) {
         Utilities.waitAndClickOnWebElement(reportsActivities, wait, driver);
-        Select activities = new Select(driver.findElement(By.id("Add here selection Id")));
-        activities.selectByVisibleText(activitiesSelectionId);
+        Select activities = new Select(reportsActivities);
+        activities.selectByVisibleText(activitiesSelection);
     }
 
-    public void clickOnFilterAndSelectOfficeNames(String officeNamesSelectionId) {
+    public void clickOnFilterAndSelectOfficeNames(String officeNamesSelection) {
         Utilities.waitAndClickOnWebElement(reportsOfficeNames, wait, driver);
-        Select officeNames = new Select(driver.findElement(By.id("Add here selection Id")));
-        officeNames.selectByVisibleText(officeNamesSelectionId);
+        Select officeNames = new Select(reportsOfficeNames);
+        officeNames.selectByVisibleText(officeNamesSelection);
     }
 
-    public void clickOnFilterAndSelectStatuses(String statusesSelectionId) {
+    public void clickOnFilterAndSelectStatuses(String statusesSelection) {
         Utilities.waitAndClickOnWebElement(reportsStatuses, wait, driver);
-        Select statuses = new Select(driver.findElement(By.id("Add here selection Id")));
-        statuses.selectByVisibleText(statusesSelectionId);
+        Select statuses = new Select(reportsStatuses);
+        statuses.selectByVisibleText(statusesSelection);
     }
 
 
@@ -114,12 +187,71 @@ public class VisitsReportPage extends BasePage {
         return Utilities.isFieldDisplayed(element, wait);
     }
 
-    public String getVisitsReportsHeaders () { return Utilities.waitAndGetWebElementText(visitsReportHeaders, wait); }
-    public String getVisitsReportsBody () { return Utilities.waitAndGetWebElementText(visitsReportBody, wait); }
-//    public void selectSecretariats (String secretariatsValue) {
-//        Select secretariats = new Select(driver.findElement(By.id("Add here selection Id")));
-//        secretariats.selectByVisibleText(secretariatsValue);
-//    }
+    /**************Getters for table Headers**************/
 
+    public String getVisitNumberHeader () {
+        return Utilities.waitAndGetWebElementText(visitNumberHeader, wait);
+    }
+    public String getVisitOfficeNameHeader () {
+        return Utilities.waitAndGetWebElementText(visitOfficeNameHeader, wait);
+    }
+    public String getVisitOfficePhoneHeader () {
+        return Utilities.waitAndGetWebElementText(visitOfficePhoneHeader, wait);
+    }
+    public String getVisitLicenseOwnerNameHeader () {
+        return Utilities.waitAndGetWebElementText(visitLicenseOwnerNameHeader, wait);
+    }
+    public String getVisitLicensePhoneHeader () {
+        return Utilities.waitAndGetWebElementText(visitLicensePhoneHeader, wait);
+    }
+    public String getVisitActivityHeader () {
+        return Utilities.waitAndGetWebElementText(visitActivityHeader, wait);
+    }
+    public String getVisitAddressHeader () {
+        return Utilities.waitAndGetWebElementText(visitAddressHeader, wait);
+    }
+    public String getVisitAssignDateHeader () {
+        return Utilities.waitAndGetWebElementText(visitAssignDateHeader, wait);
+    }
+    public String getVisitDateHeader () {
+        return Utilities.waitAndGetWebElementText(visitDateHeader, wait);
+    }
+    public String getVisitStatusHeader () {
+        return Utilities.waitAndGetWebElementText(visitStatusHeader, wait);
+    }
+
+
+    /**************Getters for table 1st Row**************/
+
+    public String getFirstVisitNumber () {
+        return Utilities.waitAndGetWebElementText(firstVisitNumber, wait);
+    }
+    public String getFirstVisitOfficeName() {
+        return Utilities.waitAndGetWebElementText(firstVisitOfficeName, wait);
+    }
+    public String getFirstVisitOfficePhone () {
+        return Utilities.waitAndGetWebElementText(firstVisitOfficePhone, wait);
+    }
+    public String getFirstVisitLicenseOwnerName () {
+        return Utilities.waitAndGetWebElementText(firstVisitLicenseOwnerName, wait);
+    }
+    public String getFirstVisitLicensePhone () {
+        return Utilities.waitAndGetWebElementText(firstVisitLicensePhone, wait);
+    }
+    public String getFirstVisitActivity () {
+        return Utilities.waitAndGetWebElementText(firstVisitActivity, wait);
+    }
+    public String getFirstVisitAddress () {
+        return Utilities.waitAndGetWebElementText(firstVisitAddress, wait);
+    }
+    public String getFirstVisitAssignDate () {
+        return Utilities.waitAndGetWebElementText(firstVisitAssignDate, wait);
+    }
+    public String getFirstVisitDate () {
+        return Utilities.waitAndGetWebElementText(firstVisitDate, wait);
+    }
+    public String getFirstVisitStatus () {
+        return Utilities.waitAndGetWebElementText(firstVisitStatus, wait);
+    }
 
 }

@@ -41,6 +41,15 @@ public class DataProviderSource {
         return fetchDataFromSheet(engineeringOfficesData, Constants.ENGINEERING_OFFICES_WORKBOOK, Constants.ENGINEERING_OFFICES_ENV_SHEET, testCaseName);
     }
 
+    /***************************Engineering Offices Data****************************************/
+
+    @DataProvider(name = "VisitsReportDataFeed")
+    public Iterator<Object> VisitsReportDataFeed(Method method) {
+        String testCaseName = method.getName();
+        VisitsReportData visitsReportData = new VisitsReportData();
+        return fetchDataFromSheet(visitsReportData, Constants.VISITS_REPORT_WORKBOOK, Constants.VISITS_REPORT_ENV_SHEET, testCaseName);
+    }
+
 
     /***************************Fetch Data From Excel Sheet****************************************/
     public Iterator<Object> fetchDataFromSheet(Object obj, String workBookName, String sheetName, String testCaseName) {
