@@ -24,10 +24,12 @@ public class VerifyEditAndSaveButtonsDisplayedTest extends BaseTest {
 // Todo assert on correct page + Add before method (driver handler, login & HTML report)
 
     @BeforeMethod(alwaysRun = true)
-    public synchronized void setUp(Method method, ITestContext ctx) throws InterruptedException, MalformedURLException {
-
+    public synchronized void setUp(Method method,Object testData[], ITestContext ctx) throws InterruptedException, MalformedURLException {
+        if (((SearchOfficesData) testData[0]).getTestCaseName() != "") {
+            ctx.setAttribute(method.getName(), ((SearchOfficesData) testData[0]).getTestCaseName());
+        } else {
             ctx.setAttribute(method.getName(), "RQM #9884 | Verify Edit/save buttons are displayed");
-
+        }
         super.setUp();
         driver = getDriver();
     }

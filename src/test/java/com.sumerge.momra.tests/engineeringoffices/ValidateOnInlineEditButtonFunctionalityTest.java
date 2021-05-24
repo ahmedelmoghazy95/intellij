@@ -23,10 +23,12 @@ public class ValidateOnInlineEditButtonFunctionalityTest extends BaseTest {
     LoginPage loginPage;
 
     @BeforeMethod(alwaysRun = true)
-    public synchronized void setUp(Method method, ITestContext ctx) throws InterruptedException, MalformedURLException {
-
-        ctx.setAttribute(method.getName(), "RQM #9880 #9882 | Validate on editable & read only fields + Validate on Inline Edit button functionality" );
-
+    public synchronized void setUp(Method method,Object testData[], ITestContext ctx) throws InterruptedException, MalformedURLException {
+        if (((SearchOfficesData) testData[0]).getTestCaseName() != "") {
+            ctx.setAttribute(method.getName(), ((SearchOfficesData) testData[0]).getTestCaseName());
+        } else {
+            ctx.setAttribute(method.getName(), "RQM #9880 #9882 | Validate on editable & read only fields + Validate on Inline Edit button functionality" );
+        }
 
         super.setUp();
         driver = getDriver();

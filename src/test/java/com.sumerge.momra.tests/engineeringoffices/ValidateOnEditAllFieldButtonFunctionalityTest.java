@@ -25,10 +25,13 @@ public class ValidateOnEditAllFieldButtonFunctionalityTest extends BaseTest {
 
 
     @BeforeMethod(alwaysRun = true)
-    public synchronized void setUp(Method method, ITestContext ctx) throws InterruptedException, MalformedURLException {
+    public synchronized void setUp(Method method,Object testData[], ITestContext ctx) throws InterruptedException, MalformedURLException {
+        if (((SearchOfficesData) testData[0]).getTestCaseName() != "") {
+            ctx.setAttribute(method.getName(), ((SearchOfficesData) testData[0]).getTestCaseName());
+        } else {
 
-        ctx.setAttribute(method.getName(), "RQM #9882 | Search: Validate on Edit (All field) button functionality");
-
+            ctx.setAttribute(method.getName(), "RQM #9882 | Search: Validate on Edit (All field) button functionality");
+        }
         super.setUp();
         driver = getDriver();
     }
