@@ -22,6 +22,9 @@ spec:
         group: "momra"
     spec:
       hostAliases:
+        - ip: "10.0.11.6"
+          hostnames:
+            - "portal.momra.gov.local"
       containers:
         - env:
             - name: HUB_PORT_4444_TCP_ADDR
