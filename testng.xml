@@ -11,7 +11,7 @@
 <!--        <suite-file path="logout.xml" />-->
 <!--    </suite-files>-->
 
-    <test parallel="classes" thread-count="24" name="Selenium UI Tests">
+    <test parallel="classes" thread-count="6" name="Selenium UI Tests">
         <packages>
             <package name="com.sumerge.momra.tests.engineeringoffices"/>
         </packages>
