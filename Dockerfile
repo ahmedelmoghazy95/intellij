@@ -8,7 +8,7 @@ ADD  target/momra-e2e-tests-*-tests.jar momra-e2e-tests.jar
 ADD  target/libs libs
 
 # Add the suite xmls
-ADD *.xml /
+ADD *.xml *.xml
 
 # Add the Test Data Excel File
 ADD src/main/resources/testdata src/main/resources/testdata/
