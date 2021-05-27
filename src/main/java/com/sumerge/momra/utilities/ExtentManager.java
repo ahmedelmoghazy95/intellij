@@ -14,7 +14,7 @@ import java.util.Date;
 public class ExtentManager {
     private static ExtentReports extent;
     private static Platform platform;
-    public static String reportFileName = "MOMRA_" + Constants.MODULE_NAME + "E2E UI ExecutionReport" + "_"
+    public static String reportFileName = "MOMRA_" + Constants.MODULE_NAME + "_E2E UI ExecutionReport" + "_"
             + new SimpleDateFormat("dd-MM-yyyy hh-mm-ss-ms").format(new Date()) + ".html";
     private static String macPath = System.getProperty("user.dir") + "/TestReport";
     private static String linuxPath = System.getProperty("user.dir") + "/TestReport";
@@ -41,7 +41,7 @@ public class ExtentManager {
         htmlReporter.config().setTheme(Theme.DARK);
         htmlReporter.config().setDocumentTitle("MOMRA E2E UI Report on " + Constants.ENVIRONMENT_NAME);
         htmlReporter.config().setEncoding("utf-8");
-        htmlReporter.config().setReportName("MOMRA " + Constants.MODULE_NAME + "E2E UI Report on " + Constants.ENVIRONMENT_NAME);
+        htmlReporter.config().setReportName("MOMRA " + Constants.MODULE_NAME + " E2E UI Report on " + Constants.ENVIRONMENT_NAME);
         htmlReporter.config().setTimelineEnabled(true);
 
         extent = new ExtentReports();
