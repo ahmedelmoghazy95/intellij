@@ -6,9 +6,9 @@
         <listener class-name="com.sumerge.momra.listeners.TestListener"/>
     </listeners>
 
-    <test parallel="classes" thread-count="6" name="Engineering Offices E2E UI Tests">
+    <test parallel="classes" thread-count="6" name="AppealsE2E UI Tests">
         <packages>
-            <package name="com.sumerge.momra.tests.engineeringoffices"/>
+
         </packages>
     </test> <!-- Test -->
 
