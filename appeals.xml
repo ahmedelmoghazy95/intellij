@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Tests" configfailurepolicy="continue">
+
+    <listeners>
+        <listener class-name="com.sumerge.momra.listeners.TestListener"/>
+    </listeners>
+
+    <test parallel="classes" thread-count="6" name="AppealsE2E UI Tests">
+        <packages>
+
+        </packages>
+    </test> <!-- Test -->
+
+</suite> <!-- Suite -->

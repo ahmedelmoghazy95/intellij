@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>MOMRA-e2e-ui-testing</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.sumerge.momra</groupId>
+    <artifactId>momra-e2e-tests</artifactId>
+    <version>0.0.2</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,20 +21,83 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>7</source>
-                    <target>7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>
+                                ${project.build.directory}/libs
+                            </outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>engineering-offices.xml</suiteXmlFile>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+
         </plugins>
+
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>kubernetes</directory>
+                <includes>
+                    <include>*.yaml</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 
     <profiles>
         <profile>
             <id>dev</id>
             <properties>
-                <env-name>Development Environment</env-name>
-                <app-host>http://10.0.200.73:60163/</app-host>
-                <MongoDB-URL>10.0.10.59</MongoDB-URL>
+                <env-name></env-name>
+                <app-host>http://portal.momra.gov.local/</app-host>
+                <MongoDB-URL></MongoDB-URL>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -44,11 +107,9 @@
         <profile>
             <id>testing</id>
             <properties>
-                <env-name>Testing Environment</env-name>
-                <app-host>http://10.0.200.73:60163/</app-host>
-                <MongoDB-URL>10.0.10.55</MongoDB-URL>
-                <Upload-Docs-CE>https://mff-ce-test:8893</Upload-Docs-CE>
-                <CE-Token>Bearer eyJraWQiOiIvcHJpdmF0ZUtleS5wZW0iLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzeXN0ZW0iLCJncm91cHMiOlsic3lzdGVtIl0sInN0ZXBzIjpbXSwiaXNzIjoibWZmLXRlc3QiLCJpYXQiOjE1OTEzMTMxMjQsImF1dGhfdGltZSI6MTU5MTMxMzEyNCwiZXhwIjo0NDM4MzIxMzQ1LCJqdGkiOiItQWJZOWV3WV9LZnRyeHpHWUtQeV9RIn0.gYn18qoOGJgv3-rA5l1BHRlpoKs7LadItiaePVizBk0o03szr1EPGakhrlbsqVrAzFEAPdiAo03aHF2KA_xkpPapIYmlmHB98pIFTNwzfCBikIxGoLlwHtOXbjXypWeFN0G4kgLiggoTemTamrTtg8ml569vhlU6zlugcjvrSDANCdONQyvwd1N6YCy6ftPEjU1GT3n50aCfy4AZvf6Q3InHeWKenBGS3gddrkQJpxcwtRKCG7vvpKueoq4xRaywn9hYJh0L5jF2Xc5wxzBTmKMez5lgaENFXjah6MPf7QcNsO1YrWcWoRKk6ZNf1IZnzHuYt6eHpkU-7wfpJ9Fm0dwlDH6d2jKwVdjgRc8fyWzIMPk5r_1qvrY0oxi7_RKLJa0mZWTa5jXbV9AE96U4hXKzvB7MAFIEspT_nfgJRhnZ5gtA-3j1DC_rhfw9-ATVBYVToVZEC_nb-I4-HrdCNJRPjYqs3BUeLSbr3193rwzWjjdYSPwXZdgyjYMVL0eN4EuNkbxQGAlGt4rkZ5g-umij_v9z-TTm_GWF17nSPpumlhyKAeBZq971RGlBjLu5vLNXZvY2PRRZanX2yPtAXM-tYEFZTvNb7Ned9RgbV0FHINwkp2uQEoC7Db_eFlH4XMOQQEFXv_HjEAC-t-QnygnTj7YbAjnQznslu6UoifI</CE-Token>
+                <env-name></env-name>
+                <app-host></app-host>
+                <MongoDB-URL></MongoDB-URL>
             </properties>
             <!--            <activation>-->
             <!--                <activeByDefault>true</activeByDefault>-->
@@ -58,10 +119,8 @@
         <profile>
             <id>staging</id>
             <properties>
-                <env-name>Staging Environment</env-name>
-                <app-host>https://41.33.113.198/</app-host>
-                <Upload-Docs-CE>https://mff-ce-stg:8893</Upload-Docs-CE>
-                <CE-Token></CE-Token>
+                <env-name></env-name>
+                <app-host></app-host>
                 <MongoDB-URL></MongoDB-URL>
             </properties>
             <!--            <activation>-->
@@ -71,12 +130,26 @@
     </profiles>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
 
-    <dependency>
-        <groupId>io.rest-assured</groupId>
-        <artifactId>rest-assured</artifactId>
-        <version>4.3.1</version>
-    </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.9</version>
+        </dependency>
 
 
         <dependency>
@@ -85,10 +158,25 @@
             <version>6.14.3</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
         <dependency>
             <groupId>javax.ws.rs</groupId>
             <artifactId>javax.ws.rs-api</artifactId>
             <version>2.1.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot -->
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>1.5.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
         </dependency>
 
         <dependency>
@@ -103,16 +191,39 @@
             <version>3.9</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>3.9</version>
-        </dependency>
 
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
             <version>5.0.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.12.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.github.kostaskougios/cloning -->
+        <dependency>
+            <groupId>io.github.kostaskougios</groupId>
+            <artifactId>cloning</artifactId>
+            <version>1.10.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-ext -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-ext</artifactId>
+            <version>1.7.30</version>
         </dependency>
     </dependencies>
 </project>
