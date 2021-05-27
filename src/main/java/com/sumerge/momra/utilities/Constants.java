@@ -8,7 +8,7 @@ public class Constants {
     public static final String MAIL_CONFIG = ENVIRONMENT_RN.getString("email.properties");
     public static final String ENVIRONMENT_NAME = ENVIRONMENT_RN.getString("env.name");
     public static final String APPLICATION_HOST = ENVIRONMENT_RN.getString("app.host");
-
+    public static final String MODULE_NAME = ENVIRONMENT_RN.getString("module.name");
 
     /***********Search Data***********/
     public static final String SEARCH_OFFICES_WORKBOOK = "SearchOfficesData.xlsx";

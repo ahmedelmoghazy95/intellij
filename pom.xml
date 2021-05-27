@@ -12,6 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <testEnv>${app-host}</testEnv>
         <envName>${env-name}</envName>
+        <moduleName>All</moduleName>
         <emailProperties>liveMailConfig</emailProperties>
     </properties>
 
@@ -95,7 +96,7 @@
         <profile>
             <id>dev</id>
             <properties>
-                <env-name></env-name>
+                <env-name>Dev</env-name>
                 <app-host>http://portal.momra.gov.local/</app-host>
                 <MongoDB-URL></MongoDB-URL>
             </properties>
@@ -107,7 +108,7 @@
         <profile>
             <id>testing</id>
             <properties>
-                <env-name></env-name>
+                <env-name>Testing</env-name>
                 <app-host></app-host>
                 <MongoDB-URL></MongoDB-URL>
             </properties>
@@ -119,7 +120,7 @@
         <profile>
             <id>staging</id>
             <properties>
-                <env-name></env-name>
+                <env-name>Staging</env-name>
                 <app-host></app-host>
                 <MongoDB-URL></MongoDB-URL>
             </properties>
