@@ -53,9 +53,9 @@ public class TestListener extends DriverHandler implements ITestListener {
         Properties prop = email.readFromPropertiesFile();
         email.sendTestReportEmail(prop.getProperty("email.user"), prop.getProperty("email.pass"), prop.getProperty("server.host"), prop.getProperty("server.port"),
                 prop.getProperty("email.sender"), prop.getProperty("email.recepient"), prop.getProperty("email.recepientCC"),
-                "[MOMRA] Automation Test Report on " + Constants.APPLICATION_HOST,
-                "Dears,\n\t\n\t Kindly find attached an HTML Report for MOMRA Automation Tests Execution Results after Deployment on "
-                        + Constants.APPLICATION_HOST + ".\n\n Best Regards,\n Automation Team",
+                "[MOMRA] " + Constants.MODULE_NAME + " E2E UI Test Report on " + Constants.ENVIRONMENT_NAME,
+                "Dears,\n\t\n\t Kindly find attached an HTML Report for MOMRA " + Constants.MODULE_NAME + " E2E UI Tests Execution Results after Deployment on "
+                        + Constants.ENVIRONMENT_NAME + " Environment.\n\n Best Regards,\n Automation Team",
                 ExtentManager.reportFileName, testReportFilePath);
     }
 
