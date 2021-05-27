@@ -1,14 +1,10 @@
 package com.sumerge.momra.tests.reports;
 
-
-import com.sumerge.momra.dataproviderobjects.EngineeringOfficesData;
 import com.sumerge.momra.dataproviderobjects.VisitsReportData;
-import com.sumerge.momra.pages.EngineeringOfficesListViewPage;
 import com.sumerge.momra.pages.VisitsReportPage;
 import com.sumerge.momra.tests.BaseTest;
 import com.sumerge.momra.utilities.DataProviderSource;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -37,6 +33,7 @@ public class ValidateOnDisplayBtnFunctionalityTest extends BaseTest {
     @Test(alwaysRun = true, dataProvider = "VisitsReportDataFeed", dataProviderClass = DataProviderSource.class)
     public void ValidateOnDisplayBtnFunctionality (VisitsReportData data) {
         softAssert = new SoftAssert();
+
         visitsReportPage = new VisitsReportPage(driver);
         visitsReportPage.clickOnFilterAndSelectSecretariat("");
         visitsReportPage.clickOnFilterAndSelectMunicipials("");
@@ -44,6 +41,7 @@ public class ValidateOnDisplayBtnFunctionalityTest extends BaseTest {
         visitsReportPage.clickOnFilterAndSelectOfficeNames("");
         visitsReportPage.clickOnFilterAndSelectStatuses("");
         visitsReportPage.clickReportsSubmitFilterBtn();
+
         softAssert.assertEquals(visitsReportPage.getVisitNumberHeader(),
                "رقم الزيارة" ,
                 "The Visits Number Header is Not Correct!");
@@ -108,7 +106,5 @@ public class ValidateOnDisplayBtnFunctionalityTest extends BaseTest {
                 "The First Visit Status is Not Correct!");
 
         softAssert.assertAll();
-
-
     }
 }

@@ -25,4 +25,4 @@ ADD src/main/resources/*.properties src/main/resources/
 # MODULE  = login-module
 # GRIDHOST = selenium hub hostname / ipaddress
 
-ENTRYPOINT ["/usr/bin/java", "-cp", "momra-e2e.jar:momra-e2e-tests.jar:libs/*", "-DseleniumHubHost=seleniumhub", "-Dbrowser=chrome", "org.testng.TestNG", "./testng.xml"]
+ENTRYPOINT ["/usr/bin/java", "-cp", "momra-e2e.jar:momra-e2e-tests.jar:libs/*", "-DseleniumHubHost=seleniumhub", "-Dbrowser=chrome", "org.testng.TestNG", "./TEST_SUITE.xml"]

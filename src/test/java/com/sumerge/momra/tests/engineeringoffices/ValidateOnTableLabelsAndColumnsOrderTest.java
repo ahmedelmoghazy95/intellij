@@ -2,8 +2,6 @@ package com.sumerge.momra.tests.engineeringoffices;
 
 import com.sumerge.momra.dataproviderobjects.EngineeringOfficesData;
 import com.sumerge.momra.pages.EngineeringOfficesListViewPage;
-import com.sumerge.momra.pages.HomePage;
-import com.sumerge.momra.pages.LoginPage;
 import com.sumerge.momra.tests.BaseTest;
 import com.sumerge.momra.utilities.DataProviderSource;
 import org.openqa.selenium.WebDriver;
@@ -19,9 +17,6 @@ public class ValidateOnTableLabelsAndColumnsOrderTest extends BaseTest {
     WebDriver driver;
     EngineeringOfficesListViewPage engineeringOfficesListViewPage;
     SoftAssert softAssert;
-    HomePage homePage;
-    LoginPage loginPage;
-
 
     @BeforeMethod(alwaysRun = true)
     public synchronized void setUp(Method method, Object testData[], ITestContext ctx) throws InterruptedException, MalformedURLException {
@@ -36,11 +31,7 @@ public class ValidateOnTableLabelsAndColumnsOrderTest extends BaseTest {
 
     @Test(alwaysRun = true, dataProvider = "EngineeringOfficesDataFeed", dataProviderClass = DataProviderSource.class)
     public void ValidateOnTableLabelsAndColumnsOrder (EngineeringOfficesData data) {
-         softAssert = new SoftAssert();
-//        loginPage = new LoginPage(driver);
-//
-//        homePage = loginPage.login(data.getUsername(), data.getPassword());
-//        engineeringOfficesListViewPage = homePage.clickOnOpenEngineeringOfficesSideMenuBtn();
+        softAssert = new SoftAssert();
 
         engineeringOfficesListViewPage = new EngineeringOfficesListViewPage (driver);
 
@@ -69,7 +60,5 @@ public class ValidateOnTableLabelsAndColumnsOrderTest extends BaseTest {
                 "The Office Capacity Label is Not Correct!");
 
         softAssert.assertAll();
-
-
     }
 }
