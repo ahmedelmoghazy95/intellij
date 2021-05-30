@@ -43,7 +43,7 @@ public class VerifyEditAndSaveButtonsDisplayedTest extends BaseTest {
 
 //        homePage = loginPage.login(data.getUsername(), data.getPassword());
 //        engineeringOfficesListViewPage = homePage.clickOnOpenEngineeringOfficesSideMenuBtn();
-       softAssert.assertTrue(engineeringOfficesListViewPage.isSaveBtnDisplayed());
+       softAssert.assertTrue(engineeringOfficesListViewPage.isDisabledSaveBtnDisplayed());
        softAssert.assertTrue(engineeringOfficesListViewPage.isEditAllBtnDisplayed());
        softAssert.assertAll();
 

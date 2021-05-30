@@ -7,6 +7,7 @@ import com.sumerge.momra.pages.LoginPage;
 import com.sumerge.momra.tests.BaseTest;
 import com.sumerge.momra.utilities.Constants;
 import com.sumerge.momra.utilities.DataProviderSource;
+import com.sumerge.momra.utilities.Utilities;
 import com.sun.corba.se.impl.orbutil.closure.Constant;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -53,7 +54,8 @@ public class ValidateOnEditAllFieldButtonFunctionalityTest extends BaseTest {
         engineeringOfficesListViewPage.clickEditAllBtn();
         softAssert.assertTrue(engineeringOfficesListViewPage.checkFieldIsDisplayed(engineeringOfficesListViewPage.getOfficeCapacityEditable()));
         softAssert.assertTrue(engineeringOfficesListViewPage.checkFieldIsDisplayed(engineeringOfficesListViewPage.getOfficeNumberOfInspectorEditable()));
-        engineeringOfficesListViewPage.clickSaveBtn();
+       engineeringOfficesListViewPage.resetOfficeCapacityEditable(Utilities.randInt(1, 999));
+        engineeringOfficesListViewPage.clickOnEnabledSaveBtn();
         softAssert.assertTrue(engineeringOfficesListViewPage.checkFieldIsDisplayed(engineeringOfficesListViewPage.getOfficeCapacityReadOnly()));
         softAssert.assertTrue(engineeringOfficesListViewPage.checkFieldIsDisplayed(engineeringOfficesListViewPage.getOfficeNumberOfInspectorReadOnly()));
         softAssert.assertAll();

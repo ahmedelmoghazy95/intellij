@@ -44,7 +44,7 @@ public class EngineeringOfficesListViewPage extends BasePage {
     WebElement officeNumberOfInspectorsEditable;
     public static final String OFFICE_NUMBER_OF_INSPECTOR_EDITABLE = "Office Number Of Inspectors Editable Field";
 
-    @FindBy(id = "offices-viewList-capacityEditAllInput")
+    @FindBy(id = "offices-viewList-capacityEditableInput")
     WebElement officeCapacityEditable;
     public static final String OFFICE_CAPACITY_EDITABLE  = "Office Capacity Editable Field";
 
@@ -82,23 +82,26 @@ public class EngineeringOfficesListViewPage extends BasePage {
 
     /**************Table Headers(Labels) IDs **************/
 
-    @FindBy(id = "")
+    @FindBy(xpath = "//th//*[contains (text(), 'إسم المكتب الهندسى')]")
     WebElement officeNameLabel;
 
-    @FindBy(id = "")
+    @FindBy(xpath = "//th//*[contains (text(), 'رقم المكتب الهندسى')]")
     WebElement officeNumberLabel;
 
-    @FindBy(id = "")
+    @FindBy(xpath = "//th//*[contains (text(), 'الأمانة')]")
     WebElement officeSecretariatLabel;
 
-    @FindBy(id = "")
+    @FindBy(xpath = "//th//*[contains (text(), 'البلدية')]")
     WebElement officeMunicipialLabel;
 
-    @FindBy(id = "")
+    @FindBy(xpath = "//th//*[contains (text(), 'عدد المراقبين')]")
     WebElement officeNumberOfInspectorsLabel;
 
-    @FindBy(id = "")
+    @FindBy(xpath = "//th//*[contains (text(), 'الطاقة الإستيعابية')]")
     WebElement officeCapacityLabel;
+
+    @FindBy(xpath = "//th//*[contains (text(), 'الإجراءات')]")
+    WebElement officeActionsLabel;
 
     /*************Getters For Table Headers(Labels)**************/
 
@@ -114,7 +117,9 @@ public class EngineeringOfficesListViewPage extends BasePage {
         return Utilities.waitAndGetWebElementText(officeCapacityLabel, wait);
     }
     public String getOfficeNumberOfInspectorLabel () { return Utilities.waitAndGetWebElementText(officeNumberOfInspectorsLabel, wait); }
-
+    public String getOfficeActionsLabel () {
+        return Utilities.waitAndGetWebElementText(officeActionsLabel, wait);
+    }
     /************** 1st Row data IDs **************/
 
     @FindBy(id = "offices-viewList-officeName")
@@ -153,8 +158,12 @@ public class EngineeringOfficesListViewPage extends BasePage {
     /*************Page Action Buttons**************/
 
     @FindBy(id = "offices-viewList-submitBtn")
-    WebElement saveBtn;
-    public static final String SAVE_BTN = "Offices List Save Button";
+    WebElement enabledSaveBtn;
+    public static final String ENABLED_SAVE_BTN = "Offices List Enabled Save Button";
+
+    @FindBy(id = "offices-viewList-invalidSubmitBtn")
+    WebElement disabledSaveBtn;
+    public static final String DISABLED_SAVE_BTN = "Offices List Disabled Save Button";
 
     @FindBy(id = "offices-viewList-editAllBtn")
     WebElement editAllBtn;
@@ -166,7 +175,7 @@ public class EngineeringOfficesListViewPage extends BasePage {
 
     /**************Click on Action Buttons**************/
 
-    public void clickSaveBtn() {Utilities.waitAndClickOnWebElement(saveBtn, wait, driver);
+    public void clickOnEnabledSaveBtn() {Utilities.waitAndClickOnWebElement(enabledSaveBtn, wait, driver);
     }
 
     public void clickEditAllBtn() {Utilities.waitAndClickOnWebElement(editAllBtn, wait, driver);
@@ -182,12 +191,20 @@ public class EngineeringOfficesListViewPage extends BasePage {
         return Utilities.isFieldDisplayed(element, wait);
     }
 
-    public boolean isSaveBtnDisplayed (){
-        return saveBtn.isDisplayed();
+    public boolean isEnabledSaveBtnDisplayed (){
+        return enabledSaveBtn.isDisplayed();
+    }
+    public boolean isDisabledSaveBtnDisplayed (){
+        return disabledSaveBtn.isDisplayed();
     }
 
     public boolean isEditAllBtnDisplayed (){
         return editAllBtn.isDisplayed();
+    }
+
+    public void resetOfficeCapacityEditable (int capacityValue) {
+        officeCapacityEditable.clear();
+        officeCapacityEditable.sendKeys(String.valueOf(capacityValue));
     }
 
 }

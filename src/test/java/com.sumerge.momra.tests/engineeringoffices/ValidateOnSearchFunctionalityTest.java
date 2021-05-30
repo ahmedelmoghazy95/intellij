@@ -42,7 +42,7 @@ public class ValidateOnSearchFunctionalityTest extends BaseTest {
 //
 //        homePage = loginPage.login(data.getUsername(), data.getPassword());
 //        engineeringOfficesListViewPage = homePage.clickOnOpenEngineeringOfficesSideMenuBtn();
-        engineeringOfficesListViewPage.searchWithOfficeName("Testing 2");
+        engineeringOfficesListViewPage.searchWithOfficeName("Test Automation Data");
         softAssert.assertEquals(engineeringOfficesListViewPage.getFirstOfficeName(), data.getOfficeName(),
                 "The Office Name Displayed in search results is Not Correct!");
         softAssert.assertEquals(engineeringOfficesListViewPage.getFirstOfficeNumber(), data.getOfficeNumber(),

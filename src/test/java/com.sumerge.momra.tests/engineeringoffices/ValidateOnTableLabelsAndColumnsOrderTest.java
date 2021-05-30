@@ -66,9 +66,12 @@ public class ValidateOnTableLabelsAndColumnsOrderTest extends BaseTest {
                 "The Office Number Of Inspector Label is Not Correct!");
 
         softAssert.assertEquals(engineeringOfficesListViewPage.getOfficeCapacityLabel(),
-                data.getOfficeNumberOfInspectorsLabel(),
+                data.getOfficeCapacityLabel(),
                 "The Office Capacity Label is Not Correct!");
 
+        softAssert.assertEquals(engineeringOfficesListViewPage.getOfficeActionsLabel(),
+                data.getOfficeActions(),
+                "The Office Actions Label is Not Correct!");
         softAssert.assertAll();
 
 
