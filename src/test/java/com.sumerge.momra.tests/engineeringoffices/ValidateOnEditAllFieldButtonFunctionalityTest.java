@@ -5,7 +5,9 @@ import com.sumerge.momra.pages.EngineeringOfficesListViewPage;
 import com.sumerge.momra.pages.HomePage;
 import com.sumerge.momra.pages.LoginPage;
 import com.sumerge.momra.tests.BaseTest;
+import com.sumerge.momra.utilities.Constants;
 import com.sumerge.momra.utilities.DataProviderSource;
+import com.sun.corba.se.impl.orbutil.closure.Constant;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeMethod;
@@ -32,7 +34,7 @@ public class ValidateOnEditAllFieldButtonFunctionalityTest extends BaseTest {
 
             ctx.setAttribute(method.getName(), "RQM #9882 | Search: Validate on Edit (All field) button functionality");
         }
-        super.setUp();
+        super.setUp(Constants.ENGINEERING_OFFICES_MODULE);
         driver = getDriver();
     }
 

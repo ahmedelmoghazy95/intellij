@@ -5,6 +5,7 @@ import com.sumerge.momra.pages.EngineeringOfficesListViewPage;
 import com.sumerge.momra.pages.HomePage;
 import com.sumerge.momra.pages.LoginPage;
 import com.sumerge.momra.tests.BaseTest;
+import com.sumerge.momra.utilities.Constants;
 import com.sumerge.momra.utilities.DataProviderSource;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -30,7 +31,7 @@ public class ValidateOnInlineEditButtonFunctionalityTest extends BaseTest {
             ctx.setAttribute(method.getName(), "RQM #9880 #9882 | Validate on editable & read only fields + Validate on Inline Edit button functionality" );
         }
 
-        super.setUp();
+        super.setUp(Constants.ENGINEERING_OFFICES_MODULE);
         driver = getDriver();
     }
 

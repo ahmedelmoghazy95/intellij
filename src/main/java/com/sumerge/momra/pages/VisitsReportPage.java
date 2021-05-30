@@ -104,7 +104,7 @@ public class VisitsReportPage extends BasePage {
 
     /**************Visits Report's Results Table 1st Row IDs**************/
 
-    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.id')]")
+    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and contains(@id, 'visitID')]")
     WebElement firstVisitNumber;
     public static final String FIRST_VISIT_NUMBER = "First Visit Number";
 

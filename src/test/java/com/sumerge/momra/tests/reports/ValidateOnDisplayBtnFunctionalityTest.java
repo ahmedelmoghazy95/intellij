@@ -6,6 +6,7 @@ import com.sumerge.momra.dataproviderobjects.VisitsReportData;
 import com.sumerge.momra.pages.EngineeringOfficesListViewPage;
 import com.sumerge.momra.pages.VisitsReportPage;
 import com.sumerge.momra.tests.BaseTest;
+import com.sumerge.momra.utilities.Constants;
 import com.sumerge.momra.utilities.DataProviderSource;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -30,7 +31,7 @@ public class ValidateOnDisplayBtnFunctionalityTest extends BaseTest {
         } else {
             ctx.setAttribute(method.getName(), "RQM #9959 | Validate on عرض button functionality");
         }
-        super.setUp();
+        super.setUp(Constants.REPORTS_MODULE);
         driver = getDriver();
     }
 

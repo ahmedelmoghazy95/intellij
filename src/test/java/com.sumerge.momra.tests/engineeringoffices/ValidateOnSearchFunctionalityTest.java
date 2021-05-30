@@ -5,6 +5,7 @@ import com.sumerge.momra.pages.EngineeringOfficesListViewPage;
 import com.sumerge.momra.pages.HomePage;
 import com.sumerge.momra.pages.LoginPage;
 import com.sumerge.momra.tests.BaseTest;
+import com.sumerge.momra.utilities.Constants;
 import com.sumerge.momra.utilities.DataProviderSource;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -29,7 +30,7 @@ public class ValidateOnSearchFunctionalityTest extends BaseTest {
         } else {
             ctx.setAttribute(method.getName(), "RQM #9874 | Validate on search functionality");
         }
-        super.setUp();
+        super.setUp(Constants.ENGINEERING_OFFICES_MODULE);
         driver = getDriver();
     }
 
