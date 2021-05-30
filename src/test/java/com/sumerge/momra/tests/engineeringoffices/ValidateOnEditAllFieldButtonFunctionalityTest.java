@@ -3,7 +3,10 @@ package com.sumerge.momra.tests.engineeringoffices;
 import com.sumerge.momra.dataproviderobjects.SearchOfficesData;
 import com.sumerge.momra.pages.EngineeringOfficesListViewPage;
 import com.sumerge.momra.tests.BaseTest;
+import com.sumerge.momra.utilities.Constants;
 import com.sumerge.momra.utilities.DataProviderSource;
+import com.sumerge.momra.utilities.Utilities;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeMethod;
@@ -27,7 +30,7 @@ public class ValidateOnEditAllFieldButtonFunctionalityTest extends BaseTest {
 
             ctx.setAttribute(method.getName(), "RQM #9882 | Search: Validate on Edit (All field) button functionality");
         }
-        super.setUp();
+        super.setUp(Constants.ENGINEERING_OFFICES_MODULE);
         driver = getDriver();
     }
 
@@ -42,7 +45,8 @@ public class ValidateOnEditAllFieldButtonFunctionalityTest extends BaseTest {
         engineeringOfficesListViewPage.clickEditAllBtn();
         softAssert.assertTrue(engineeringOfficesListViewPage.checkFieldIsDisplayed(engineeringOfficesListViewPage.getOfficeCapacityEditable()));
         softAssert.assertTrue(engineeringOfficesListViewPage.checkFieldIsDisplayed(engineeringOfficesListViewPage.getOfficeNumberOfInspectorEditable()));
-        engineeringOfficesListViewPage.clickSaveBtn();
+       engineeringOfficesListViewPage.resetOfficeCapacityEditable(Utilities.randInt(1, 999));
+        engineeringOfficesListViewPage.clickOnEnabledSaveBtn();
         softAssert.assertTrue(engineeringOfficesListViewPage.checkFieldIsDisplayed(engineeringOfficesListViewPage.getOfficeCapacityReadOnly()));
         softAssert.assertTrue(engineeringOfficesListViewPage.checkFieldIsDisplayed(engineeringOfficesListViewPage.getOfficeNumberOfInspectorReadOnly()));
 

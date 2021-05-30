@@ -67,8 +67,12 @@ public class DriverHandler {
         driver.findElement(By.id("clearBrowsingDataConfirm")).click();
 	}*/
 
-    public void gotoApplicationHomePage() {
+    public void gotoApplicationEngineeringOfficesPage() {
         driverThread.get().get(Constants.APPLICATION_HOST + "engineering-offices-ui");
+    }
+
+    public void gotoApplicationReportsPage() {
+        driverThread.get().get(Constants.APPLICATION_HOST + "reports-ui");
     }
 
     public WebDriver getDriver() {

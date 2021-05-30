@@ -1,5 +1,6 @@
 package com.sumerge.momra.tests;
 
+import com.sumerge.momra.utilities.Constants;
 import com.sumerge.momra.utilities.DriverHandler;
 
 import com.sumerge.momra.listeners.TestListener;
@@ -26,11 +27,20 @@ public class BaseTest extends TestListener {
         }
     }
 
-    public void setUp() throws InterruptedException, MalformedURLException {
+    public void setUp(String page) throws InterruptedException, MalformedURLException {
         driverHandler = DriverHandler.getInstance();
         driverHandler.createDriver();
 //		driverx.clearBrowserCache();
-        driverHandler.gotoApplicationHomePage();
+        if (page == Constants.ENGINEERING_OFFICES_MODULE) {
+            driverHandler.gotoApplicationEngineeringOfficesPage();
+        } else if (page == Constants.REPORTS_MODULE) {
+            driverHandler.gotoApplicationReportsPage();
+        }
+
+
+
+
+
 
     }
 //********************Ask Amr about difference bet this & login method in login page************************

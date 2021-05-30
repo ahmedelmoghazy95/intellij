@@ -3,6 +3,7 @@ package com.sumerge.momra.tests.engineeringoffices;
 import com.sumerge.momra.dataproviderobjects.EngineeringOfficesData;
 import com.sumerge.momra.pages.EngineeringOfficesListViewPage;
 import com.sumerge.momra.tests.BaseTest;
+import com.sumerge.momra.utilities.Constants;
 import com.sumerge.momra.utilities.DataProviderSource;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -25,7 +26,7 @@ public class ValidateOnTableLabelsAndColumnsOrderTest extends BaseTest {
         } else {
             ctx.setAttribute(method.getName(), "RQM #9873 | Validate on table structure, labels & columns order");
         }
-        super.setUp();
+        super.setUp(Constants.ENGINEERING_OFFICES_MODULE);
         driver = getDriver();
     }
 
@@ -56,9 +57,12 @@ public class ValidateOnTableLabelsAndColumnsOrderTest extends BaseTest {
                 "The Office Number Of Inspector Label is Not Correct!");
 
         softAssert.assertEquals(engineeringOfficesListViewPage.getOfficeCapacityLabel(),
-                data.getOfficeNumberOfInspectorsLabel(),
+                data.getOfficeCapacityLabel(),
                 "The Office Capacity Label is Not Correct!");
 
+        softAssert.assertEquals(engineeringOfficesListViewPage.getOfficeActionsLabel(),
+                data.getOfficeActions(),
+                "The Office Actions Label is Not Correct!");
         softAssert.assertAll();
     }
 }

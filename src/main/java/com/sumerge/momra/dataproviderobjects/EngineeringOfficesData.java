@@ -31,6 +31,9 @@ public class EngineeringOfficesData {
     @CustomAnnotations.ExcelColumn(9)
     String officeCapacityLabel;
 
+    @CustomAnnotations.ExcelColumn(10)
+    String officeActionsLabel;
+
 
     public String getTestCaseName() {
         return testCaseName;
@@ -80,6 +83,12 @@ public class EngineeringOfficesData {
         this.officeSecretariatLabel = officeSecretariatLabel;
     }
 
+    public String getOfficeActions () { return officeActionsLabel; }
+
+    public void setOfficeActionsLabel (String officeActionsLabel) {
+        this.officeActionsLabel = officeActionsLabel;
+    }
+
     public String getOfficeMunicipialLabel() {
         return officeMunicipialLabel;
     }
@@ -90,6 +99,10 @@ public class EngineeringOfficesData {
 
     public String getOfficeNumberOfInspectorsLabel() {
         return officeNumberOfInspectorsLabel;
+    }
+
+    public String getOfficeActionsLabel() {
+        return officeActionsLabel;
     }
 
     public void setOfficeNumberOfInspectorsLabel(String officeNumberOfInspectorsLabel) {
