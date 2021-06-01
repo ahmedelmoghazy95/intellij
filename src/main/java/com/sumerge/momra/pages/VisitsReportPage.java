@@ -105,43 +105,43 @@ public class VisitsReportPage extends BasePage {
 
     /**************Visits Report's Results Table 1st Row IDs**************/
 
-    @FindBy(id = "reports-table-visitID-602ad14290919651d8c979e0")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-visitID')]")
     WebElement firstVisitNumber;
     public static final String FIRST_VISIT_NUMBER = "First Visit Number";
 
-    @FindBy(id = "reports-table-officeName-602ad14290919651d8c979e0")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-officeName')]")
     WebElement firstVisitOfficeName;
     public static final String FIRST_VISIT_OFFICE_NAME = "First Visit Office Name";
 
-    @FindBy(id = "reports-table-officePhone-602ad14290919651d8c979e0")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-officePhone')]")
     WebElement firstVisitOfficePhone;
     public static final String FIRST_VISIT_OFFICE_PHONE = "First Visit Office Phone";
 
-    @FindBy(id = "reports-table-licenseOwnerName-602ad14290919651d8c979e0")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-licenseOwnerName')]")
     WebElement firstVisitLicenseOwnerName;
     public static final String FIRST_VISIT_LICENSE_OWNER = "First Visit License Owner Name";
 
-    @FindBy(id = "reports-table-licensePhone-602ad14290919651d8c979e0")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-licensePhone')]")
     WebElement firstVisitLicensePhone;
     public static final String FIRST_VISIT_LICENSE_PHONE = "First Visit License Phone";
 
-    @FindBy(id = "reports-table-activity-602ad14290919651d8c979e0")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-activity')]")
     WebElement firstVisitActivity;
     public static final String FIRST_VISIT_ACTIVITY = "First Visit Activity";
 
-    @FindBy(id = "reports-table-address-602ad14290919651d8c979e0")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-address')]")
     WebElement firstVisitAddress;
     public static final String FIRST_VISIT_ADDRESS = "First Visit Address";
 
-    @FindBy(id = "reports-table-submitDate-602ad14290919651d8c979e0")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-submitDate')]")
     WebElement firstVisitAssignDate;
     public static final String FIRST_VISIT_ASSIGN_DATE = "First Visit Assign Dates";
 
-    @FindBy(id = "reports-table-visitDate-602ad14290919651d8c979e0")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-visitDate')]")
     WebElement firstVisitDate;
     public static final String FIRST_VISIT_DATE = "First Visit Date";
 
-    @FindBy(id = "reports-table-status-602ad14290919651d8c979e0")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-status')]")
     WebElement firstVisitStatus;
     public static final String FIRST_VISIT_STATUS= "First Visit Status";
 

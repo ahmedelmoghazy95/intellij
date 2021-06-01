@@ -39,10 +39,10 @@ public class ValidateOnDisplayBtnFunctionalityTest extends BaseTest {
     public void ValidateOnDisplayBtnFunctionality (VisitsReportData data) {
         softAssert = new SoftAssert();
         visitsReportPage = new VisitsReportPage(driver);
-        visitsReportPage.clickOnFilterAndSelectSecretariat("amana");
-        visitsReportPage.clickOnFilterAndSelectMunicipials("baladeya");
-        visitsReportPage.clickOnFilterAndSelectActivities("abc");
-        visitsReportPage.clickOnFilterAndSelectOfficeNames("Office");
+        visitsReportPage.clickOnFilterAndSelectSecretariat("أمانة مدينة الرياض");
+        visitsReportPage.clickOnFilterAndSelectMunicipials("بلدية مدينة الرياض");
+        visitsReportPage.clickOnFilterAndSelectActivities("النطاق");
+        visitsReportPage.clickOnFilterAndSelectOfficeNames("المكتب السعودي");
         visitsReportPage.clickOnFilterAndSelectStatuses("NEW");
         visitsReportPage.clickReportsSubmitFilterBtn();
         softAssert.assertEquals(visitsReportPage.getVisitNumberHeader(),
