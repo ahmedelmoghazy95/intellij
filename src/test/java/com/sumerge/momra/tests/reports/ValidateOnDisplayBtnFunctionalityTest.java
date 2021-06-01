@@ -43,7 +43,7 @@ public class ValidateOnDisplayBtnFunctionalityTest extends BaseTest {
         visitsReportPage.clickOnFilterAndSelectMunicipials("بلدية مدينة الرياض");
         visitsReportPage.clickOnFilterAndSelectActivities("النطاق");
         visitsReportPage.clickOnFilterAndSelectOfficeNames("المكتب السعودي");
-        visitsReportPage.clickOnFilterAndSelectStatuses("NEW");
+        visitsReportPage.clickOnFilterAndSelectStatuses("جديدة");
         visitsReportPage.clickReportsSubmitFilterBtn();
         softAssert.assertEquals(visitsReportPage.getVisitNumberHeader(),
                "رقم الزيارة" ,
