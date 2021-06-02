@@ -1,5 +1,6 @@
 package com.sumerge.momra.utilities;
 
+import com.sumerge.momra.pages.ViewVisitsViolations1stTabPage;
 import io.github.bonigarcia.wdm.OperatingSystem;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Platform;
@@ -37,7 +38,7 @@ public class DriverHandler {
 
     public void createDriver() throws MalformedURLException {
         System.setProperty("java.awt.headless", "true");
-//        System.out.println(java.awt.GraphicsEnvironment.isHeadless());
+        System.out.println(java.awt.GraphicsEnvironment.isHeadless());
         setWebDriver(ExtentManager.getCurrentPlatform());
         ChromeOptions options = new ChromeOptions();
         options.addArguments("disable-infobars"); // disabling infobars
@@ -50,7 +51,7 @@ public class DriverHandler {
         options.addArguments("start-maximized"); // open Browser in maximized mode
         options.setCapability("applicationCacheEnabled", false);
         // For Testing Locally
-//        setDriver(new ChromeDriver(options));
+    //    setDriver(new ChromeDriver(options));
         RemoteWebDriver remoteWebDriver = new RemoteWebDriver(new URL("http://seleniumhub:4444/wd/hub"), options);
         remoteWebDriver.setFileDetector(new LocalFileDetector());
         setDriver(remoteWebDriver);
@@ -69,6 +70,10 @@ public class DriverHandler {
 
     public void gotoApplicationHomePage() {
         driverThread.get().get(Constants.APPLICATION_HOST + "engineering-offices-ui");
+    }
+
+    public void goToViolationsPage(){
+        driverThread.get().get("http://portal.momra.gov.local/violations-ui");
     }
 
     public WebDriver getDriver() {

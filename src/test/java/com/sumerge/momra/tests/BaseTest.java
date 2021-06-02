@@ -30,7 +30,7 @@ public class BaseTest extends TestListener {
         driverHandler = DriverHandler.getInstance();
         driverHandler.createDriver();
 //		driverx.clearBrowserCache();
-        driverHandler.gotoApplicationHomePage();
+//       driverHandler.gotoApplicationHomePage();
 
     }
 //********************Ask Amr about difference bet this & login method in login page************************

@@ -153,4 +153,139 @@ public abstract class BasePage {
     }
 
 
+
+
+
+
+
+
+
+//    public String getVisitReportNumberLabelInTab(int tabNumber){
+//        String value;
+//        if (tabNumber == 1){
+//            value = viewVisitsViolations1stTabPage.getVisitReportNumber().getText();
+//        }
+//        else{
+//            if (tabNumber == 2){
+//                value = viewVisitsViolations2ndTabPage.getVisitReportNumber().getText();
+//            }
+//            else{
+//                if (tabNumber == 3){
+//                    value = viewVisitsViolations3rdTabPage.getVisitReportNumber().getText();
+//                }
+//                else {
+//                    value = viewVisitsViolations4thTabPage.getVisitReportNumber().getText();
+//                }
+//            }
+//        }
+//        return value;
+//    }
+//
+//    public String getVisitDateLabelInTab(int tabNumber){
+//        String value;
+//        if (tabNumber == 1){
+//            value = viewVisitsViolations1stTabPage.getVisitDate().getText();
+//        }
+//        else{
+//            if (tabNumber == 2){
+//                value = viewVisitsViolations2ndTabPage.getVisitDate().getText();
+//            }
+//            else{
+//                if (tabNumber == 3){
+//                    value = viewVisitsViolations3rdTabPage.getVisitDate().getText();
+//                }
+//                else {
+//                    value = viewVisitsViolations4thTabPage.getVisitDate().getText();
+//                }
+//            }
+//        }
+//        return value;
+//    }
+//
+//    public String getVisitPlaceLabelInTab(int tabNumber){
+//        String value;
+//        if (tabNumber == 1){
+//            value = viewVisitsViolations1stTabPage.getPlaceName().getText();
+//        }
+//        else{
+//            if (tabNumber == 2){
+//                value = viewVisitsViolations2ndTabPage.getPlaceName().getText();
+//            }
+//            else{
+//                if (tabNumber == 3){
+//                    value = viewVisitsViolations3rdTabPage.getPlaceName().getText();
+//                }
+//                else {
+//                    value = viewVisitsViolations4thTabPage.getPlaceName().getText();
+//                }
+//            }
+//        }
+//        return value;
+//    }
+//
+//    public String getLicenceNumberLabelInTab(int tabNumber){
+//        String value;
+//        if (tabNumber == 1){
+//            value = viewVisitsViolations1stTabPage.getLicenceNumber().getText();
+//        }
+//        else{
+//            if (tabNumber == 2){
+//                value = viewVisitsViolations2ndTabPage.getLicenceNumber().getText();
+//            }
+//            else{
+//                if (tabNumber == 3){
+//                    value = viewVisitsViolations3rdTabPage.getLicenceNumber().getText();
+//                }
+//                else {
+//                    value = viewVisitsViolations4thTabPage.getLicenceNumber().getText();
+//                }
+//            }
+//        }
+//        return value;
+//    }
+//
+//    public String getLocationLabelInTab(int tabNumber){
+//        String value;
+//        if (tabNumber == 1){
+//            value = viewVisitsViolations1stTabPage.getLocation().getText();
+//        }
+//        else{
+//            if (tabNumber == 2){
+//                value = viewVisitsViolations2ndTabPage.getLocation().getText();
+//            }
+//            else{
+//                if (tabNumber == 3){
+//                    value = viewVisitsViolations3rdTabPage.getLocation().getText();
+//                }
+//                else {
+//                    value = viewVisitsViolations4thTabPage.getLocation().getText();
+//                }
+//            }
+//        }
+//        return value;
+//    }
+//
+//    public String getFineAmountLabelInTab(int tabNumber){
+//        String value;
+//        if (tabNumber == 1){
+//            value = viewVisitsViolations1stTabPage.getFineAmount().getText();
+//        }
+//        else{
+//            if (tabNumber == 2){
+//                value = viewVisitsViolations2ndTabPage.getFineAmount().getText();
+//            }
+//            else{
+//                if (tabNumber == 3){
+//                    value = viewVisitsViolations3rdTabPage.getFineAmount().getText();
+//                }
+//                else {
+//                    value = viewVisitsViolations4thTabPage.getFineAmount().getText();
+//                }
+//            }
+//        }
+//        return value;
+//    }
+
+
+
 }
