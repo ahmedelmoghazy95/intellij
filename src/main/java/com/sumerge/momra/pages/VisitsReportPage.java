@@ -36,23 +36,24 @@ public class VisitsReportPage extends BasePage {
     WebElement visitEndDate;
     public static final String VISIT_END_DATE = "Visit End Date Filter";
 
-    @FindBy(id = "reports-secretariats-label")
-    WebElement reportsSecretariats;
+   // @FindBy(xpath = "//li[@class='multiselect-item-checkbox ng-star-inserted']/input[@type='checkbox' and @aria-label  = 'amana']")
+   @FindBy(xpath = "//label[@id='reports-secretariats-label']/following-sibling::ng-multiselect-dropdown//*[@class='multiselect-dropdown']")
+   WebElement reportsSecretariats;
     public static final String REPORTS_SECRETARIATS = "Reports Secretariats Filter";
 
-    @FindBy(id = "reports-municipials-label")
+    @FindBy(xpath = "//label[@id='reports-municipials-label']/following-sibling::ng-multiselect-dropdown//*[@class='multiselect-dropdown']")
     WebElement reportsMunicipials;
     public static final String REPORTS_MUNICIPIALS = "Reports Municipials Filter";
 
-    @FindBy(id = "reports-activites-label")
+    @FindBy(xpath = "//label[@id='reports-activites-label']/following-sibling::ng-multiselect-dropdown//*[@class='multiselect-dropdown']")
     WebElement reportsActivities;
     public static final String REPORTS_ACTIVITIES = "Reports Activities Filter";
 
-    @FindBy(id = "reports-officeNames-label")
+    @FindBy(xpath = "//label[@id='reports-officeNames-label']/following-sibling::ng-multiselect-dropdown//*[@class='multiselect-dropdown']")
     WebElement reportsOfficeNames;
     public static final String REPORTS_OFFICE_NAMES = "Reports Office Names Filter";
 
-    @FindBy(id = "reports-statuses-label")
+    @FindBy(xpath = "//label[@id='reports-statuses-label']/following-sibling::ng-multiselect-dropdown//*[@class='multiselect-dropdown']")
     WebElement reportsStatuses;
     public static final String REPORTS_STATUSES = "Reports Statuses Filter";
 
@@ -62,85 +63,85 @@ public class VisitsReportPage extends BasePage {
 
     /**************Visits Report's Results Table Headers**************/
 
-    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'رقم الزيارة')]")
+    @FindBy(id = "reports-table-visitId-header")
     WebElement visitNumberHeader;
     public static final String VISIT_NUMBER_HEADER = "Visit Number Header";
 
-    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'اسم المكتب')]")
+    @FindBy(id = "reports-table-officeName-header")
     WebElement visitOfficeNameHeader;
     public static final String VISIT_OFFICE_NAME_HEADER = "Visit Office Name Header";
 
-    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'رقم هاتف المكتب')]")
+    @FindBy(id = "reports-table-officePhone-header")
     WebElement visitOfficePhoneHeader;
     public static final String VISIT_OFFICE_PHONE_HEADER = "Visit Office Phone Header";
 
-    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'إسم مالك السكن')]")
+    @FindBy(id = "reports-table-licenseOwnerName-header")
     WebElement visitLicenseOwnerNameHeader;
     public static final String VISIT_LICENSE_OWNER_NAME_HEADER = "Visit License Owner Name Header";
 
-    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'رقم الهاتف/ الجوال')]")
+    @FindBy(id = "reports-table-licensePhone-header")
     WebElement visitLicensePhoneHeader;
     public static final String VISIT_LICENSE_PHONE_HEADER = "Visit License Phone Header";
 
-    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'النطاق')]")
+    @FindBy(id = "reports-table-activity-header")
     WebElement visitActivityHeader;
     public static final String VISIT_ACTIVITY_HEADER = "Visit Activity Header";
 
-    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'العنوان')]")
+    @FindBy(id = "reports-table-address-header")
     WebElement visitAddressHeader;
     public static final String VISIT_ADDRESS_HEADER = "Visit Address Header";
 
-    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'تاريخ توزيع الزيارة')]")
+    @FindBy(id = "reports-table-submitDate-header")
     WebElement visitAssignDateHeader;
     public static final String VISIT_ASSIGN_DATE_HEADER = "Visit Assign Dates Header";
 
-    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'تاريخ تنفيذ الزيارة')]")
+    @FindBy(id = "reports-table-visitDate-header")
     WebElement visitDateHeader;
     public static final String VISIT_DATE_HEADER = "Visit Date Header";
 
-    @FindBy(xpath = "//tr[@id='reports-table-view']/th[@class='table-headers' and  contains(text(), 'الحالة')]")
+    @FindBy(id = "reports-table-status-header")
     WebElement visitStatusHeader;
     public static final String VISIT_STATUS_HEADER = "Visit Status Header";
 
     /**************Visits Report's Results Table 1st Row IDs**************/
 
-    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and contains(@id, 'visitID')]")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-visitID')]")
     WebElement firstVisitNumber;
     public static final String FIRST_VISIT_NUMBER = "First Visit Number";
 
-    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.officeName')]")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-officeName')]")
     WebElement firstVisitOfficeName;
     public static final String FIRST_VISIT_OFFICE_NAME = "First Visit Office Name";
 
-    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.officePhone')]")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-officePhone')]")
     WebElement firstVisitOfficePhone;
     public static final String FIRST_VISIT_OFFICE_PHONE = "First Visit Office Phone";
 
-    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.licenseOwnerName')]")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-licenseOwnerName')]")
     WebElement firstVisitLicenseOwnerName;
     public static final String FIRST_VISIT_LICENSE_OWNER = "First Visit License Owner Name";
 
-    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.licensePhone')]")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-licensePhone')]")
     WebElement firstVisitLicensePhone;
     public static final String FIRST_VISIT_LICENSE_PHONE = "First Visit License Phone";
 
-    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.activity')]")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-activity')]")
     WebElement firstVisitActivity;
     public static final String FIRST_VISIT_ACTIVITY = "First Visit Activity";
 
-    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.address')]")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-address')]")
     WebElement firstVisitAddress;
     public static final String FIRST_VISIT_ADDRESS = "First Visit Address";
 
-    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.assignDate')]")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-submitDate')]")
     WebElement firstVisitAssignDate;
     public static final String FIRST_VISIT_ASSIGN_DATE = "First Visit Assign Dates";
 
-    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.visitDate')]")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-visitDate')]")
     WebElement firstVisitDate;
     public static final String FIRST_VISIT_DATE = "First Visit Date";
 
-    @FindBy(xpath = "//tbody[@id='reports-table-body']//td[@class='table-elements' and  contains(text(), 'visit.status')]")
+    @FindBy(xpath = "//td[contains(@id, 'reports-table-status')]")
     WebElement firstVisitStatus;
     public static final String FIRST_VISIT_STATUS= "First Visit Status";
 
@@ -153,33 +154,32 @@ public class VisitsReportPage extends BasePage {
 
     public void clickOnFilterAndSelectSecretariat (String secretariatsSelection) {
         Utilities.waitAndClickOnWebElement(reportsSecretariats, wait, driver);
-            Select secretariats = new Select(reportsSecretariats);
-            secretariats.selectByVisibleText(secretariatsSelection);
-
+        Utilities.waitAndClickOnWebElement(
+                reportsSecretariats.findElement(By.xpath("//li//*[contains(text(), '" + secretariatsSelection + "')]")), wait, driver);
     }
 
     public void clickOnFilterAndSelectMunicipials(String municipialsSelection) {
         Utilities.waitAndClickOnWebElement(reportsMunicipials, wait, driver);
-        Select municipials = new Select(reportsMunicipials);
-        municipials.selectByVisibleText(municipialsSelection);
+        Utilities.waitAndClickOnWebElement(
+                reportsMunicipials.findElement(By.xpath("//li//*[contains(text(), '" + municipialsSelection + "')]")), wait, driver);
     }
 
     public void clickOnFilterAndSelectActivities(String activitiesSelection) {
         Utilities.waitAndClickOnWebElement(reportsActivities, wait, driver);
-        Select activities = new Select(reportsActivities);
-        activities.selectByVisibleText(activitiesSelection);
+        Utilities.waitAndClickOnWebElement(
+                reportsActivities.findElement(By.xpath("//li//*[contains(text(), '" + activitiesSelection + "')]")), wait, driver);
     }
 
     public void clickOnFilterAndSelectOfficeNames(String officeNamesSelection) {
         Utilities.waitAndClickOnWebElement(reportsOfficeNames, wait, driver);
-        Select officeNames = new Select(reportsOfficeNames);
-        officeNames.selectByVisibleText(officeNamesSelection);
+        Utilities.waitAndClickOnWebElement(
+                reportsOfficeNames.findElement(By.xpath("//li//*[contains(text(), '" + officeNamesSelection + "')]")), wait, driver);
     }
 
     public void clickOnFilterAndSelectStatuses(String statusesSelection) {
         Utilities.waitAndClickOnWebElement(reportsStatuses, wait, driver);
-        Select statuses = new Select(reportsStatuses);
-        statuses.selectByVisibleText(statusesSelection);
+        Utilities.waitAndClickOnWebElement(
+                reportsStatuses.findElement(By.xpath("//li//*[contains(text(), '" + statusesSelection + "')]")), wait, driver);
     }
 
 

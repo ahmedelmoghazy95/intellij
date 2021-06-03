@@ -36,11 +36,11 @@ public class ValidateOnDisplayBtnFunctionalityTest extends BaseTest {
         softAssert = new SoftAssert();
 
         visitsReportPage = new VisitsReportPage(driver);
-        visitsReportPage.clickOnFilterAndSelectSecretariat("");
-        visitsReportPage.clickOnFilterAndSelectMunicipials("");
-        visitsReportPage.clickOnFilterAndSelectActivities("");
-        visitsReportPage.clickOnFilterAndSelectOfficeNames("");
-        visitsReportPage.clickOnFilterAndSelectStatuses("");
+        visitsReportPage.clickOnFilterAndSelectSecretariat("أمانة مدينة الرياض");
+        visitsReportPage.clickOnFilterAndSelectMunicipials("بلدية مدينة الرياض");
+        visitsReportPage.clickOnFilterAndSelectActivities("النطاق");
+        visitsReportPage.clickOnFilterAndSelectOfficeNames("المكتب السعودي");
+        visitsReportPage.clickOnFilterAndSelectStatuses("جديدة");
         visitsReportPage.clickReportsSubmitFilterBtn();
 
         softAssert.assertEquals(visitsReportPage.getVisitNumberHeader(),
@@ -65,7 +65,7 @@ public class ValidateOnDisplayBtnFunctionalityTest extends BaseTest {
                 "النطاق" ,
                 "The Visit Activity Header are is Correct!");
         softAssert.assertEquals(visitsReportPage.getVisitAssignDateHeader(),
-                "تاريخ استلام الزيارة" ,
+                "تاريخ توزيع الزيارة" ,
                 "The Visit Assign Date Header is Not Correct!");
         softAssert.assertEquals(visitsReportPage.getVisitDateHeader(),
                 "تاريخ تنفيذ الزيارة" ,
