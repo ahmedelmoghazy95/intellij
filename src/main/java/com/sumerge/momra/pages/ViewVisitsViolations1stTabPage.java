@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class ViewVisitsViolations1stTabPage extends BasePage {
     public ViewVisitsViolations1stTabPage(WebDriver driver) {
         super(driver);
-//        checkCorrectPage("", "This is Not the Correct ViewViolations Page!");
+        checkCorrectPage("awaiting-payment-violations-tab-مخالفات بإنتظار السداد", "This is Not the Correct ViewViolations Page!");
         PageFactory.initElements(driver, this);
     }
 
@@ -24,7 +24,7 @@ public class ViewVisitsViolations1stTabPage extends BasePage {
     @FindBy(id = "awaiting-payment-violations-tab-مخالفات تم سدادها")
     WebElement tab3Title; //مخالفات تم سدادها
 
-    @FindBy(id = "awaiting-payment-violations-tab-مخالفات تم قبول الإعتراض عليها")
+    @FindBy(id = "awaiting-payment-violations-tab-مخالفات تم قبول الإعتراض لها")
     WebElement tab4Title; //مخالفات تم قبول الإعتراض لها
 
     @FindBy(id="awaiting-payment-back-btn")

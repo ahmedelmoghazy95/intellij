@@ -9,7 +9,7 @@ public class ViewVisitsViolations4thTabPage extends BasePage {
 
     public ViewVisitsViolations4thTabPage(WebDriver driver) {
         super(driver);
-    //    checkCorrectPage("", "This is Not the Correct ViewViolations Page!");
+        checkCorrectPage("appeal-accepted-violations-table-acceptanceDate-header", "This is Not the Correct ViewViolations Page!");
         PageFactory.initElements(driver, this);
     }
 
@@ -26,7 +26,7 @@ public class ViewVisitsViolations4thTabPage extends BasePage {
     @FindBy(id = "appeal-accepted-violations-tab-مخالفات تم سدادها")
     WebElement tab3Title; //مخالفات تم سدادها
 
-    @FindBy(id = "appeal-accepted-violations-tab-مخالفات تم قبول الإعتراض عليها")
+    @FindBy(id = "appeal-accepted-violations-tab-مخالفات تم قبول الإعتراض لها")
     WebElement tab4Title; //مخالفات تم قبول الإعتراض لها
 
 

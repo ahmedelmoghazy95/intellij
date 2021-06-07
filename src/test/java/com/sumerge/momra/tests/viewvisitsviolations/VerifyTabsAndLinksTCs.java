@@ -26,11 +26,8 @@ public class VerifyTabsAndLinksTCs extends BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public synchronized void setUp(Method method, Object testData[], ITestContext ctx) throws InterruptedException, MalformedURLException {
-//        if (((SearchOfficesData) testData[0]).getTestCaseName() != "") {
-//            ctx.setAttribute(method.getName(), ((SearchOfficesData) testData[0]).getTestCaseName());
-//        } else {
-//            ctx.setAttribute(method.getName(), "RQM ");
-//        }
+
+        ctx.setAttribute(method.getName(), "RQM e2e scenario to check labels ");
 
         super.setUp();
         driver = getDriver();
@@ -49,7 +46,7 @@ public class VerifyTabsAndLinksTCs extends BaseTest {
         softAssert.assertEquals(viewVisitsViolationsPage.getTab4Title().getText(), "مخالفات تم قبول الإعتراض لها", "tab 4 title is incorrect");
 
         viewVisitsViolationsPage2 = viewVisitsViolationsPage.goTo2ndTab(driver);
-        softAssert.assertEquals(viewVisitsViolationsPage2.getAppealDateLable(), "تاريخ تقديم إعتراض");
+        softAssert.assertEquals(viewVisitsViolationsPage2.getAppealDateLable(), "تاريخ تقديم الإعتراض");
         viewVisitsViolationsPage3 = viewVisitsViolationsPage2.goTo3rdTab(driver);
         softAssert.assertEquals(viewVisitsViolationsPage3.getFinePaymentDateLabel(), "تاريخ السداد");
         viewVisitsViolationsPage4 = viewVisitsViolationsPage3.goTo4thTab(driver);

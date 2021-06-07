@@ -9,7 +9,7 @@ public class ViewVisitsViolations3rdTabPage extends BasePage {
 
     public ViewVisitsViolations3rdTabPage(WebDriver driver) {
         super(driver);
-       // checkCorrectPage("", "This is Not the Correct ViewViolations Page!");
+        checkCorrectPage("paid-violations-table-paymentDate-header", "This is Not the Correct ViewViolations Page!");
         PageFactory.initElements(driver, this);
     }
 
@@ -25,7 +25,7 @@ public class ViewVisitsViolations3rdTabPage extends BasePage {
     @FindBy(id = "paid-violations-tab-مخالفات تم سدادها")
     WebElement tab3Title; //مخالفات تم سدادها
 
-    @FindBy(id = "paid-violations-tab-مخالفات تم قبول الإعتراض عليها")
+    @FindBy(id = "paid-violations-tab-مخالفات تم قبول الإعتراض لها")
     WebElement tab4Title; //مخالفات تم قبول الإعتراض لها
 
     public WebElement getTab1Title() {
