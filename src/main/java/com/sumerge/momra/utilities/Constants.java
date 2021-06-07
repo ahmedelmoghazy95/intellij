@@ -24,7 +24,8 @@ public class Constants {
 
     /***********App Pages Constants***********/
     public static final String ENGINEERING_OFFICES_MODULE = "EngineeringOfficesModule";
-    public static final String REPORTS_MODULE = "ReportsModule";
+    public static final String VISITS_REPORT_MODULE = "VisitReportModule";
+    public static final String OFFICES_VISITS_REPORT_MODULE = "OfficesVisitsReportsModule";
     public static final String VISITS_VIOLATIONS_MODULE = "VisitsViolationsModule";
 
 }

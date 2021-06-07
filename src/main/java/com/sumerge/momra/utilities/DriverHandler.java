@@ -76,8 +76,12 @@ public class DriverHandler {
         driverThread.get().get(Constants.APPLICATION_HOST + "violations-ui");
     }
 
-    public void gotoApplicationReportsPage() {
+    public void gotoVisitsReportPage() {
         driverThread.get().get(Constants.APPLICATION_HOST + "reports-ui");
+    }
+
+    public void gotoOfficesVisitsReportPage() {
+        driverThread.get().get(Constants.APPLICATION_HOST + "offices-reports-ui");
     }
 
     public WebDriver getDriver() {

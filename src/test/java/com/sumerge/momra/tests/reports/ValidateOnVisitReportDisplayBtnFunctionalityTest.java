@@ -14,7 +14,7 @@ import org.testng.asserts.SoftAssert;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 
-public class ValidateOnDisplayBtnFunctionalityTest extends BaseTest {
+public class ValidateOnVisitReportDisplayBtnFunctionalityTest extends BaseTest {
     WebDriver driver;
     VisitsReportPage visitsReportPage;
     SoftAssert softAssert;
@@ -27,7 +27,7 @@ public class ValidateOnDisplayBtnFunctionalityTest extends BaseTest {
         } else {
             ctx.setAttribute(method.getName(), "RQM #9959 | Validate on عرض button functionality");
         }
-        super.setUp(Constants.REPORTS_MODULE);
+        super.setUp(Constants.VISITS_REPORT_MODULE);
         driver = getDriver();
     }
 

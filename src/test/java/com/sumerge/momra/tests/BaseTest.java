@@ -34,8 +34,10 @@ public class BaseTest extends TestListener {
 
         if (page.equals(Constants.ENGINEERING_OFFICES_MODULE)) {
             driverHandler.gotoApplicationEngineeringOfficesPage();
-        } else if (page.equals(Constants.REPORTS_MODULE)) {
-            driverHandler.gotoApplicationReportsPage();
+        } else if (page.equals(Constants.VISITS_REPORT_MODULE)) {
+            driverHandler.gotoVisitsReportPage();
+        } else if(page.equals(Constants.OFFICES_VISITS_REPORT_MODULE) ) {
+            driverHandler.gotoOfficesVisitsReportPage();
         } else if(page.equals(Constants.VISITS_VIOLATIONS_MODULE) ) {
             driverHandler.goToViolationsPage();
         }
