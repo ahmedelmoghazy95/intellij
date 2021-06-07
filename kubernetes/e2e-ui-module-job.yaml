@@ -14,7 +14,7 @@ spec:
         group: "momra"
     spec:
       containers:
-      - image: DOCKER-REGISTRY/momra-e2e-testsMODULE_NAME:VERSION
+      - image: DOCKER-REGISTRY/momra-e2e-tests:VERSION
         imagePullPolicy: "Always"
         name: momra-e2e-testsMODULE_NAME
       restartPolicy: Never
