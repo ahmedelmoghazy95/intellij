@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  labels:
+    group: "momra"
+  name: momra-e2e-testsMODULE_NAME
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      name: momra-e2e-testsMODULE_NAME
+      namespace: momra-inspections
+      labels:
+        group: "momra"
+    spec:
+      containers:
+      - image: DOCKER-REGISTRY/momra-e2e-testsMODULE_NAME:VERSION
+        imagePullPolicy: "Always"
+        name: momra-e2e-testsMODULE_NAME
+      restartPolicy: Never
