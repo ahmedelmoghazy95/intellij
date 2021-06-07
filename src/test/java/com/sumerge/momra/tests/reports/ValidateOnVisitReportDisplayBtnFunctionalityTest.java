@@ -32,10 +32,12 @@ public class ValidateOnVisitReportDisplayBtnFunctionalityTest extends BaseTest {
     }
 
     @Test(alwaysRun = true, dataProvider = "VisitsReportDataFeed", dataProviderClass = DataProviderSource.class)
-    public void ValidateOnDisplayBtnFunctionality (VisitsReportData data) {
+    public void ValidateOnDisplayBtnFunctionality (VisitsReportData data) throws InterruptedException {
         softAssert = new SoftAssert();
 
         visitsReportPage = new VisitsReportPage(driver);
+
+        Thread.sleep(3000);
         visitsReportPage.clickOnFilterAndSelectSecretariat("أمانة مدينة الرياض");
         visitsReportPage.clickOnFilterAndSelectMunicipials("بلدية مدينة الرياض");
         visitsReportPage.clickOnFilterAndSelectActivities("النطاق");
