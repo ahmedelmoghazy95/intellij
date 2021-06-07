@@ -139,9 +139,7 @@ public abstract class BasePage {
             return false;
         }
     }
-
-
-
+    
     /************Common Loading Spinners across Different Pages************/
 
     public void waitUntilLoadingProgressBar() {
@@ -151,6 +149,5 @@ public abstract class BasePage {
             e.printStackTrace();
         }
     }
-
 
 }
