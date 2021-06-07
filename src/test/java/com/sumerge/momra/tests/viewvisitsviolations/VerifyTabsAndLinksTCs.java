@@ -6,6 +6,7 @@ import com.sumerge.momra.pages.ViewVisitsViolations2ndTabPage;
 import com.sumerge.momra.pages.ViewVisitsViolations3rdTabPage;
 import com.sumerge.momra.pages.ViewVisitsViolations4thTabPage;
 import com.sumerge.momra.tests.BaseTest;
+import com.sumerge.momra.utilities.Constants;
 import com.sumerge.momra.utilities.DataProviderSource;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -29,9 +30,8 @@ public class VerifyTabsAndLinksTCs extends BaseTest {
 
         ctx.setAttribute(method.getName(), "RQM e2e scenario to check labels ");
 
-        super.setUp();
+        super.setUp(Constants.VISITS_VIOLATIONS_MODULE);
         driver = getDriver();
-        goToViolationsPage();
     }
 
     @Test

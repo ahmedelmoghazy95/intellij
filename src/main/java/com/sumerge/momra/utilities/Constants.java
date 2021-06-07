@@ -10,12 +10,9 @@ public class Constants {
     public static final String APPLICATION_HOST = ENVIRONMENT_RN.getString("app.host");
     public static final String MODULE_NAME = ENVIRONMENT_RN.getString("module.name");
 
-
-
     /***********Search Data***********/
     public static final String SEARCH_OFFICES_WORKBOOK = "SearchOfficesData.xlsx";
     public static final String SEARCH_OFFICES_ENV_SHEET = "Sheet1";
-
 
     /***********ENGINEERING OFFICES Data***********/
     public static final String ENGINEERING_OFFICES_WORKBOOK = "EngineeringOfficesData.xlsx";
@@ -26,9 +23,8 @@ public class Constants {
     public static final String VISITS_REPORT_ENV_SHEET = "Sheet1";
 
     /***********App Pages Constants***********/
-
     public static final String ENGINEERING_OFFICES_MODULE = "EngineeringOfficesModule";
     public static final String REPORTS_MODULE = "ReportsModule";
-
+    public static final String VISITS_VIOLATIONS_MODULE = "VisitsViolationsModule";
 
 }

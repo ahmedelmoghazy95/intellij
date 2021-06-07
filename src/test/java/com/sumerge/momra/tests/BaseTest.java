@@ -31,16 +31,14 @@ public class BaseTest extends TestListener {
         driverHandler = DriverHandler.getInstance();
         driverHandler.createDriver();
 //		driverx.clearBrowserCache();
-        if (page == Constants.ENGINEERING_OFFICES_MODULE) {
+
+        if (page.equals(Constants.ENGINEERING_OFFICES_MODULE)) {
             driverHandler.gotoApplicationEngineeringOfficesPage();
-        } else if (page == Constants.REPORTS_MODULE) {
+        } else if (page.equals(Constants.REPORTS_MODULE)) {
             driverHandler.gotoApplicationReportsPage();
+        } else if(page.equals(Constants.VISITS_VIOLATIONS_MODULE) ) {
+            driverHandler.goToViolationsPage();
         }
-
-
-
-
-
 
     }
 //********************Ask Amr about difference bet this & login method in login page************************
@@ -50,7 +48,7 @@ public class BaseTest extends TestListener {
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
-//        driverHandler.getDriver().quit();
+        driverHandler.getDriver().quit();
         driverHandler.setDriver(null);
     }
 }
