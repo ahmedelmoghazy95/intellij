@@ -32,7 +32,7 @@ public class ValidateOnVisitReportDisplayBtnFunctionalityTest extends BaseTest {
     }
 
     @Test(alwaysRun = true, dataProvider = "VisitsReportDataFeed", dataProviderClass = DataProviderSource.class)
-    public void ValidateOnDisplayBtnFunctionality (VisitsReportData data) throws InterruptedException {
+    public void ValidateOnVisitsDisplayBtnFunctionality (VisitsReportData data) throws InterruptedException {
         softAssert = new SoftAssert();
 
         visitsReportPage = new VisitsReportPage(driver);
