@@ -80,6 +80,10 @@ public class DriverHandler {
         driverThread.get().get(Constants.APPLICATION_HOST + "reports-ui");
     }
 
+    public void gotoAllVisitsViewPage() {
+        driverThread.get().get(Constants.APPLICATION_HOST + "ministry-visits-ui");
+    }
+
     public WebDriver getDriver() {
         return driverThread.get();
     }

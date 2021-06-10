@@ -26,5 +26,6 @@ public class Constants {
     public static final String ENGINEERING_OFFICES_MODULE = "EngineeringOfficesModule";
     public static final String REPORTS_MODULE = "ReportsModule";
     public static final String VISITS_VIOLATIONS_MODULE = "VisitsViolationsModule";
+    public static final String VIEW_ALL_VISITS_PAGE = "ViewAllVisitsPage";
 
 }

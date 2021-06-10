@@ -38,6 +38,8 @@ public class BaseTest extends TestListener {
             driverHandler.gotoApplicationReportsPage();
         } else if(page.equals(Constants.VISITS_VIOLATIONS_MODULE) ) {
             driverHandler.goToViolationsPage();
+        } else if(page.equals(Constants.VIEW_ALL_VISITS_PAGE) ) {
+            driverHandler.gotoAllVisitsViewPage();
         }
 
     }
