@@ -24,7 +24,7 @@ public class AllVisitsViewPage extends BasePage {
     WebElement newVisitsTab;
     public static final String NEW_VISITS_TITLE = "New Visits Title";
 
-    @FindBy(id = "View-list-license-status-header")
+    @FindBy(xpath = "//*[@id='view-list-license-status-header']//*[contains(@class, 'mat-sort-header-content')]")
     WebElement visitLicenseStatusLabel;
     public static final String VISIT_LICENSE_STATUS_LABEL = "Visit License Status Label";
 
@@ -34,17 +34,19 @@ public class AllVisitsViewPage extends BasePage {
     WebElement scheduledVisitsTab;
     public static final String SCHEDULED_VISITS_TITLE = "Scheduled Visits Title";
 
-    @FindBy(id = "view-list-visit-date-header")
+
+    @FindBy(xpath = "//*[@id='view-list-visit-date-header']//*[contains(@class, 'mat-sort-header-content')]")
     WebElement scheduledVisitDateLabel;
     public static final String SCHEDULED_VISIT_DATE_LABEL = "Scheduled Visit Date Label";
 
 //    ****************** 3rd Tab Elements ******************
 
-    @FindBy(id = "")
+    @FindBy(id = "completed-tab")
     WebElement completedVisitsTab;
     public static final String COMPLETED_VISITS_TITLE = "Completed Visits Title";
 
-    @FindBy(id = "view-list-visit-date-header")
+
+    @FindBy(xpath = "//*[@id='view-list-visit-date-header']//*[contains(@class, 'mat-sort-header-content')]")
     WebElement completedVisitDateLabel;
     public static final String COMPLETED_VISIT_DATE_LABEL= "Completed Visit Date Label";
 
@@ -54,7 +56,8 @@ public class AllVisitsViewPage extends BasePage {
     WebElement rejectedVisitsTab;
     public static final String REJECTED_VISITS_TITLE = "Rejected Visits Title";
 
-    @FindBy(id = "view-list-visit-date-header")
+
+    @FindBy(xpath = "//*[@id='view-list-visit-date-header']//*[contains(@class, 'mat-sort-header-content')]")
     WebElement visitDateLabel;
     public static final String VISIT_DATE_LABEL = "Visit Date Label";
 
@@ -71,42 +74,51 @@ public class AllVisitsViewPage extends BasePage {
 
 //  ****************** Table Common Headers IDs ******************
 
-    @FindBy(id = "view-list-visit-id-header")
+    @FindBy(xpath = "//*[@id='view-list-visit-id-header']//*[contains(@class, 'mat-sort-header-content')]")
     WebElement viewVisitIdLabel ;
     public static final String VIEW_VISIT_ID_LABEL = "View Visit Id Label";
 
-    @FindBy(id = "view-list-site-name-header")
+
+    @FindBy(xpath = "//*[@id='view-list-site-name-header']//*[contains(@class, 'mat-sort-header-content')]")
     WebElement VisitSiteNameLabel ;
     public static final String VISIT_SITE_NAME_LABEL = "Visit Site Name Label";
 
-    @FindBy(id = "view-list-license-id-header")
+
+    @FindBy(xpath = "//*[@id='view-list-license-id-header']//*[contains(@class, 'mat-sort-header-content')]")
     WebElement visitLicenseIdLabel;
     public static final String VISIT_LICENSE_ID_LABEL = "Visit License Id Label";
 
 
-    @FindBy(id = "view-list-amana-header")
+    @FindBy(xpath = "//*[@id='view-list-amana-header']//*[contains(@class, 'mat-sort-header-content')]")
     WebElement visitAmanaLabel;
     public static final String VISIT_AMANA_LABEL = "visit Amana Label";
 
-    @FindBy(id = "view-list-baladya-header")
+    @FindBy(xpath = "//*[@id='view-list-baladya-header']//*[contains(@class, 'mat-sort-header-content')]")
     WebElement visitBaladyaLabel;
     public static final String VISIT_BALADYA_LABEL  = "visit Baladya Label";
 
-    @FindBy(id = "view-list-status-header")
+    @FindBy(xpath = "//*[@id='view-list-status-header']//*[contains(@class, 'mat-sort-header-content')]")
     WebElement visitStatusLabel;
     public static final String VISIT_STATUS_LABEL = "Visit Status Label";
 
-    @FindBy(id = "view-list-no-0f-beds-header")
+
+    @FindBy(xpath = "//*[@id='view-list-no-0f-beds-header']//*[contains(@class, 'mat-sort-header-content')]")
     WebElement visitBedsNumberLabel;
     public static final String VISITS_BEDS_NUMBER_LABEL = "Visit Number Of Beds Label";
 
-    @FindBy(id = "view-list-office-name-header")
+
+    @FindBy(xpath = "//*[@id='view-list-office-name-header']//*[contains(@class, 'mat-sort-header-content')]")
     WebElement visitEngineeringOfficeNameLabel;
     public static final String VISITS_ENG_OFFICES_NAME_LABEL = "Visit Engineering Office Name Label";
 
-    @FindBy(id = "view-list-actions-header")
+    @FindBy(xpath = "//*[@id='view-list-actions-header']//*[contains(@class, 'actions-header')]")
     WebElement visitActionsLabel;
     public static final String VISITS_ACTIONS_LABEL = "Visit Actions Label";
+
+
+    @FindBy(xpath = "//*[@id='visits-view-list-actions-header']//*[contains(@class, 'actions-header')]")
+    WebElement visitRejectedActionsLabel;
+    public static final String VISITS_REJECTED_ACTIONS_LABEL = "Visit Rejected Actions Label";
 
     /*************Getters For Page Elements **************/
 
@@ -156,14 +168,18 @@ public class AllVisitsViewPage extends BasePage {
         return Utilities.waitAndGetWebElementText( visitActionsLabel, wait);
     }
 
+    public String getRejectedVisitActionsLabel () {
+        return Utilities.waitAndGetWebElementText( visitRejectedActionsLabel, wait);
+    }
+
     public String getScheduledVisitDateLabel () {
-        return Utilities.waitAndGetWebElementText( visitActionsLabel, wait);
+        return Utilities.waitAndGetWebElementText( scheduledVisitDateLabel, wait);
     }
     public String getCompletedVisitDateLabel () {
-        return Utilities.waitAndGetWebElementText( visitActionsLabel, wait);
+        return Utilities.waitAndGetWebElementText( completedVisitDateLabel, wait);
     }
     public String getVisitDateLabel () {
-        return Utilities.waitAndGetWebElementText( visitActionsLabel, wait);
+        return Utilities.waitAndGetWebElementText( visitDateLabel, wait);
     }
 
 

@@ -65,7 +65,7 @@ public class VerifyPageItemsAndLabels extends BaseTest {
                 "Site Name Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitLicenseIdLabel(),
-                "قرقم الرخصة" ,
+                "رقم الرخصة" ,
                 "License ID Header isNot Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitLicenseStatusLabel(),
@@ -81,7 +81,7 @@ public class VerifyPageItemsAndLabels extends BaseTest {
                 "Baladya Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitStatusLabel(),
-                "حالة تقريرالزيارة" ,
+                "حالة تقرير الزيارة" ,
                 "Visit Status Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitBedsNumberLabel(),
@@ -93,7 +93,7 @@ public class VerifyPageItemsAndLabels extends BaseTest {
                 "Engineering Office Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitActionsLabel(),
-                "الإجراءاتى" ,
+                "الإجراءات" ,
                 "Actions Header is Not Correct!");
 
 allVisitsViewPage.clickOnScheduledVisitsTab();
@@ -107,7 +107,7 @@ allVisitsViewPage.clickOnScheduledVisitsTab();
                 "Site Name Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitLicenseIdLabel(),
-                "قرقم الرخصة" ,
+                "رقم الرخصة" ,
                 "License ID Header isNot Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getScheduledVisitDateLabel(),
@@ -123,7 +123,7 @@ allVisitsViewPage.clickOnScheduledVisitsTab();
                 "Baladya Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitStatusLabel(),
-                "حالة تقريرالزيارة" ,
+                "حالة تقرير الزيارة" ,
                 "Visit Status Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitBedsNumberLabel(),
@@ -135,7 +135,7 @@ allVisitsViewPage.clickOnScheduledVisitsTab();
                 "Engineering Office Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitActionsLabel(),
-                "الإجراءاتى" ,
+                "الإجراءات" ,
                 "Actions Header is Not Correct!");
 
         allVisitsViewPage.clickOnCompletedVisitsTab();
@@ -149,7 +149,7 @@ allVisitsViewPage.clickOnScheduledVisitsTab();
                 "Site Name Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitLicenseIdLabel(),
-                "قرقم الرخصة" ,
+                "رقم الرخصة" ,
                 "License ID Header isNot Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getCompletedVisitDateLabel(),
@@ -165,7 +165,7 @@ allVisitsViewPage.clickOnScheduledVisitsTab();
                 "Baladya Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitStatusLabel(),
-                "حالة تقريرالزيارة" ,
+                "حالة تقرير الزيارة" ,
                 "Visit Status Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitBedsNumberLabel(),
@@ -177,7 +177,7 @@ allVisitsViewPage.clickOnScheduledVisitsTab();
                 "Engineering Office Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitActionsLabel(),
-                "الإجراءاتى" ,
+                "الإجراءات" ,
                 "Actions Header is Not Correct!");
 
         allVisitsViewPage.clickOnRejectedVisitsTab();
@@ -191,7 +191,7 @@ allVisitsViewPage.clickOnScheduledVisitsTab();
                 "Site Name Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitLicenseIdLabel(),
-                "قرقم الرخصة" ,
+                "رقم الرخصة" ,
                 "License ID Header isNot Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitDateLabel(),
@@ -207,7 +207,7 @@ allVisitsViewPage.clickOnScheduledVisitsTab();
                 "Baladya Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitStatusLabel(),
-                "حالة تقريرالزيارة" ,
+                "حالة تقرير الزيارة" ,
                 "Visit Status Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitBedsNumberLabel(),
@@ -218,10 +218,10 @@ allVisitsViewPage.clickOnScheduledVisitsTab();
                 "إسم المكتب الهندسى" ,
                 "Engineering Office Header is Not Correct!");
 
-        softAssert.assertEquals(allVisitsViewPage.getVisitActionsLabel(),
-                "الإجراءاتى" ,
+        softAssert.assertEquals(allVisitsViewPage.getRejectedVisitActionsLabel(),
+                "الإجراءات" ,
                 "Actions Header is Not Correct!");
-
+        softAssert.assertAll();
 
     }
 }
