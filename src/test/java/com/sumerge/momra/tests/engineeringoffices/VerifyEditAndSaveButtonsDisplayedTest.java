@@ -36,11 +36,11 @@ public class VerifyEditAndSaveButtonsDisplayedTest extends BaseTest {
     }
 
     @Test(alwaysRun = true, dataProvider = "SearchOfficesDataFeed", dataProviderClass = DataProviderSource.class)
-    public void VerifyEditAndSaveButtonsDisplayed (SearchOfficesData data) throws InterruptedException {
+    public void VerifyEditAndSaveButtonsDisplayed (SearchOfficesData data)  {
          softAssert = new SoftAssert();
 //        loginPage = new LoginPage(driver);
         engineeringOfficesListViewPage = new EngineeringOfficesListViewPage (driver);
-        Thread.sleep(3000);
+
 //        homePage = loginPage.login(data.getUsername(), data.getPassword());
 //        engineeringOfficesListViewPage = homePage.clickOnOpenEngineeringOfficesSideMenuBtn();
        softAssert.assertTrue(engineeringOfficesListViewPage.isDisabledSaveBtnDisplayed());

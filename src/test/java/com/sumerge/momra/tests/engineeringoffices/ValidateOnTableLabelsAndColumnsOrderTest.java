@@ -31,11 +31,11 @@ public class ValidateOnTableLabelsAndColumnsOrderTest extends BaseTest {
     }
 
     @Test(alwaysRun = true, dataProvider = "EngineeringOfficesDataFeed", dataProviderClass = DataProviderSource.class)
-    public void ValidateOnTableLabelsAndColumnsOrder (EngineeringOfficesData data) throws InterruptedException {
+    public void ValidateOnTableLabelsAndColumnsOrder (EngineeringOfficesData data) {
         softAssert = new SoftAssert();
 
         engineeringOfficesListViewPage = new EngineeringOfficesListViewPage (driver);
-        Thread.sleep(3000);
+
         softAssert.assertEquals(engineeringOfficesListViewPage.getOfficeNameLabel(),
                 data.getOfficeNameLabel(),
                 "The Office Name Label is Not Correct!");

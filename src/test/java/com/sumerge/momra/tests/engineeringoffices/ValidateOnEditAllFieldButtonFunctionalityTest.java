@@ -35,11 +35,11 @@ public class ValidateOnEditAllFieldButtonFunctionalityTest extends BaseTest {
     }
 
     @Test(alwaysRun = true, dataProvider = "SearchOfficesDataFeed", dataProviderClass = DataProviderSource.class)
-    public void ValidateOnEditAllFieldButtonFunctionality (SearchOfficesData data) throws InterruptedException {
+    public void ValidateOnEditAllFieldButtonFunctionality (SearchOfficesData data)  {
         softAssert = new SoftAssert();
 
         engineeringOfficesListViewPage = new EngineeringOfficesListViewPage (driver);
-        Thread.sleep(3000);
+
         softAssert.assertTrue(engineeringOfficesListViewPage.checkFieldIsDisplayed(engineeringOfficesListViewPage.getOfficeCapacityReadOnly()));
         softAssert.assertTrue(engineeringOfficesListViewPage.checkFieldIsDisplayed(engineeringOfficesListViewPage.getOfficeNumberOfInspectorReadOnly()));
         engineeringOfficesListViewPage.clickEditAllBtn();
