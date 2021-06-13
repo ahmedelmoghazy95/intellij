@@ -36,7 +36,7 @@ public class VerifyEditAndSaveButtonsDisplayedTest extends BaseTest {
     }
 
     @Test(alwaysRun = true, dataProvider = "SearchOfficesDataFeed", dataProviderClass = DataProviderSource.class)
-    public void VerifyEditAndSaveButtonsDisplayed (SearchOfficesData data) {
+    public void VerifyEditAndSaveButtonsDisplayed (SearchOfficesData data)  {
          softAssert = new SoftAssert();
 //        loginPage = new LoginPage(driver);
         engineeringOfficesListViewPage = new EngineeringOfficesListViewPage (driver);

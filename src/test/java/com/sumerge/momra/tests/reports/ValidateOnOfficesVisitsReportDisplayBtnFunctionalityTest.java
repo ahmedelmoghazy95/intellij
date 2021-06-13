@@ -14,7 +14,7 @@ import org.testng.asserts.SoftAssert;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 
-public class ValidateOnDisplayBtnFunctionalityTest extends BaseTest {
+public class ValidateOnOfficesVisitsReportDisplayBtnFunctionalityTest extends BaseTest {
     WebDriver driver;
     VisitsReportPage visitsReportPage;
     SoftAssert softAssert;
@@ -25,17 +25,19 @@ public class ValidateOnDisplayBtnFunctionalityTest extends BaseTest {
         if (((VisitsReportData) testData[0]).getTestCaseName() != "") {
             ctx.setAttribute(method.getName(), ((VisitsReportData) testData[0]).getTestCaseName());
         } else {
-            ctx.setAttribute(method.getName(), "RQM #9959 | Validate on عرض button functionality");
+            ctx.setAttribute(method.getName(), "RQM #9959 | Validate on عرض button functionality in offices-reports-ui");
         }
-        super.setUp(Constants.REPORTS_MODULE);
+        super.setUp(Constants.OFFICES_VISITS_REPORT_MODULE);
         driver = getDriver();
     }
 
     @Test(alwaysRun = true, dataProvider = "VisitsReportDataFeed", dataProviderClass = DataProviderSource.class)
-    public void ValidateOnDisplayBtnFunctionality (VisitsReportData data) {
+    public void ValidateOnOfficesVisitsDisplayBtnFunctionality (VisitsReportData data)  {
         softAssert = new SoftAssert();
 
         visitsReportPage = new VisitsReportPage(driver);
+
+
         visitsReportPage.clickOnFilterAndSelectSecretariat("أمانة مدينة الرياض");
         visitsReportPage.clickOnFilterAndSelectMunicipials("بلدية مدينة الرياض");
         visitsReportPage.clickOnFilterAndSelectActivities("النطاق");

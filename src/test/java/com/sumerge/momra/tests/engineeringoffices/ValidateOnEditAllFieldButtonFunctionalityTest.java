@@ -35,7 +35,7 @@ public class ValidateOnEditAllFieldButtonFunctionalityTest extends BaseTest {
     }
 
     @Test(alwaysRun = true, dataProvider = "SearchOfficesDataFeed", dataProviderClass = DataProviderSource.class)
-    public void ValidateOnEditAllFieldButtonFunctionality (SearchOfficesData data) {
+    public void ValidateOnEditAllFieldButtonFunctionality (SearchOfficesData data)  {
         softAssert = new SoftAssert();
 
         engineeringOfficesListViewPage = new EngineeringOfficesListViewPage (driver);

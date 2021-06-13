@@ -36,7 +36,7 @@ public class ValidateOnInlineEditButtonFunctionalityTest extends BaseTest {
     }
 
     @Test(alwaysRun = true, dataProvider = "SearchOfficesDataFeed", dataProviderClass = DataProviderSource.class)
-    public void ValidateOnInlineEditButtonFunctionality (SearchOfficesData data) {
+    public void ValidateOnInlineEditButtonFunctionality (SearchOfficesData data)  {
         softAssert = new SoftAssert();
 //        loginPage = new LoginPage(driver);
         engineeringOfficesListViewPage = new EngineeringOfficesListViewPage (driver);

@@ -35,11 +35,11 @@ public class ValidateOnSearchFunctionalityTest extends BaseTest {
     }
 
     @Test(alwaysRun = true, dataProvider = "SearchOfficesDataFeed", dataProviderClass = DataProviderSource.class)
-    public void ValidateOnSearchFunctionality (SearchOfficesData data) {
-         softAssert = new SoftAssert();
+    public void ValidateOnSearchFunctionality(SearchOfficesData data)  {
+        softAssert = new SoftAssert();
 //        loginPage = new LoginPage(driver);
-        engineeringOfficesListViewPage = new EngineeringOfficesListViewPage (driver);
-//
+        engineeringOfficesListViewPage = new EngineeringOfficesListViewPage(driver);
+
 //        homePage = loginPage.login(data.getUsername(), data.getPassword());
 //        engineeringOfficesListViewPage = homePage.clickOnOpenEngineeringOfficesSideMenuBtn();
         engineeringOfficesListViewPage.searchWithOfficeName("Test Automation Data");
