@@ -25,6 +25,9 @@ spec:
         - ip: "10.0.11.6"
           hostnames:
             - "portal.momra.gov.local"
+        - ip: "10.0.10.62"
+          hostnames:
+            - "api.momra.gov.local"
       containers:
         - env:
             - name: HUB_PORT_4444_TCP_ADDR
