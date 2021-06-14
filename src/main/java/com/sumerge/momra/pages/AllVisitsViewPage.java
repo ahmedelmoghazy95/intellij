@@ -120,6 +120,12 @@ public class AllVisitsViewPage extends BasePage {
     WebElement visitRejectedActionsLabel;
     public static final String VISITS_REJECTED_ACTIONS_LABEL = "Visit Rejected Actions Label";
 
+    /*************Page Action Btns **************/
+
+    @FindBy(id = "display-visit-info")
+    WebElement viewVisitBtn;
+    public static final String VIEW_VISIT_BTN = "View Visit Btn";
+
     /*************Getters For Page Elements **************/
 
     public String getPageTitle () {
@@ -182,6 +188,8 @@ public class AllVisitsViewPage extends BasePage {
         return Utilities.waitAndGetWebElementText( visitDateLabel, wait);
     }
 
+    public void clickViewVisitBtn() {Utilities.waitAndClickOnWebElement(viewVisitBtn, wait, driver);
+    }
 
 }
 

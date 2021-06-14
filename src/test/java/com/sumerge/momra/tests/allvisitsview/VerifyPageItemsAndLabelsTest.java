@@ -15,7 +15,7 @@ import org.testng.asserts.SoftAssert;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 
-public class VerifyPageItemsAndLabels extends BaseTest {
+public class VerifyPageItemsAndLabelsTest extends BaseTest {
 
     WebDriver driver;
     AllVisitsViewPage allVisitsViewPage;
@@ -31,7 +31,7 @@ public class VerifyPageItemsAndLabels extends BaseTest {
     }
 
     @Test(alwaysRun = true)
-    public void ValidateOnEditAllFieldButtonFunctionality () {
+    public void VerifyPageItemsAndLabels () {
         softAssert = new SoftAssert();
 
         allVisitsViewPage = new AllVisitsViewPage(driver);
