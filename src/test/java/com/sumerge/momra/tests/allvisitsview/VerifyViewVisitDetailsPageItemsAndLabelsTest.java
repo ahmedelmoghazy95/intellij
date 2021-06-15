@@ -30,7 +30,7 @@ public class VerifyViewVisitDetailsPageItemsAndLabelsTest extends BaseTest {
     }
 
     @Test(alwaysRun = true)
-    public void VerifyViewVisitDetailsPageItemsAndLabels () {
+    public void VerifyViewVisitDetailsPageItemsAndLabels() {
         softAssert = new SoftAssert();
 
         allVisitsViewPage = new AllVisitsViewPage(driver);
@@ -38,62 +38,129 @@ public class VerifyViewVisitDetailsPageItemsAndLabelsTest extends BaseTest {
         allVisitsViewPage.clickViewVisitBtn();
 
         softAssert.assertEquals(visitDetailsPage.getPageTitle(),
-                "تفاصيل زيارة" ,
-                "Engineering Office Header is Not Correct!");
-
-        softAssert.assertEquals(visitDetailsPage.getSiteNameLabel(),
-                "إسم المنشأة" ,
+                "تفاصيل زيارة",
                 "Page title is Not Correct!");
 
+        softAssert.assertEquals(visitDetailsPage.getSiteNameLabel(),
+                "إسم المنشأة",
+                "Site name label is Not Correct!");
+
         softAssert.assertEquals(visitDetailsPage.getAddressLabel(),
-                "العنوان" ,
-                "1st tab title is Not Correct!");
+                "العنوان",
+                "Address label is Not Correct!");
 
         softAssert.assertEquals(visitDetailsPage.getAmanaNameLabel(),
-                "الأمانة" ,
-                "2nd tab title is Not Correct!");
+                "الأمانة",
+                "Amana name label is Not Correct!");
 
         softAssert.assertEquals(visitDetailsPage.getBaladyaNameLabel(),
-                "البلدية" ,
-                "3rd tab title is Not Correct!");
+                "البلدية",
+                "Balady name label is Not Correct!");
 
         softAssert.assertEquals(visitDetailsPage.getBedsNumberLabel(),
-                "عدد الأسرة" ,
-                "4th tab title is Not Correct!");
+                "عدد الأسرة",
+                "Number of beds label is Not Correct!");
 
         softAssert.assertEquals(visitDetailsPage.getDistrictNameLabel(),
-                "الحى" ,
-                "Visit ID Header is Not Correct!");
+                "الحى",
+                "District name label is Not Correct!");
 
         softAssert.assertEquals(visitDetailsPage.getLicenseIdLabel(),
-                "رقم الرخصة" ,
-                "Site Name Header is Not Correct!");
+                "رقم الرخصة",
+                "License Id label is Not Correct!");
 
         softAssert.assertEquals(visitDetailsPage.getLicensePhoneLabel(),
-                "رقم جوال صاحب الرخصة" ,
-                "License ID Header isNot Correct!");
+                "رقم جوال صاحب الرخصة",
+                "License phone label is Not Correct!");
 
         softAssert.assertEquals(visitDetailsPage.getLicenseStatusLabel(),
-                "حالة الرخصة" ,
-                "License Status Header is Not Correct!");
+                "حالة الرخصة",
+                "License Status label is Not Correct!");
 
         softAssert.assertEquals(visitDetailsPage.getOwnerIdLabel(),
-                "رقم هوية صاحب الرخصة" ,
-                "Amana Header is Not Correct!");
+                "رقم هوية صاحب الرخصة",
+                "Owner Id label is Not Correct!");
 
         softAssert.assertEquals(visitDetailsPage.getLicenseExpiryDateLabel(),
-                "تاريخ إنتهاء الرخصة" ,
-                "Baladya Header is Not Correct!");
+                "تاريخ إنتهاء الرخصة",
+                "License expiry date label is Not Correct!");
 
         softAssert.assertEquals(visitDetailsPage.getLicenseIssueDateLabel(),
-                "تاريخ إصدار الرخصة" ,
-                "Visit Status Header is Not Correct!");
+                "تاريخ إصدار الرخصة",
+                "license issue date label is Not Correct!");
 
         softAssert.assertEquals(visitDetailsPage.getLicenseOwnerNameLabel(),
-                "إسم صاحب الرخصة" ,
-                "No. of beds Header is Not Correct!");
+                "إسم صاحب الرخصة",
+                "license owner name label is Not Correct!");
+
+        softAssert.assertEquals(visitDetailsPage.getScheduleVisitSectionTitle(),
+                "جدولة الزيارة",
+                " Schedule Visit Section Title is Not Correct!");
+
+        softAssert.assertEquals(visitDetailsPage.getVisitStatusLabel(),
+                "حالة الزيارة",
+                " Visit status label is Not Correct!");
+
+        softAssert.assertEquals(visitDetailsPage.getIsVisitScheduledLabel(),
+                "تم جدولة الزيارة",
+                " Visit Scheduled label is Not Correct!");
+
+        softAssert.assertEquals(visitDetailsPage.getVisitScheduledDateLabel(),
+                "تاريخ جدولة الزيارة",
+                "Visit Scheduled Date label is Not Correct!");
+
+        softAssert.assertEquals(visitDetailsPage.getVisitScheduledTimeLabel(),
+                "وقت الزيارة",
+                "Visit Scheduled Time label is Not Correct!");
+
+        softAssert.assertEquals(visitDetailsPage.getInspectorAllocationTypeLabel(),
+                "إسناد الزيارة",
+                "Inspector Allocation Type label is Not Correct!");
+
+        softAssert.assertEquals(visitDetailsPage.getVisitInspectorNameLabel(),
+                "إسم المراقب",
+                "Inspector NAme label is Not Correct!");
+
+        softAssert.assertEquals(visitDetailsPage.getVisitNotesLabel(),
+                "ملاحظات",
+                "Notes label is Not Correct!");
+
+        softAssert.assertTrue(visitDetailsPage.isSaveBtnDisplayed());
+
+        softAssert.assertEquals(visitDetailsPage.getVisitHistoryTitle(),
+                "السجل السابق لجدولة الزيارة",
+                "Visit History Title is Not Correct!");
+
+        softAssert.assertEquals(visitDetailsPage.getNotesHeader(),
+                "ملاحظات",
+                "Notes header is Not Correct!");
+
+        softAssert.assertEquals(visitDetailsPage.getStatusHeader(),
+                "حالة الزيارة",
+                "Status header is Not Correct!");
+
+        softAssert.assertEquals(visitDetailsPage.getTimestampHeader(),
+                "الوقت و التاريخ",
+                "Timestamp header is Not Correct!");
+
+        softAssert.assertEquals(visitDetailsPage.getUserHeader(),
+                "إسم المستخدم",
+                "User header is Not Correct!");
+
+        softAssert.assertEquals(visitDetailsPage.getInspectorNameHeader(),
+                "إسم المراقب",
+                "Inspector Name eader is Not Correct!");
+
+        softAssert.assertEquals(visitDetailsPage.getScheduleStatusHeader(),
+                "تم جدولة الزيارة",
+                "Schedule Status Header is Not Correct!");
+
+        softAssert.assertEquals(visitDetailsPage.getVisitDateHeader(),
+                "تاريخ جدولة الزيارة",
+                "Visit Date Header is Not Correct!");
 
 
+        allVisitsViewPage = visitDetailsPage.clickOnBackBtn();
         softAssert.assertAll();
 
     }

@@ -8,13 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 
 public class VisitDetailsPage extends BasePage {
 
+
     public VisitDetailsPage(WebDriver driver) {
         super(driver);
-        checkCorrectPage("", "This is Not the Correct Visit Details Page!");
+        checkCorrectPage("page-title", "This is Not the Correct Visit Details Page!");
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(id = "")
+    @FindBy(id = "page-title")
     WebElement pageTitle;
     public static final String PAGE_TITLE = "Page Title";
 
@@ -73,8 +74,82 @@ public class VisitDetailsPage extends BasePage {
     WebElement addressLabel;
     public static final String ADDRESS_LABEL = "Address Label";
 
+    //    ****************** Visit Re/scheduling section IDs ******************
 
-    /*************Getters For Page Elements **************/
+    @FindBy(id = "visit-rescheduling-section-title")
+    WebElement scheduleVisitSectionTitle;
+    public static final String SCHEDULE_VISIT_SECTION_TITLE = "Schedule Visit Section Title";
+
+    @FindBy(id = "is-visit-rescheduled")
+    WebElement isVisitScheduledLabel;
+    public static final String IS_VISIT_SCHEDULED_LABEL = "Is Visit Scheduled Label";
+
+    @FindBy(id = "visit-status")
+    WebElement visitStatusLabel;
+    public static final String VISIT_STATUS_LABEL = "Visit Status Label";
+
+    @FindBy(id = "visit-scheduled-date")
+    WebElement visitScheduledDateLabel;
+    public static final String VISIT_SCHEDULED_DATE_LABEL = "Visit Scheduled Date Label";
+
+    @FindBy(id = "visit-scheduled-time")
+    WebElement visitScheduledTimeLabel;
+    public static final String VISIT_SCHEDULED_TIME_LABEL = "Visit Scheduled Time Label";
+
+    @FindBy(id = "inspector-allocation-type")
+    WebElement inspectorAllocationTypeLabel ;
+    public static final String INSPECTOR_ALLOCATION_TYPE_LABEL = "Inspector Allocation Type Label";
+
+    @FindBy(id = "visit-inspector-name")
+    WebElement visitInspectorNameLabel;
+    public static final String VISIT_INSPECTOR_NAME_LABEL = "Visit Inspector Name Label";
+
+    @FindBy(id = "visit-notes")
+    WebElement visitNotesLabel;
+    public static final String VISIT_NOTES_LABEL = "Visit Notes Label";
+
+    @FindBy(id = "edit-visit-save-btn")
+    WebElement editVisitSaveBtn;
+    public static final String EDIT_VISIT_SAVE_BTN = "Edit Visit Save Btn";
+
+    //    ****************** Visit History IDs ******************
+    @FindBy(id = "visit-history-title")
+    WebElement visitHistoryTitle;
+    public static final String VISIT_HISTORY_TITLE  = "visitHistoryTitle";
+
+    @FindBy(id = "timestamp")
+    WebElement timestampHeader;
+    public static final String TIMESTAMP_HEADER = "Timestamp Header";
+
+    @FindBy(id = "user")
+    WebElement userHeader;
+    public static final String USER_HEADER = "User Header";
+
+    @FindBy(id = "scheduling-status")
+    WebElement scheduleStatusHeader;
+    public static final String  SCHEDULE_STATUS_HEADER= "Schedule Status Header";
+
+    @FindBy(id = "status")
+    WebElement statusHeader;
+    public static final String STATUS_HEADER = "Status Header";
+
+    @FindBy(id = "visit-date")
+    WebElement visitDateHeader;
+    public static final String VISIT_DATE_HEADER = "visit Date Header";
+
+    @FindBy(id = "inspector-name")
+    WebElement inspectorNameHeader;
+    public static final String INSPECTOR_NAME_HEADER = "Inspector Name Header";
+
+    @FindBy(id = "notes")
+    WebElement notesHeader;
+    public static final String NOTES_HEADER = "Notes Header";
+
+    @FindBy(id = "visit-details-back-btn")
+    WebElement visitDetailsBackBtn;
+    public static final String VISIT_DETAILS_BACK_BTN = "visit Details Back Btn";
+
+    /*************Getters For Visit Details Elements **************/
 
     public String getPageTitle () {
         return Utilities.waitAndGetWebElementText( pageTitle, wait);
@@ -119,7 +194,63 @@ public class VisitDetailsPage extends BasePage {
         return Utilities.waitAndGetWebElementText( addressLabel, wait);
     }
 
+    /*************Getters For Visit Scheduling Section **************/
 
+    public String getScheduleVisitSectionTitle () {
+        return Utilities.waitAndGetWebElementText( scheduleVisitSectionTitle, wait);
+    }
+    public String getVisitStatusLabel () {
+        return Utilities.waitAndGetWebElementText( visitStatusLabel, wait);
+    }
+    public String getIsVisitScheduledLabel () {
+        return Utilities.waitAndGetWebElementText( isVisitScheduledLabel, wait);
+    }
+    public String getVisitScheduledDateLabel () {
+        return Utilities.waitAndGetWebElementText( visitScheduledDateLabel, wait);
+    }
+    public String getVisitScheduledTimeLabel () {
+        return Utilities.waitAndGetWebElementText( visitScheduledTimeLabel, wait);
+    }
+    public String getInspectorAllocationTypeLabel () {
+        return Utilities.waitAndGetWebElementText( inspectorAllocationTypeLabel, wait);
+    }
+    public String getVisitInspectorNameLabel () {
+        return Utilities.waitAndGetWebElementText( visitInspectorNameLabel, wait);
+    }
+    public String getVisitNotesLabel () {
+        return Utilities.waitAndGetWebElementText( visitNotesLabel, wait);
+    }
+    public boolean isSaveBtnDisplayed (){
+        return editVisitSaveBtn.isDisplayed();
+    }
+
+    /*************Getters For Visit History Section **************/
+    public String getVisitHistoryTitle () {
+        return Utilities.waitAndGetWebElementText( visitHistoryTitle, wait);
+    }
+    public String getTimestampHeader () {
+        return Utilities.waitAndGetWebElementText( timestampHeader, wait);
+    }
+    public String getUserHeader () {
+        return Utilities.waitAndGetWebElementText( userHeader, wait);
+    }
+    public String getScheduleStatusHeader () {
+        return Utilities.waitAndGetWebElementText( scheduleStatusHeader, wait);
+    }
+    public String getStatusHeader () {
+        return Utilities.waitAndGetWebElementText( statusHeader, wait);
+    }
+    public String getVisitDateHeader () {
+        return Utilities.waitAndGetWebElementText( visitDateHeader, wait);
+    }
+    public String getInspectorNameHeader () {
+        return Utilities.waitAndGetWebElementText( inspectorNameHeader, wait);
+    }
+    public String getNotesHeader () {
+        return Utilities.waitAndGetWebElementText( notesHeader, wait);
+    }
+    public AllVisitsViewPage clickOnBackBtn() {Utilities.waitAndClickOnWebElement(visitDetailsBackBtn, wait, driver);
+        return new AllVisitsViewPage (driver); }
 }
 
 
