@@ -23,7 +23,7 @@ public class VerifyViewVisitDetailsPageItemsAndLabelsTest extends BaseTest {
     @BeforeMethod(alwaysRun = true)
     public synchronized void setUp(Method method, ITestContext ctx) throws InterruptedException, MalformedURLException {
         {
-            ctx.setAttribute(method.getName(), "RQM #10350 | Verify visit details view page items/labels + back btn functionality");
+            ctx.setAttribute(method.getName(), "RQM #10392 #10399 #10395 | Verify visit details view page items/labels + back btn functionality");
         }
         super.setUp(Constants.VIEW_VISIT_DETAILS);
         driver = getDriver();
