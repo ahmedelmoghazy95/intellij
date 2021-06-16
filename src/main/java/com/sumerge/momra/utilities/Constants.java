@@ -28,5 +28,6 @@ public class Constants {
     public static final String OFFICES_VISITS_REPORT_MODULE = "OfficesVisitsReportsModule";
     public static final String VISITS_VIOLATIONS_MODULE = "VisitsViolationsModule";
     public static final String VIEW_ALL_VISITS_PAGE = "ViewAllVisitsPage";
+    public static final String VIEW_VISIT_DETAILS = "ViewVisitDetails";
 
 }

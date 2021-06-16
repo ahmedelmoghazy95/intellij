@@ -11,7 +11,7 @@ public class VisitDetailsPage extends BasePage {
 
     public VisitDetailsPage(WebDriver driver) {
         super(driver);
-        checkCorrectPage("page-title", "This is Not the Correct Visit Details Page!");
+        checkCorrectPage("visit-requests-page-title", "This is Not the Correct Visit Details Page!");
         PageFactory.initElements(driver, this);
     }
 
@@ -117,37 +117,43 @@ public class VisitDetailsPage extends BasePage {
     WebElement visitHistoryTitle;
     public static final String VISIT_HISTORY_TITLE  = "visitHistoryTitle";
 
-    @FindBy(id = "timestamp")
+    @FindBy(id = "view-list-timestamp")
     WebElement timestampHeader;
     public static final String TIMESTAMP_HEADER = "Timestamp Header";
 
-    @FindBy(id = "user")
+    @FindBy(id = "view-list-user")
     WebElement userHeader;
     public static final String USER_HEADER = "User Header";
 
-    @FindBy(id = "scheduling-status")
+    @FindBy(id = "view-list-visit-scheduling-status")
     WebElement scheduleStatusHeader;
     public static final String  SCHEDULE_STATUS_HEADER= "Schedule Status Header";
 
-    @FindBy(id = "status")
+    @FindBy(id = "view-list-status")
     WebElement statusHeader;
     public static final String STATUS_HEADER = "Status Header";
 
-    @FindBy(id = "visit-date")
+    @FindBy(id = "view-list-visit-date")
     WebElement visitDateHeader;
     public static final String VISIT_DATE_HEADER = "visit Date Header";
 
-    @FindBy(id = "inspector-name")
+    @FindBy(id = "view-list-inspector-name")
     WebElement inspectorNameHeader;
     public static final String INSPECTOR_NAME_HEADER = "Inspector Name Header";
 
-    @FindBy(id = "notes")
+    @FindBy(id = "view-list-notes")
     WebElement notesHeader;
     public static final String NOTES_HEADER = "Notes Header";
 
     @FindBy(id = "visit-details-back-btn")
     WebElement visitDetailsBackBtn;
     public static final String VISIT_DETAILS_BACK_BTN = "visit Details Back Btn";
+
+    /*************Page Action Btns **************/
+
+    @FindBy(id = "display-visit-info")
+    WebElement viewVisitBtn;
+    public static final String VIEW_VISIT_BTN = "View Visit Btn";
 
     /*************Getters For Visit Details Elements **************/
 
@@ -251,6 +257,9 @@ public class VisitDetailsPage extends BasePage {
     }
     public AllVisitsViewPage clickOnBackBtn() {Utilities.waitAndClickOnWebElement(visitDetailsBackBtn, wait, driver);
         return new AllVisitsViewPage (driver); }
+
+    public void clickViewVisitBtn() {Utilities.waitAndClickOnWebElement(viewVisitBtn, wait, driver);
+    }
 }
 
 

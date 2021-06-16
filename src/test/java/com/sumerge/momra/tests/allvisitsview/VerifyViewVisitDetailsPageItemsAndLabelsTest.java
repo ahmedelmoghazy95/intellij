@@ -25,7 +25,7 @@ public class VerifyViewVisitDetailsPageItemsAndLabelsTest extends BaseTest {
         {
             ctx.setAttribute(method.getName(), "RQM #10350 | Verify visit details view page items/labels");
         }
-        super.setUp(Constants.VIEW_ALL_VISITS_PAGE);
+        super.setUp(Constants.VIEW_VISIT_DETAILS);
         driver = getDriver();
     }
 
@@ -33,10 +33,9 @@ public class VerifyViewVisitDetailsPageItemsAndLabelsTest extends BaseTest {
     public void VerifyViewVisitDetailsPageItemsAndLabels() {
         softAssert = new SoftAssert();
 
-        allVisitsViewPage = new AllVisitsViewPage(driver);
 
-        allVisitsViewPage.clickViewVisitBtn();
-
+        visitDetailsPage = new VisitDetailsPage (driver);
+        visitDetailsPage.clickViewVisitBtn();
         softAssert.assertEquals(visitDetailsPage.getPageTitle(),
                 "تفاصيل زيارة",
                 "Page title is Not Correct!");

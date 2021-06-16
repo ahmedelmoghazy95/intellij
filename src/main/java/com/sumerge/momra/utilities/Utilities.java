@@ -27,7 +27,7 @@ public class Utilities {
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", webElement);
             wait.until(ExpectedConditions.elementToBeClickable(webElement));
             webElement.click();
-        } catch(NoSuchElementException | TimeoutException e) {
+        } catch(NoSuchElementException | TimeoutException | ElementClickInterceptedException e ) {
             wait.until(ExpectedConditions.elementToBeClickable(webElement));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", webElement);
             webElement.click();
