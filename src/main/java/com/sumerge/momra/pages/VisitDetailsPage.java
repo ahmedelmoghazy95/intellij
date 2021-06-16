@@ -117,31 +117,31 @@ public class VisitDetailsPage extends BasePage {
     WebElement visitHistoryTitle;
     public static final String VISIT_HISTORY_TITLE  = "visitHistoryTitle";
 
-    @FindBy(id = "view-list-timestamp")
+    @FindBy(id = "timestamp")
     WebElement timestampHeader;
     public static final String TIMESTAMP_HEADER = "Timestamp Header";
 
-    @FindBy(id = "view-list-user")
+    @FindBy(id = "user")
     WebElement userHeader;
     public static final String USER_HEADER = "User Header";
 
-    @FindBy(id = "view-list-visit-scheduling-status")
+    @FindBy(id = "scheduling-status")
     WebElement scheduleStatusHeader;
     public static final String  SCHEDULE_STATUS_HEADER= "Schedule Status Header";
 
-    @FindBy(id = "view-list-status")
+    @FindBy(id = "status")
     WebElement statusHeader;
     public static final String STATUS_HEADER = "Status Header";
 
-    @FindBy(id = "view-list-visit-date")
+    @FindBy(id = "visit-date")
     WebElement visitDateHeader;
     public static final String VISIT_DATE_HEADER = "visit Date Header";
 
-    @FindBy(id = "view-list-inspector-name")
+    @FindBy(id = "inspector-name")
     WebElement inspectorNameHeader;
     public static final String INSPECTOR_NAME_HEADER = "Inspector Name Header";
 
-    @FindBy(id = "view-list-notes")
+    @FindBy(id = "notes")
     WebElement notesHeader;
     public static final String NOTES_HEADER = "Notes Header";
 
