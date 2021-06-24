@@ -1,10 +1,13 @@
 package com.sumerge.momra.pages;
 
 import com.sumerge.momra.utilities.Utilities;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.text.DateFormat;
 
 public class VisitDetailsPage extends BasePage {
 
@@ -47,7 +50,7 @@ public class VisitDetailsPage extends BasePage {
 
     @FindBy(id = "baladya-name")
     WebElement baladyaNameLabel;
-    public static final String BALADYA_NAME_LABEL  = "Baladya Name Label";
+    public static final String BALADYA_NAME_LABEL = "Baladya Name Label";
 
     @FindBy(id = "district-name")
     WebElement districtNameLabel;
@@ -97,7 +100,7 @@ public class VisitDetailsPage extends BasePage {
     public static final String VISIT_SCHEDULED_TIME_LABEL = "Visit Scheduled Time Label";
 
     @FindBy(id = "inspector-allocation-type")
-    WebElement inspectorAllocationTypeLabel ;
+    WebElement inspectorAllocationTypeLabel;
     public static final String INSPECTOR_ALLOCATION_TYPE_LABEL = "Inspector Allocation Type Label";
 
     @FindBy(id = "visit-inspector-name")
@@ -112,10 +115,72 @@ public class VisitDetailsPage extends BasePage {
     WebElement editVisitSaveBtn;
     public static final String EDIT_VISIT_SAVE_BTN = "Edit Visit Save Btn";
 
+    @FindBy(id = "yes-input")
+    WebElement isVisitScheduledYes;
+    public static final String IS_VISIT_SCHEDULED_YES = "Is Visit Scheduled YES";
+
+    @FindBy(id = "no-input")
+    WebElement isVisitScheduledNo;
+    public static final String IS_VISIT_SCHEDULED_NO = "Is Visit Scheduled No";
+
+    @FindBy(id = "unreachable-input")
+    WebElement isVisitScheduledUnreachable;
+    public static final String IS_VISIT_SCHEDULED_UNREACHABLE = "Is Visit Scheduled Unreachable";
+
+    @FindBy(id = "visit-status-dropdown")
+    WebElement visitStatusDropDown;
+    public static final String VISIT_STATUS_DROPDOWN = "Visit Status Dropdown Field";
+
+    @FindBy(id = "scheduled")
+    WebElement visitStatusScheduled;
+    public static final String VISIT_STATUS_SCHEDULED = "Visit Status Scheduled";
+
+    @FindBy(id = "rescheduled")
+    WebElement visitStatusRescheduled;
+    public static final String VISIT_STATUS_RESCHEDULED = "Visit Status Rescheduled";
+
+    @FindBy(id = "suspended")
+    WebElement visitStatusSuspended;
+    public static final String VISIT_STATUS_SUSPENDED = "Visit Status Suspended";
+
+    @FindBy(id = "rejected")
+    WebElement visitStatusRejected;
+    public static final String VISIT_STATUS_REJECTED = "Visit Status Rejected";
+
+    @FindBy(id = "visit-date-input")
+    WebElement visitScheduledDateField;
+    public static final String VISIT_SCHEDULED_DATE_FIELD = "Visit Scheduled Date Field";
+
+    @FindBy(id = "visit-time-dropdown")
+    WebElement visitScheduledTimeDropDown;
+    public static final String VISIT_SCHEDULED_TIME_DROPDOWN = "Visit Scheduled Time Dropdown Field";
+
+    @FindBy(id = "16")
+    WebElement visitScheduledTime4To5;
+    public static final String VISIT_SCHEDULED_TIME_4_TO_5 = "Visit Scheduled Time 4 to 5";
+
+    @FindBy(id = "manual-input")
+    WebElement inspectorAllocationTypeManual;
+    public static final String INSPECTOR_ALLOCATION_TYPE_MANUAL = "Inspector Allocation Type Manual";
+
+    @FindBy(id = "automatic-input")
+    WebElement inspectorAllocationTypeAutomatic;
+    public static final String INSPECTOR_ALLOCATION_TYPE_AUTOMATIC = "Inspector Allocation Type Automatic";
+
+    @FindBy(id = "inspectors-dropdown")
+    WebElement visitInspectorDropDown;
+    public static final String VISIT_INSPECTOR_DROPDOWN = "Visit Inspector Dropdown Field";
+
+    //    id represents the inspector id
+    @FindBy(id = "inspector-id")
+    WebElement visitInspectorName;
+    public static final String VISIT_INSPECTOR_NAME = "Visit Inspector Name";
+
+
     //    ****************** Visit History IDs ******************
     @FindBy(id = "visit-history-title")
     WebElement visitHistoryTitle;
-    public static final String VISIT_HISTORY_TITLE  = "visitHistoryTitle";
+    public static final String VISIT_HISTORY_TITLE = "visitHistoryTitle";
 
     @FindBy(id = "timestamp")
     WebElement timestampHeader;
@@ -127,7 +192,7 @@ public class VisitDetailsPage extends BasePage {
 
     @FindBy(id = "scheduling-status")
     WebElement scheduleStatusHeader;
-    public static final String  SCHEDULE_STATUS_HEADER= "Schedule Status Header";
+    public static final String SCHEDULE_STATUS_HEADER = "Schedule Status Header";
 
     @FindBy(id = "status")
     WebElement statusHeader;
@@ -157,108 +222,210 @@ public class VisitDetailsPage extends BasePage {
 
     /*************Getters For Visit Details Elements **************/
 
-    public String getPageTitle () {
-        return Utilities.waitAndGetWebElementText( pageTitle, wait);
+    public String getPageTitle() {
+        return Utilities.waitAndGetWebElementText(pageTitle, wait);
     }
-    public String getSiteNameLabel () {
-        return Utilities.waitAndGetWebElementText( siteNameLabel, wait);
+
+    public String getSiteNameLabel() {
+        return Utilities.waitAndGetWebElementText(siteNameLabel, wait);
     }
-    public String getLicenseIdLabel () {
-        return Utilities.waitAndGetWebElementText( LicenseIdLabel, wait);
+
+    public String getLicenseIdLabel() {
+        return Utilities.waitAndGetWebElementText(LicenseIdLabel, wait);
     }
-    public String getLicenseStatusLabel () {
-        return Utilities.waitAndGetWebElementText( licenseStatusLabel, wait);
+
+    public String getLicenseStatusLabel() {
+        return Utilities.waitAndGetWebElementText(licenseStatusLabel, wait);
     }
-    public String getLicenseIssueDateLabel () {
-        return Utilities.waitAndGetWebElementText( licenseIssueDateLabel, wait);
+
+    public String getLicenseIssueDateLabel() {
+        return Utilities.waitAndGetWebElementText(licenseIssueDateLabel, wait);
     }
-    public String getLicenseExpiryDateLabel () {
-        return Utilities.waitAndGetWebElementText( licenseExpiryDateLabel, wait);
+
+    public String getLicenseExpiryDateLabel() {
+        return Utilities.waitAndGetWebElementText(licenseExpiryDateLabel, wait);
     }
-    public String getAmanaNameLabel () {
-        return Utilities.waitAndGetWebElementText( amanaNameLabel, wait);
+
+    public String getAmanaNameLabel() {
+        return Utilities.waitAndGetWebElementText(amanaNameLabel, wait);
     }
-    public String getBaladyaNameLabel () {
-        return Utilities.waitAndGetWebElementText( baladyaNameLabel, wait);
+
+    public String getBaladyaNameLabel() {
+        return Utilities.waitAndGetWebElementText(baladyaNameLabel, wait);
     }
-    public String getDistrictNameLabel () {
-        return Utilities.waitAndGetWebElementText( districtNameLabel, wait);
+
+    public String getDistrictNameLabel() {
+        return Utilities.waitAndGetWebElementText(districtNameLabel, wait);
     }
-    public String getBedsNumberLabel () {
-        return Utilities.waitAndGetWebElementText( bedsNumberLabel, wait);
+
+    public String getBedsNumberLabel() {
+        return Utilities.waitAndGetWebElementText(bedsNumberLabel, wait);
     }
-    public String getLicenseOwnerNameLabel () {
-        return Utilities.waitAndGetWebElementText( licenseOwnerNameLabel, wait);
+
+    public String getLicenseOwnerNameLabel() {
+        return Utilities.waitAndGetWebElementText(licenseOwnerNameLabel, wait);
     }
-    public String getOwnerIdLabel () {
-        return Utilities.waitAndGetWebElementText( ownerIdLabel, wait);
+
+    public String getOwnerIdLabel() {
+        return Utilities.waitAndGetWebElementText(ownerIdLabel, wait);
     }
-    public String getLicensePhoneLabel () {
-        return Utilities.waitAndGetWebElementText( licensePhoneLabel, wait);
+
+    public String getLicensePhoneLabel() {
+        return Utilities.waitAndGetWebElementText(licensePhoneLabel, wait);
     }
-    public String getAddressLabel () {
-        return Utilities.waitAndGetWebElementText( addressLabel, wait);
+
+    public String getAddressLabel() {
+        return Utilities.waitAndGetWebElementText(addressLabel, wait);
     }
 
     /*************Getters For Visit Scheduling Section **************/
 
-    public String getScheduleVisitSectionTitle () {
-        return Utilities.waitAndGetWebElementText( scheduleVisitSectionTitle, wait);
+    public String getScheduleVisitSectionTitle() {
+        return Utilities.waitAndGetWebElementText(scheduleVisitSectionTitle, wait);
     }
-    public String getVisitStatusLabel () {
-        return Utilities.waitAndGetWebElementText( visitStatusLabel, wait);
+
+    public String getVisitStatusLabel() {
+        return Utilities.waitAndGetWebElementText(visitStatusLabel, wait);
     }
-    public String getIsVisitScheduledLabel () {
-        return Utilities.waitAndGetWebElementText( isVisitScheduledLabel, wait);
+
+    public String getIsVisitScheduledLabel() {
+        return Utilities.waitAndGetWebElementText(isVisitScheduledLabel, wait);
     }
-    public String getVisitScheduledDateLabel () {
-        return Utilities.waitAndGetWebElementText( visitScheduledDateLabel, wait);
+
+    public String getVisitScheduledDateLabel() {
+        return Utilities.waitAndGetWebElementText(visitScheduledDateLabel, wait);
     }
-    public String getVisitScheduledTimeLabel () {
-        return Utilities.waitAndGetWebElementText( visitScheduledTimeLabel, wait);
+
+    public String getVisitScheduledTimeLabel() {
+        return Utilities.waitAndGetWebElementText(visitScheduledTimeLabel, wait);
     }
-    public String getInspectorAllocationTypeLabel () {
-        return Utilities.waitAndGetWebElementText( inspectorAllocationTypeLabel, wait);
+
+    public String getInspectorAllocationTypeLabel() {
+        return Utilities.waitAndGetWebElementText(inspectorAllocationTypeLabel, wait);
     }
-    public String getVisitInspectorNameLabel () {
-        return Utilities.waitAndGetWebElementText( visitInspectorNameLabel, wait);
+
+    public String getVisitInspectorNameLabel() {
+        return Utilities.waitAndGetWebElementText(visitInspectorNameLabel, wait);
     }
-    public String getVisitNotesLabel () {
-        return Utilities.waitAndGetWebElementText( visitNotesLabel, wait);
+
+    public String getVisitNotesLabel() {
+        return Utilities.waitAndGetWebElementText(visitNotesLabel, wait);
     }
-    public boolean isSaveBtnDisplayed (){
+
+    public boolean isSaveBtnDisplayed() {
         return editVisitSaveBtn.isDisplayed();
     }
 
-    /*************Getters For Visit History Section **************/
-    public String getVisitHistoryTitle () {
-        return Utilities.waitAndGetWebElementText( visitHistoryTitle, wait);
+    public void clickOnSaveBtn() {
+        Utilities.waitAndClickOnWebElement(editVisitSaveBtn, wait, driver);
     }
-    public String getTimestampHeader () {
-        return Utilities.waitAndGetWebElementText( timestampHeader, wait);
-    }
-    public String getUserHeader () {
-        return Utilities.waitAndGetWebElementText( userHeader, wait);
-    }
-    public String getScheduleStatusHeader () {
-        return Utilities.waitAndGetWebElementText( scheduleStatusHeader, wait);
-    }
-    public String getStatusHeader () {
-        return Utilities.waitAndGetWebElementText( statusHeader, wait);
-    }
-    public String getVisitDateHeader () {
-        return Utilities.waitAndGetWebElementText( visitDateHeader, wait);
-    }
-    public String getInspectorNameHeader () {
-        return Utilities.waitAndGetWebElementText( inspectorNameHeader, wait);
-    }
-    public String getNotesHeader () {
-        return Utilities.waitAndGetWebElementText( notesHeader, wait);
-    }
-    public AllVisitsViewPage clickOnBackBtn() {Utilities.waitAndClickOnWebElement(visitDetailsBackBtn, wait, driver);
-        return new AllVisitsViewPage (driver); }
 
-    public void clickViewVisitBtn() {Utilities.waitAndClickOnWebElement(viewVisitBtn, wait, driver);
+    public void clickOnIsVisitScheduledYes() {
+        Utilities.waitAndClickOnWebElement(isVisitScheduledYes, wait, driver);
+    }
+
+    public void clickOnIsVisitScheduledNo() {
+        Utilities.waitAndClickOnWebElement(isVisitScheduledNo, wait, driver);
+    }
+
+    public void clickOnIsVisitScheduledUnreachable() {
+        Utilities.waitAndClickOnWebElement(isVisitScheduledUnreachable, wait, driver);
+    }
+
+    public void selectVisitStatusSuspended() {
+        Utilities.waitAndClickOnWebElement(visitStatusDropDown, wait, driver);
+        Utilities.waitAndClickOnWebElement(
+                visitStatusDropDown.findElement(By.id("suspended")), wait, driver);
+    }
+
+    public void selectVisitStatusRejected() {
+        Utilities.waitAndClickOnWebElement(visitStatusDropDown, wait, driver);
+        Utilities.waitAndClickOnWebElement(
+                visitStatusDropDown.findElement(By.id("rejected")), wait, driver);
+    }
+
+    public String getVisitStatusScheduled() {
+        return Utilities.waitAndGetWebElementText(visitStatusScheduled, wait);
+    }
+
+    public String getVisitStatusRejected() {
+        return Utilities.waitAndGetWebElementText(visitStatusRejected, wait);
+    }
+
+    public String getVisitStatusRescheduled() {
+        return Utilities.waitAndGetWebElementText(visitStatusRescheduled, wait);
+    }
+
+    public void insertVisitScheduledDate(String date) {
+        visitScheduledDateField.sendKeys(date);
+    }
+
+    public void selectVisitTimeFrom4To5() {
+        Utilities.waitAndClickOnWebElement(visitScheduledTimeDropDown, wait, driver);
+        Utilities.waitAndClickOnWebElement(
+                visitStatusDropDown.findElement(By.id("16")), wait, driver);
+    }
+
+    public void clickOnInspectorAllocationTypeManual() {
+        Utilities.waitAndClickOnWebElement(inspectorAllocationTypeManual,
+                wait, driver);
+    }
+
+    public void clickOnInspectorAllocationTypeAutomatic() {
+        Utilities.waitAndClickOnWebElement(inspectorAllocationTypeAutomatic,
+                wait, driver);
+    }
+
+    public void selectInspectorName() {
+        Utilities.waitAndClickOnWebElement(visitInspectorDropDown, wait, driver);
+        Utilities.waitAndClickOnWebElement(
+                visitStatusDropDown.findElement(By.id("inspector-id")), wait, driver);
+    }
+
+    public void insertNotesText(String notes) {
+        visitNotesLabel.sendKeys(String.valueOf(notes));
+    }
+
+    /*************Getters For Visit History Section **************/
+    public String getVisitHistoryTitle() {
+        return Utilities.waitAndGetWebElementText(visitHistoryTitle, wait);
+    }
+
+    public String getTimestampHeader() {
+        return Utilities.waitAndGetWebElementText(timestampHeader, wait);
+    }
+
+    public String getUserHeader() {
+        return Utilities.waitAndGetWebElementText(userHeader, wait);
+    }
+
+    public String getScheduleStatusHeader() {
+        return Utilities.waitAndGetWebElementText(scheduleStatusHeader, wait);
+    }
+
+    public String getStatusHeader() {
+        return Utilities.waitAndGetWebElementText(statusHeader, wait);
+    }
+
+    public String getVisitDateHeader() {
+        return Utilities.waitAndGetWebElementText(visitDateHeader, wait);
+    }
+
+    public String getInspectorNameHeader() {
+        return Utilities.waitAndGetWebElementText(inspectorNameHeader, wait);
+    }
+
+    public String getNotesHeader() {
+        return Utilities.waitAndGetWebElementText(notesHeader, wait);
+    }
+
+    public AllVisitsViewPage clickOnBackBtn() {
+        Utilities.waitAndClickOnWebElement(visitDetailsBackBtn, wait, driver);
+        return new AllVisitsViewPage(driver);
+    }
+
+    public void clickViewVisitBtn() {
+        Utilities.waitAndClickOnWebElement(viewVisitBtn, wait, driver);
     }
 }
 
