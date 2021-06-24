@@ -33,7 +33,8 @@ public class ViewDailyVisitsTest extends BaseTest {
         softAssert = new SoftAssert();
         inspectorDailyVisitsPage = new InspectorDailyVisitsPage(driver);
 
-        softAssert.assertTrue(inspectorDailyVisitsPage.getVisitNumberFieldValue().isEmpty());
+        softAssert.assertTrue(!inspectorDailyVisitsPage.getVisitNumberFieldValue().isEmpty());
+        softAssert.assertAll();
 
 
     }
