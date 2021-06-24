@@ -46,15 +46,15 @@ public class DriverHandler {
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--incognito");
-        options.addArguments("--headless");
+//        options.addArguments("--headless");
         options.addArguments("--window-size=1920,1080");
         options.addArguments("start-maximized"); // open Browser in maximized mode
         options.setCapability("applicationCacheEnabled", false);
         // For Testing Locally
-//       setDriver(new ChromeDriver(options));
-        RemoteWebDriver remoteWebDriver = new RemoteWebDriver(new URL("http://seleniumhub:4444/wd/hub"), options);
-        remoteWebDriver.setFileDetector(new LocalFileDetector());
-        setDriver(remoteWebDriver);
+       setDriver(new ChromeDriver(options));
+//        RemoteWebDriver remoteWebDriver = new RemoteWebDriver(new URL("http://seleniumhub:4444/wd/hub"), options);
+//        remoteWebDriver.setFileDetector(new LocalFileDetector());
+//        setDriver(remoteWebDriver);
     }
 
     public static DriverHandler getInstance() {
@@ -86,6 +86,10 @@ public class DriverHandler {
 
     public void gotoAllVisitsViewPage() {
         driverThread.get().get(Constants.APPLICATION_HOST + "ministry-visits-ui");
+    }
+
+    public void gotoInspectorDailyVisitsPage() {
+        driverThread.get().get(Constants.APPLICATION_HOST + "daily-visits-web-ui");
     }
 
     public WebDriver getDriver() {
