@@ -7,8 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.text.DateFormat;
-
 public class VisitDetailsPage extends BasePage {
 
 
@@ -111,19 +109,23 @@ public class VisitDetailsPage extends BasePage {
     WebElement visitNotesLabel;
     public static final String VISIT_NOTES_LABEL = "Visit Notes Label";
 
+    @FindBy(xpath = "//textarea [@id ='visit-notes']")
+    WebElement visitNotes;
+    public static final String VISIT_NOTES = "Visit Notes";
+
     @FindBy(id = "edit-visit-save-btn")
     WebElement editVisitSaveBtn;
     public static final String EDIT_VISIT_SAVE_BTN = "Edit Visit Save Btn";
 
-    @FindBy(id = "yes-input")
+    @FindBy(id = "yes")
     WebElement isVisitScheduledYes;
     public static final String IS_VISIT_SCHEDULED_YES = "Is Visit Scheduled YES";
 
-    @FindBy(id = "no-input")
+    @FindBy(id = "no")
     WebElement isVisitScheduledNo;
     public static final String IS_VISIT_SCHEDULED_NO = "Is Visit Scheduled No";
 
-    @FindBy(id = "unreachable-input")
+    @FindBy(id = "unreachable")
     WebElement isVisitScheduledUnreachable;
     public static final String IS_VISIT_SCHEDULED_UNREACHABLE = "Is Visit Scheduled Unreachable";
 
@@ -131,7 +133,7 @@ public class VisitDetailsPage extends BasePage {
     WebElement visitStatusDropDown;
     public static final String VISIT_STATUS_DROPDOWN = "Visit Status Dropdown Field";
 
-    @FindBy(id = "scheduled")
+    @FindBy(id = "mat-select-value-3")
     WebElement visitStatusScheduled;
     public static final String VISIT_STATUS_SCHEDULED = "Visit Status Scheduled";
 
@@ -151,15 +153,15 @@ public class VisitDetailsPage extends BasePage {
     WebElement visitScheduledDateField;
     public static final String VISIT_SCHEDULED_DATE_FIELD = "Visit Scheduled Date Field";
 
-    @FindBy(id = "visit-time-dropdown")
+    @FindBy(id = "mat-select-value-5")
     WebElement visitScheduledTimeDropDown;
     public static final String VISIT_SCHEDULED_TIME_DROPDOWN = "Visit Scheduled Time Dropdown Field";
 
-    @FindBy(id = "16")
+    @FindBy(id = "visit-time-16")
     WebElement visitScheduledTime4To5;
     public static final String VISIT_SCHEDULED_TIME_4_TO_5 = "Visit Scheduled Time 4 to 5";
 
-    @FindBy(id = "manual-input")
+    @FindBy(id = "manual")
     WebElement inspectorAllocationTypeManual;
     public static final String INSPECTOR_ALLOCATION_TYPE_MANUAL = "Inspector Allocation Type Manual";
 
@@ -172,10 +174,13 @@ public class VisitDetailsPage extends BasePage {
     public static final String VISIT_INSPECTOR_DROPDOWN = "Visit Inspector Dropdown Field";
 
     //    id represents the inspector id
-    @FindBy(id = "inspector-id")
+    @FindBy(id = "inspector-2")
     WebElement visitInspectorName;
     public static final String VISIT_INSPECTOR_NAME = "Visit Inspector Name";
 
+    @FindBy(xpath = "//snack-bar-container//*[@class='mat-simple-snackbar ng-star-inserted']")
+    WebElement displayMsg;
+    public static final String DISPLAY_MSG = "Display Msg";
 
     //    ****************** Visit History IDs ******************
     @FindBy(id = "visit-history-title")
@@ -341,7 +346,7 @@ public class VisitDetailsPage extends BasePage {
     public void selectVisitStatusRejected() {
         Utilities.waitAndClickOnWebElement(visitStatusDropDown, wait, driver);
         Utilities.waitAndClickOnWebElement(
-                visitStatusDropDown.findElement(By.id("rejected")), wait, driver);
+                visitStatusDropDown.findElement(By.xpath("//mat-option [@id = 'rejected']")), wait, driver);
     }
 
     public String getVisitStatusScheduled() {
@@ -360,10 +365,10 @@ public class VisitDetailsPage extends BasePage {
         visitScheduledDateField.sendKeys(date);
     }
 
-    public void selectVisitTimeFrom4To5() {
+    public void selectVisitTimeFrom11To12() {
         Utilities.waitAndClickOnWebElement(visitScheduledTimeDropDown, wait, driver);
         Utilities.waitAndClickOnWebElement(
-                visitStatusDropDown.findElement(By.id("16")), wait, driver);
+                visitStatusDropDown.findElement(By.xpath("//mat-option [@id = 'visit-time-11']")), wait, driver);
     }
 
     public void clickOnInspectorAllocationTypeManual() {
@@ -379,11 +384,11 @@ public class VisitDetailsPage extends BasePage {
     public void selectInspectorName() {
         Utilities.waitAndClickOnWebElement(visitInspectorDropDown, wait, driver);
         Utilities.waitAndClickOnWebElement(
-                visitStatusDropDown.findElement(By.id("inspector-id")), wait, driver);
+                visitInspectorDropDown.findElement(By.xpath("//mat-option [@id = 'inspector-1']")), wait, driver);
     }
 
     public void insertNotesText(String notes) {
-        visitNotesLabel.sendKeys(String.valueOf(notes));
+        visitNotes.sendKeys(String.valueOf(notes));
     }
 
     /*************Getters For Visit History Section **************/
@@ -427,6 +432,13 @@ public class VisitDetailsPage extends BasePage {
     public void clickViewVisitBtn() {
         Utilities.waitAndClickOnWebElement(viewVisitBtn, wait, driver);
     }
-}
+
+        public String getDisplayMSGText() {
+            return Utilities.waitAndGetWebElementText(displayMsg, wait);
+        }
+
+
+    }
+
 
 

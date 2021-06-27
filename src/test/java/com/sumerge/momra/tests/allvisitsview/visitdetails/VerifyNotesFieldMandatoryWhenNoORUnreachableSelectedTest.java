@@ -36,12 +36,13 @@ public class VerifyNotesFieldMandatoryWhenNoORUnreachableSelectedTest extends Ba
         visitDetailsPage = new VisitDetailsPage (driver);
         visitDetailsPage.clickViewVisitBtn();
         visitDetailsPage.clickOnIsVisitScheduledUnreachable();
-//        visitDetailsPage.insertNotesText("Text");
+//
         visitDetailsPage.clickOnSaveBtn();
-//        error msg should be displayed or specific class on notes field
-//        softAssert.assertEquals(visitDetailsPage.getVisitStatusScheduled(),
-//                "مجدولة",
-//                "Visit Status is Not Correct!");
+        softAssert.assertEquals(visitDetailsPage.getDisplayMSGText(),
+                "عفوا ، يجب إستكمال جميع الحقول الإجبارية.\n" +
+                        "إغلاق",
+                "Mandatory Field Error MSG is Not Correct!");
+
         softAssert.assertAll();
 
     }

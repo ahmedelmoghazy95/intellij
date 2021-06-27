@@ -41,16 +41,16 @@ public class VerifyInspectorNameMandatoryWhenManualIsSelectedTest extends BaseTe
         softAssert.assertEquals(visitDetailsPage.getVisitStatusScheduled(),
                 "مجدولة",
                 "Visit Status is Not Correct!");
-        visitDetailsPage.insertVisitScheduledDate("30072021");
-        visitDetailsPage.selectVisitTimeFrom4To5();
+        visitDetailsPage.insertVisitScheduledDate("07/30/2021");
+        visitDetailsPage.selectVisitTimeFrom11To12();
         visitDetailsPage.clickOnInspectorAllocationTypeManual();
 //        visitDetailsPage.selectInspectorName();
         visitDetailsPage.insertNotesText("Text");
         visitDetailsPage.clickOnSaveBtn();
-//        error msg should be displayed or specific class
-//        softAssert.assertEquals(visitDetailsPage.getVisitStatusScheduled(),
-//                "مجدولة",
-//                "Visit Status is Not Correct!");
+        softAssert.assertEquals(visitDetailsPage.getDisplayMSGText(),
+                "عفوا ، يجب إستكمال جميع الحقول الإجبارية.\n" +
+                        "إغلاق",
+                "Mandatory Field Error MSG is Not Correct!");
         softAssert.assertAll();
 
     }

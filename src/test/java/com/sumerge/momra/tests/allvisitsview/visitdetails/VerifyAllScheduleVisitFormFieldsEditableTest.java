@@ -41,12 +41,16 @@ public class VerifyAllScheduleVisitFormFieldsEditableTest extends BaseTest {
         softAssert.assertEquals(visitDetailsPage.getVisitStatusScheduled(),
                 "مجدولة",
                 "Visit Status is Not Correct!");
-        visitDetailsPage.insertVisitScheduledDate("30072021");
-        visitDetailsPage.selectVisitTimeFrom4To5();
+        visitDetailsPage.insertVisitScheduledDate("07/30/2021");
+        visitDetailsPage.selectVisitTimeFrom11To12();
         visitDetailsPage.clickOnInspectorAllocationTypeManual();
         visitDetailsPage.selectInspectorName();
         visitDetailsPage.insertNotesText("Text");
         visitDetailsPage.clickOnSaveBtn();
+        softAssert.assertEquals(visitDetailsPage.getDisplayMSGText(),
+                "تم حفظ معلومات جدولة الزيارة بنجاح.\n" +
+                        "إغلاق",
+                "Confirmation MSG is Not Correct!");
 
         softAssert.assertAll();
 
