@@ -22,7 +22,7 @@ public class VerifyAllScheduleVisitFormFieldsEditableTest extends BaseTest {
     @BeforeMethod(alwaysRun = true)
     public synchronized void setUp(Method method, ITestContext ctx) throws InterruptedException, MalformedURLException {
         {
-            ctx.setAttribute(method.getName(), "RQM #10669 | VerifyAllScheduleVisitFormFieldsEditableTest ");
+            ctx.setAttribute(method.getName(), "RQM #10669 #10673 | VerifyAllScheduleVisitFormFieldsEditableTest ");
         }
         super.setUp(Constants.VIEW_VISIT_DETAILS);
         driver = getDriver();
