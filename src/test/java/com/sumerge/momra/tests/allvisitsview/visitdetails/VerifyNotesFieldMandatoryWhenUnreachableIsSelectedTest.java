@@ -13,7 +13,7 @@ import org.testng.asserts.SoftAssert;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 
-public class VerifyNotesFieldMandatoryWhenNoORUnreachableSelectedTest extends BaseTest {
+public class VerifyNotesFieldMandatoryWhenUnreachableIsSelectedTest extends BaseTest {
 
     WebDriver driver;
     VisitDetailsPage visitDetailsPage;
@@ -22,14 +22,14 @@ public class VerifyNotesFieldMandatoryWhenNoORUnreachableSelectedTest extends Ba
     @BeforeMethod(alwaysRun = true)
     public synchronized void setUp(Method method, ITestContext ctx) throws InterruptedException, MalformedURLException {
         {
-            ctx.setAttribute(method.getName(), "RQM #10672 | VerifyNotesFieldMandatoryWhenNoORUnreachableSelectedTest ");
+            ctx.setAttribute(method.getName(), "RQM #10672 | VerifyNotesFieldMandatoryWhenUnreachableIsSelectedTest ");
         }
         super.setUp(Constants.VIEW_VISIT_DETAILS);
         driver = getDriver();
     }
 
     @Test(alwaysRun = true)
-    public void VerifyNotesFieldMandatoryWhenNoORUnreachableSelected () {
+    public void VerifyNotesFieldMandatoryWhenUnreachableSelected () {
         softAssert = new SoftAssert();
 
 

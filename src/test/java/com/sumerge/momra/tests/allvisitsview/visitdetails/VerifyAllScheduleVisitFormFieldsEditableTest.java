@@ -36,8 +36,7 @@ public class VerifyAllScheduleVisitFormFieldsEditableTest extends BaseTest {
         visitDetailsPage = new VisitDetailsPage (driver);
         visitDetailsPage.clickViewVisitBtn();
         visitDetailsPage.clickOnIsVisitScheduledYes();
-
-        Thread.sleep(20000);
+        
         softAssert.assertEquals(visitDetailsPage.getVisitStatusScheduled(),
                 "مجدولة",
                 "Visit Status is Not Correct!");

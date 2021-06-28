@@ -74,7 +74,7 @@ public class AllVisitsViewPage extends BasePage {
 
 //  ****************** Table Common Headers IDs ******************
 
-    @FindBy(xpath = "//*[@id='view-list-visit-id-header']//*[contains(@class, 'mat-sort-header-content')]")
+    @FindBy(xpath = "//*[@id='view-list-visit-number-header']//*[contains(@class, 'mat-sort-header-content')]")
     WebElement viewVisitIdLabel ;
     public static final String VIEW_VISIT_ID_LABEL = "View Visit Id Label";
 
