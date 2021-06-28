@@ -47,7 +47,6 @@ public class VerifyAllScheduleVisitFormFieldsEditableTest extends BaseTest {
         visitDetailsPage.selectInspectorName();
         visitDetailsPage.insertNotesText("Text");
         visitDetailsPage.clickOnSaveBtn();
-        Thread.sleep(20000);
         softAssert.assertEquals(visitDetailsPage.getDisplayMSGText(),
                 "تم حفظ معلومات جدولة الزيارة بنجاح.\n" +
                         "إغلاق",
