@@ -145,7 +145,7 @@ public class VisitDetailsPage extends BasePage {
     WebElement visitStatusSuspended;
     public static final String VISIT_STATUS_SUSPENDED = "Visit Status Suspended";
 
-    @FindBy(id = "//span[@class='mat-select-min-line ng-tns-c39-228 ng-star-inserted' and contains(text(),'مرفوضة')]")
+    @FindBy(xpath = "//span[contains(@class,'mat-select-min-line') and contains(text(),'مرفوضة')]")
     WebElement visitStatusRejected;
     public static final String VISIT_STATUS_REJECTED = "Visit Status Rejected";
 
