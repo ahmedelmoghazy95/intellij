@@ -29,7 +29,7 @@ public class VerifyAllScheduleVisitFormFieldsEditableTest extends BaseTest {
     }
 
     @Test(alwaysRun = true)
-    public void VerifyAllScheduleVisitFormFieldsEditable () {
+    public void VerifyAllScheduleVisitFormFieldsEditable () throws InterruptedException {
         softAssert = new SoftAssert();
 
 
@@ -37,7 +37,7 @@ public class VerifyAllScheduleVisitFormFieldsEditableTest extends BaseTest {
         visitDetailsPage.clickViewVisitBtn();
         visitDetailsPage.clickOnIsVisitScheduledYes();
 
-
+        Thread.sleep(20000);
         softAssert.assertEquals(visitDetailsPage.getVisitStatusScheduled(),
                 "مجدولة",
                 "Visit Status is Not Correct!");
@@ -47,6 +47,7 @@ public class VerifyAllScheduleVisitFormFieldsEditableTest extends BaseTest {
         visitDetailsPage.selectInspectorName();
         visitDetailsPage.insertNotesText("Text");
         visitDetailsPage.clickOnSaveBtn();
+        Thread.sleep(20000);
         softAssert.assertEquals(visitDetailsPage.getDisplayMSGText(),
                 "تم حفظ معلومات جدولة الزيارة بنجاح.\n" +
                         "إغلاق",
