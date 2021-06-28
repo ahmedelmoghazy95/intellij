@@ -1,17 +1,20 @@
 package com.sumerge.momra.pages;
 
 import com.sumerge.momra.utilities.Utilities;
+import lombok.Data;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
+@Data
 public class InspectorDailyVisitsPage extends BasePage {
 
     public InspectorDailyVisitsPage(WebDriver driver) {
-
         super(driver);
         PageFactory.initElements(driver, this);
+        wait.until(ExpectedConditions.visibilityOf(visitDateField));
 
     }
 
@@ -49,9 +52,15 @@ public class InspectorDailyVisitsPage extends BasePage {
     @FindBy(id ="closeDialogButton")
     private WebElement visitCloseLocationButton;
 
-    public String getVisitNumberFieldValue(){
-        return Utilities.waitAndGetWebElementText( visitNumberField, wait);
-    }
+    @FindBy (id = "startVisitButton")
+    private WebElement startVisitButton;
+
+    @FindBy (id = "navigateToVisitButton")
+    private WebElement startNavigationButton;
+
+//    public String getVisitNumberFieldValue(){
+//        return Utilities.waitAndGetWebElementText( visitNumberField, wait);
+//    }
     public String getVisitDateFieldValue(){
         return Utilities.waitAndGetWebElementText( visitDateField, wait);
     }
@@ -73,8 +82,16 @@ public class InspectorDailyVisitsPage extends BasePage {
     public String getVisitLicensePhoneFieldValue(){
         return Utilities.waitAndGetWebElementText( visitLicensePhoneField, wait);
     }
-    public void clickOnVisitLocationButton() {Utilities.waitAndClickOnWebElement(visitLocationButton, wait, driver);
+    public void clickOnVisitLocationButton() {
+        Utilities.waitAndClickOnWebElement(visitLocationButton, wait, driver);
     }
-    public void clickOnVisitCloseLocationButton() {Utilities.waitAndClickOnWebElement(visitCloseLocationButton, wait, driver); }
+    public void clickOnVisitCloseLocationButton() {
+        Utilities.waitAndClickOnWebElement(visitCloseLocationButton, wait, driver); }
+
+    public InspectorStartVisitPage clickOnStartVisitButton() {
+        Utilities.waitAndClickOnWebElement(startVisitButton, wait, driver);
+        return new InspectorStartVisitPage(driver);
+    }
+
 
 }

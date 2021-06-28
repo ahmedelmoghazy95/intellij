@@ -36,7 +36,9 @@ public class ViewDailyVisitsTest extends BaseTest {
         inspectorDailyVisitsPage.clickOnVisitLocationButton();
         inspectorDailyVisitsPage.clickOnVisitCloseLocationButton();
 
-        softAssert.assertTrue(!inspectorDailyVisitsPage.getVisitNumberFieldValue().isEmpty());
+        System.out.println(inspectorDailyVisitsPage.getVisitDateField().getText());
+
+        softAssert.assertTrue(!inspectorDailyVisitsPage.getVisitNumberField().getText().isEmpty());
         softAssert.assertTrue(!inspectorDailyVisitsPage.getVisitDateFieldValue().isEmpty());
         softAssert.assertTrue(!inspectorDailyVisitsPage.getVisitSiteNameFieldValue().isEmpty());
         softAssert.assertTrue(!inspectorDailyVisitsPage.getVisitLicenseIdFieldValue().isEmpty());
@@ -48,7 +50,6 @@ public class ViewDailyVisitsTest extends BaseTest {
 
 
         softAssert.assertAll();
-
 
     }
 

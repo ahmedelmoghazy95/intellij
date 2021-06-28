@@ -1,6 +1,7 @@
 package com.sumerge.momra.pages;
 
 import com.sumerge.momra.utilities.Utilities;
+import lombok.NoArgsConstructor;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,6 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
+@NoArgsConstructor
 public abstract class BasePage {
 
     protected WebDriver driver;

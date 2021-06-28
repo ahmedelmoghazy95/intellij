@@ -52,9 +52,9 @@ public class BaseTest extends TestListener {
 //        return loginPage.login(username, password);
 //    }
 
-    @AfterMethod(alwaysRun = true)
-    public void tearDown() {
-        driverHandler.getDriver().quit();
-        driverHandler.setDriver(null);
-    }
+//    @AfterMethod(alwaysRun = true)
+//    public void tearDown() {
+//        driverHandler.getDriver().quit();
+//        driverHandler.setDriver(null);
+//    }
 }
