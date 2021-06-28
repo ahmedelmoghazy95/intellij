@@ -75,7 +75,7 @@ public class VisitDetailsPage extends BasePage {
     WebElement addressLabel;
     public static final String ADDRESS_LABEL = "Address Label";
 
-    //    ****************** Visit Re/scheduling section IDs ******************
+    /****************** Visit Re/scheduling section IDs ******************/
 
     @FindBy(id = "visit-rescheduling-section-title")
     WebElement scheduleVisitSectionTitle;
