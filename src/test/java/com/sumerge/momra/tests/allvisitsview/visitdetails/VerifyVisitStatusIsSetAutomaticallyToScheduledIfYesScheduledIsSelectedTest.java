@@ -13,7 +13,7 @@ import org.testng.asserts.SoftAssert;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 
-public class VerifyVisitStatusIsSetAutomaticallyToScheduledWhenIfYesScheduledIsSelectedTest extends BaseTest {
+public class VerifyVisitStatusIsSetAutomaticallyToScheduledIfYesScheduledIsSelectedTest extends BaseTest {
 
     WebDriver driver;
     VisitDetailsPage visitDetailsPage;
@@ -22,7 +22,7 @@ public class VerifyVisitStatusIsSetAutomaticallyToScheduledWhenIfYesScheduledIsS
     @BeforeMethod(alwaysRun = true)
     public synchronized void setUp(Method method, ITestContext ctx) throws InterruptedException, MalformedURLException {
         {
-            ctx.setAttribute(method.getName(), "RQM #10670 | VerifyVisitStatusIsSetAutomaticallyToScheduledWhenIfYesScheduledIsSelectedTest");
+            ctx.setAttribute(method.getName(), "RQM #10670 | VerifyVisitStatusIsSetAutomaticallyToScheduledIfYesScheduledIsSelectedTest");
         }
         super.setUp(Constants.VIEW_VISIT_DETAILS);
         driver = getDriver();
