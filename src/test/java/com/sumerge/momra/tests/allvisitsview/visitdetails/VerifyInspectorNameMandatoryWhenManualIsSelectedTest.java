@@ -44,7 +44,7 @@ public class VerifyInspectorNameMandatoryWhenManualIsSelectedTest extends BaseTe
         visitDetailsPage.insertVisitScheduledDate("07/30/2021");
         visitDetailsPage.selectVisitTimeFrom11To12();
         visitDetailsPage.clickOnInspectorAllocationTypeManual();
-//        visitDetailsPage.selectInspectorName();
+
         visitDetailsPage.insertNotesText("Text");
         visitDetailsPage.clickOnSaveBtn();
         softAssert.assertEquals(visitDetailsPage.getDisplayMSGText(),

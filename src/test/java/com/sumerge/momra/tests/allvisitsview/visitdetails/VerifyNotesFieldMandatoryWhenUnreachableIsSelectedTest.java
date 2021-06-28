@@ -36,7 +36,6 @@ public class VerifyNotesFieldMandatoryWhenUnreachableIsSelectedTest extends Base
         visitDetailsPage = new VisitDetailsPage (driver);
         visitDetailsPage.clickViewVisitBtn();
         visitDetailsPage.clickOnIsVisitScheduledUnreachable();
-//
         visitDetailsPage.clickOnSaveBtn();
         softAssert.assertEquals(visitDetailsPage.getDisplayMSGText(),
                 "عفوا ، يجب إستكمال جميع الحقول الإجبارية.",
