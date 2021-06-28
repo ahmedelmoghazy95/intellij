@@ -74,7 +74,7 @@ public class AllVisitsViewPage extends BasePage {
 
 //  ****************** Table Common Headers IDs ******************
 
-    @FindBy(xpath = "//*[@id='view-list-visit-id-header']//*[contains(@class, 'mat-sort-header-content')]")
+    @FindBy(xpath = "//*[@id='view-list-visit-number-header']//*[contains(@class, 'mat-sort-header-content')]")
     WebElement viewVisitIdLabel ;
     public static final String VIEW_VISIT_ID_LABEL = "View Visit Id Label";
 
@@ -119,6 +119,8 @@ public class AllVisitsViewPage extends BasePage {
     @FindBy(xpath = "//*[@id='visits-view-list-actions-header']//*[contains(@class, 'actions-header')]")
     WebElement visitRejectedActionsLabel;
     public static final String VISITS_REJECTED_ACTIONS_LABEL = "Visit Rejected Actions Label";
+
+
 
     /*************Getters For Page Elements **************/
 
@@ -181,6 +183,7 @@ public class AllVisitsViewPage extends BasePage {
     public String getVisitDateLabel () {
         return Utilities.waitAndGetWebElementText( visitDateLabel, wait);
     }
+
 
 
 }

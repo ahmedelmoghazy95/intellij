@@ -15,7 +15,7 @@ import org.testng.asserts.SoftAssert;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 
-public class VerifyPageItemsAndLabels extends BaseTest {
+public class VerifyPageItemsAndLabelsTest extends BaseTest {
 
     WebDriver driver;
     AllVisitsViewPage allVisitsViewPage;
@@ -31,7 +31,7 @@ public class VerifyPageItemsAndLabels extends BaseTest {
     }
 
     @Test(alwaysRun = true)
-    public void ValidateOnEditAllFieldButtonFunctionality () {
+    public void VerifyPageItemsAndLabels () {
         softAssert = new SoftAssert();
 
         allVisitsViewPage = new AllVisitsViewPage(driver);
@@ -41,7 +41,7 @@ public class VerifyPageItemsAndLabels extends BaseTest {
                 "Page title is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getNewVisitsTab(),
-                "زيارات بإنتظار الجدولة" ,
+                "زيارات بانتظار الجدولة" ,
                 "1st tab title is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getScheduledVisitsTab(),
@@ -61,7 +61,7 @@ public class VerifyPageItemsAndLabels extends BaseTest {
                 "Visit ID Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitSiteNameLabel(),
-                "إسم المنشأة" ,
+                "اسم المنشأة" ,
                 "Site Name Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitLicenseIdLabel(),
@@ -89,7 +89,7 @@ public class VerifyPageItemsAndLabels extends BaseTest {
                 "No. of beds Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitEngineeringOfficeNameLabel(),
-                "إسم المكتب الهندسى" ,
+                "اسم المكتب الهندسي" ,
                 "Engineering Office Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitActionsLabel(),
@@ -103,7 +103,7 @@ allVisitsViewPage.clickOnScheduledVisitsTab();
                 "Visit ID Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitSiteNameLabel(),
-                "إسم المنشأة" ,
+                "اسم المنشأة" ,
                 "Site Name Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitLicenseIdLabel(),
@@ -131,7 +131,7 @@ allVisitsViewPage.clickOnScheduledVisitsTab();
                 "No. of beds Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitEngineeringOfficeNameLabel(),
-                "إسم المكتب الهندسى" ,
+                "اسم المكتب الهندسي" ,
                 "Engineering Office Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitActionsLabel(),
@@ -145,7 +145,7 @@ allVisitsViewPage.clickOnScheduledVisitsTab();
                 "Visit ID Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitSiteNameLabel(),
-                "إسم المنشأة" ,
+                "اسم المنشأة" ,
                 "Site Name Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitLicenseIdLabel(),
@@ -173,7 +173,7 @@ allVisitsViewPage.clickOnScheduledVisitsTab();
                 "No. of beds Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitEngineeringOfficeNameLabel(),
-                "إسم المكتب الهندسى" ,
+                "اسم المكتب الهندسي" ,
                 "Engineering Office Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitActionsLabel(),
@@ -187,7 +187,7 @@ allVisitsViewPage.clickOnScheduledVisitsTab();
                 "Visit ID Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitSiteNameLabel(),
-                "إسم المنشأة" ,
+                "اسم المنشأة" ,
                 "Site Name Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitLicenseIdLabel(),
@@ -215,7 +215,7 @@ allVisitsViewPage.clickOnScheduledVisitsTab();
                 "No. of beds Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getVisitEngineeringOfficeNameLabel(),
-                "إسم المكتب الهندسى" ,
+                "اسم المكتب الهندسي" ,
                 "Engineering Office Header is Not Correct!");
 
         softAssert.assertEquals(allVisitsViewPage.getRejectedVisitActionsLabel(),

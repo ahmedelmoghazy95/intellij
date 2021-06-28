@@ -13,12 +13,21 @@ import java.util.Random;
 public class Utilities {
 
     public static String waitAndGetWebElementText(WebElement element, WebDriverWait wait) {
-        wait.until(ExpectedConditions.visibilityOf(element));
-        String textValue = element.getAttribute("value");
-        if (textValue != null && textValue.length() > 0)
-            return element.getAttribute("value");
-        else
-            return element.getText();
+        try {
+            wait.until(ExpectedConditions.visibilityOf(element));
+            String textValue = element.getAttribute("value");
+            if (textValue != null && textValue.length() > 0)
+                return element.getAttribute("value");
+            else
+                return element.getText();
+        } catch (StaleElementReferenceException e) {
+            String textValue = element.getAttribute("value");
+            if (textValue != null && textValue.length() > 0)
+                return element.getAttribute("value");
+            else
+                return element.getText();
+        }
+
     }
 
 
@@ -27,7 +36,7 @@ public class Utilities {
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", webElement);
             wait.until(ExpectedConditions.elementToBeClickable(webElement));
             webElement.click();
-        } catch(NoSuchElementException | TimeoutException e) {
+        } catch(NoSuchElementException | TimeoutException | ElementClickInterceptedException e ) {
             wait.until(ExpectedConditions.elementToBeClickable(webElement));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", webElement);
             webElement.click();
