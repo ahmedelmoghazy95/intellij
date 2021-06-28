@@ -9,6 +9,7 @@
     <test parallel="classes" thread-count="6" name="Visits E2E UI Tests">
         <packages>
             <package name="com.sumerge.momra.tests.allvisitsview"/>
+            <package name="com.sumerge.momra.tests.allvisitsview.visitdetails"/>
         </packages>
     </test> <!-- Test -->
 
