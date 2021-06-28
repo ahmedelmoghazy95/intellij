@@ -36,7 +36,7 @@ public class VerifyAllScheduleVisitFormFieldsEditableTest extends BaseTest {
         visitDetailsPage = new VisitDetailsPage (driver);
         visitDetailsPage.clickViewVisitBtn();
         visitDetailsPage.clickOnIsVisitScheduledYes();
-        
+
         softAssert.assertEquals(visitDetailsPage.getVisitStatusScheduled(),
                 "مجدولة",
                 "Visit Status is Not Correct!");
@@ -47,8 +47,7 @@ public class VerifyAllScheduleVisitFormFieldsEditableTest extends BaseTest {
         visitDetailsPage.insertNotesText("Text");
         visitDetailsPage.clickOnSaveBtn();
         softAssert.assertEquals(visitDetailsPage.getDisplayMSGText(),
-                "تم حفظ معلومات جدولة الزيارة بنجاح.\n" +
-                        "إغلاق",
+                "تم حفظ معلومات جدولة الزيارة بنجاح." ,
                 "Confirmation MSG is Not Correct!");
 
         softAssert.assertAll();

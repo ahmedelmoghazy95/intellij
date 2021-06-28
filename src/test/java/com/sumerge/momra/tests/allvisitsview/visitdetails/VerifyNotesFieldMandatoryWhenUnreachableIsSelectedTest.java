@@ -39,8 +39,7 @@ public class VerifyNotesFieldMandatoryWhenUnreachableIsSelectedTest extends Base
 //
         visitDetailsPage.clickOnSaveBtn();
         softAssert.assertEquals(visitDetailsPage.getDisplayMSGText(),
-                "عفوا ، يجب إستكمال جميع الحقول الإجبارية.\n" +
-                        "إغلاق",
+                "عفوا ، يجب إستكمال جميع الحقول الإجبارية.",
                 "Mandatory Field Error MSG is Not Correct!");
 
         softAssert.assertAll();

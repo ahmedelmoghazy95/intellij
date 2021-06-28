@@ -178,7 +178,7 @@ public class VisitDetailsPage extends BasePage {
     WebElement visitInspectorName;
     public static final String VISIT_INSPECTOR_NAME = "Visit Inspector Name";
 
-    @FindBy(xpath = "//snack-bar-container//*[@class='mat-simple-snackbar ng-star-inserted']")
+    @FindBy(xpath = "//snack-bar-container//*[@class='mat-simple-snackbar ng-star-inserted']/span")
     WebElement displayMsg;
     public static final String DISPLAY_MSG = "Display Msg";
 
