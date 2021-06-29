@@ -5,6 +5,7 @@ import com.sumerge.momra.utilities.DriverHandler;
 
 import com.sumerge.momra.listeners.TestListener;
 
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 
@@ -12,6 +13,8 @@ import java.net.MalformedURLException;
 
 public class BaseTest extends TestListener {
     DriverHandler driverHandler;
+
+    WebDriverWait wait;
 
     protected ThreadLocal<String> testName = new ThreadLocal<>();
     // Get Directory of the Upload File
@@ -30,6 +33,7 @@ public class BaseTest extends TestListener {
     public void setUp(String page) throws InterruptedException, MalformedURLException {
         driverHandler = DriverHandler.getInstance();
         driverHandler.createDriver();
+
 //		driverx.clearBrowserCache();
 
         if (page.equals(Constants.ENGINEERING_OFFICES_MODULE)) {
@@ -42,6 +46,8 @@ public class BaseTest extends TestListener {
             driverHandler.goToViolationsPage();
         } else if(page.equals(Constants.VIEW_ALL_VISITS_PAGE) ) {
             driverHandler.gotoAllVisitsViewPage();
+        }else if(page.equals(Constants.INSPECTOR_SCREENS_DAILY_VISITS) ) {
+            driverHandler.gotoInspectorDailyVisitsPage();
         }else if(page.equals(Constants.VIEW_VISIT_DETAILS) ) {
             driverHandler.gotoVisitDetailsPage();
         }

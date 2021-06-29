@@ -88,6 +88,10 @@ public class DriverHandler {
         driverThread.get().get(Constants.APPLICATION_HOST + "ministry-visits-ui");
     }
 
+    public void gotoInspectorDailyVisitsPage() {
+        driverThread.get().get(Constants.APPLICATION_HOST + "daily-visits-web-ui");
+    }
+
     public void gotoVisitDetailsPage() {
         driverThread.get().get(Constants.APPLICATION_HOST + "visits-ui?id=126");
     }
