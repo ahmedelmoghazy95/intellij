@@ -19,7 +19,6 @@ public class StartVisitTest extends BaseTest {
 
     WebDriver driver;
     SoftAssert softAssert;
-    WebDriverWait wait;
     InspectorDailyVisitsPage inspectorDailyVisitsPage;
     InspectorStartVisitPage inspectorStartVisitPage;
 
@@ -39,23 +38,23 @@ public class StartVisitTest extends BaseTest {
     public void startDailyVisitHappyScenario(){
 
         softAssert = new SoftAssert();
-        wait = new WebDriverWait(driver, 40);
         inspectorDailyVisitsPage = new InspectorDailyVisitsPage(driver);
 
         inspectorDailyVisitsPage.clickOnVisitLocationButton();
         inspectorStartVisitPage = inspectorDailyVisitsPage.clickOnStartVisitButton();
 
-        softAssert.assertTrue(Utilities.waitAndGetWebElementText(inspectorStartVisitPage
-                        .getVisitStatusField() , wait).isEmpty()
+        softAssert.assertTrue(!inspectorStartVisitPage.getVisitStatusFieldValue().isEmpty()
                 , "Visit Status Field is Empty");
 
-        softAssert.assertTrue(!inspectorStartVisitPage.getLicenseExpiryDateField().
-                getText().isEmpty() , "License Expiry Date Field is Empty");
+        softAssert.assertTrue(!inspectorStartVisitPage.getLicenseExpiryFieldValue().
+                isEmpty() , "License Expiry Date Field is Empty");
 
-        softAssert.assertTrue(!inspectorStartVisitPage.getLicenseBedsField().
-                getText().isEmpty() , "License Beds Field is Empty");
+        softAssert.assertTrue(!inspectorStartVisitPage.getLicenseBedsFieldValue().
+                isEmpty() , "License Beds Field is Empty");
 
         softAssert.assertAll();
+
+        inspectorStartVisitPage.selectLocationSituation("المنشأة مفتوحة");
 
     }
 

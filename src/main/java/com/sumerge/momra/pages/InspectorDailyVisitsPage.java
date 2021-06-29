@@ -13,8 +13,9 @@ public class InspectorDailyVisitsPage extends BasePage {
 
     public InspectorDailyVisitsPage(WebDriver driver) {
         super(driver);
+        checkCorrectPage("open-map",
+                "This is Not the Correct Daily Visits Page!");
         PageFactory.initElements(driver, this);
-        wait.until(ExpectedConditions.visibilityOf(visitDateField));
 
     }
 
@@ -32,7 +33,6 @@ public class InspectorDailyVisitsPage extends BasePage {
 
     @FindBy(id ="visits-viewList-licenseStatus")
     private WebElement visitLicenseStatusField;
-
 
     @FindBy(id ="visits-viewList-address")
     private WebElement visitAddressField;
