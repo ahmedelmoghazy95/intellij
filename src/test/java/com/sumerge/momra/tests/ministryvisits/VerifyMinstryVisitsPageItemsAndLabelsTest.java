@@ -1,4 +1,4 @@
-package com.sumerge.momra.tests.allvisitsview;
+package com.sumerge.momra.tests.ministryvisits;
 
 import com.sumerge.momra.dataproviderobjects.SearchOfficesData;
 import com.sumerge.momra.pages.AllVisitsViewPage;
@@ -15,7 +15,7 @@ import org.testng.asserts.SoftAssert;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 
-public class VerifyPageItemsAndLabelsTest extends BaseTest {
+public class VerifyMinstryVisitsPageItemsAndLabelsTest extends BaseTest {
 
     WebDriver driver;
     AllVisitsViewPage allVisitsViewPage;

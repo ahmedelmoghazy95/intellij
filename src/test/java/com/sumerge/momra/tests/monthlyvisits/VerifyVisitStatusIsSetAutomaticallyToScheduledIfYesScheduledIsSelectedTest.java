@@ -1,4 +1,4 @@
-package com.sumerge.momra.tests.allvisitsview.visitdetails;
+package com.sumerge.momra.tests.monthlyvisits;
 
 
 import com.sumerge.momra.pages.VisitDetailsPage;
@@ -13,7 +13,7 @@ import org.testng.asserts.SoftAssert;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 
-public class VerifyInspectorNameMandatoryWhenManualIsSelectedTest extends BaseTest {
+public class VerifyVisitStatusIsSetAutomaticallyToScheduledIfYesScheduledIsSelectedTest extends BaseTest {
 
     WebDriver driver;
     VisitDetailsPage visitDetailsPage;
@@ -22,14 +22,14 @@ public class VerifyInspectorNameMandatoryWhenManualIsSelectedTest extends BaseTe
     @BeforeMethod(alwaysRun = true)
     public synchronized void setUp(Method method, ITestContext ctx) throws InterruptedException, MalformedURLException {
         {
-            ctx.setAttribute(method.getName(), "RQM #10671 | VerifyInspectorNameMandatoryWhenManualIsSelected ");
+            ctx.setAttribute(method.getName(), "RQM #10670 | VerifyVisitStatusIsSetAutomaticallyToScheduledIfYesScheduledIsSelectedTest");
         }
         super.setUp(Constants.VIEW_VISIT_DETAILS);
         driver = getDriver();
     }
 
     @Test(alwaysRun = true)
-    public void VerifyInspectorNameMandatoryWhenManualIsSelected () {
+    public void VerifyVisitStatusIsSetAutomaticallyToScheduledWhenIfYesScheduledIsSelected () {
         softAssert = new SoftAssert();
 
 
@@ -41,15 +41,12 @@ public class VerifyInspectorNameMandatoryWhenManualIsSelectedTest extends BaseTe
         softAssert.assertEquals(visitDetailsPage.getVisitStatusScheduled(),
                 "مجدولة",
                 "Visit Status is Not Correct!");
-        visitDetailsPage.insertVisitScheduledDate("07/30/2021");
-        visitDetailsPage.selectVisitTimeFrom11To12();
-        visitDetailsPage.clickOnInspectorAllocationTypeManual();
+        visitDetailsPage.clickOnIsVisitScheduledNo();
+        visitDetailsPage.selectVisitStatusRejected();
+        softAssert.assertEquals(visitDetailsPage.getVisitStatusRejected(),
+                "مرفوضة",
+                "Visit Status is Not Correct!");
 
-        visitDetailsPage.insertNotesText("Text");
-        visitDetailsPage.clickOnSaveBtn();
-        softAssert.assertEquals(visitDetailsPage.getDisplayMSGText(),
-                "عفوا ، يجب إستكمال جميع الحقول الإجبارية." ,
-                "Mandatory Field Error MSG is Not Correct!");
         softAssert.assertAll();
 
     }

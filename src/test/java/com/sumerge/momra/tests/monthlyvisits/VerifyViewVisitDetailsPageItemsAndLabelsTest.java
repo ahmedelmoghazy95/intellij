@@ -1,6 +1,7 @@
-package com.sumerge.momra.tests.allvisitsview.visitdetails;
+package com.sumerge.momra.tests.monthlyvisits;
 
 import com.sumerge.momra.pages.AllVisitsViewPage;
+import com.sumerge.momra.pages.MonthlyVisitsViewPage;
 import com.sumerge.momra.pages.VisitDetailsPage;
 import com.sumerge.momra.tests.BaseTest;
 import com.sumerge.momra.utilities.Constants;
@@ -16,7 +17,7 @@ import java.net.MalformedURLException;
 public class VerifyViewVisitDetailsPageItemsAndLabelsTest extends BaseTest {
 
     WebDriver driver;
-    AllVisitsViewPage allVisitsViewPage;
+    MonthlyVisitsViewPage monthlyVisitsViewPage;
     VisitDetailsPage visitDetailsPage;
     SoftAssert softAssert;
 
@@ -159,7 +160,7 @@ public class VerifyViewVisitDetailsPageItemsAndLabelsTest extends BaseTest {
                 "Visit Date Header is Not Correct!");
 
 
-        allVisitsViewPage = visitDetailsPage.clickOnBackBtn();
+        monthlyVisitsViewPage = visitDetailsPage.clickOnBackBtn();
         softAssert.assertAll();
 
     }

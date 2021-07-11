@@ -1,4 +1,4 @@
-package com.sumerge.momra.tests.allvisitsview.visitdetails;
+package com.sumerge.momra.tests.monthlyvisits;
 
 
 import com.sumerge.momra.pages.VisitDetailsPage;

@@ -7,12 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class VisitDetailsPage extends BasePage {
+public class MinistryVisitDetailsPage extends BasePage {
 
 
-    public VisitDetailsPage(WebDriver driver) {
+    public MinistryVisitDetailsPage(WebDriver driver) {
         super(driver);
-        checkCorrectPage("visit-requests-page-title", "This is Not the Correct Visit Details Page!");
+        checkCorrectPage("page-title", "This is Not the Correct Visit Details Page!");
         PageFactory.initElements(driver, this);
     }
 
@@ -20,7 +20,7 @@ public class VisitDetailsPage extends BasePage {
     WebElement pageTitle;
     public static final String PAGE_TITLE = "Page Title";
 
-//    ****************** Visit Details IDs ******************
+    /****************** Visit Details IDs ******************/
 
     @FindBy(id = "site-name")
     WebElement siteNameLabel;
@@ -182,7 +182,7 @@ public class VisitDetailsPage extends BasePage {
     WebElement displayMsg;
     public static final String DISPLAY_MSG = "Display Msg";
 
-    //    ****************** Visit History IDs ******************
+    /****************** Visit History IDs ******************/
     @FindBy(id = "visit-history-title")
     WebElement visitHistoryTitle;
     public static final String VISIT_HISTORY_TITLE = "visitHistoryTitle";
@@ -219,14 +219,46 @@ public class VisitDetailsPage extends BasePage {
     WebElement visitDetailsBackBtn;
     public static final String VISIT_DETAILS_BACK_BTN = "visit Details Back Btn";
 
-    /*************Page Action Btns **************/
+    /****************** Visit Clauses Section IDs ******************/
 
-    @FindBy(id = "display-visit-info")
-    WebElement viewVisitBtn;
-    public static final String VIEW_VISIT_BTN = "View Visit Btn";
+    @FindBy(id = "inspection-clauses-title")
+    WebElement inspectionClausesTitle;
+    public static final String INSPECTION_CLAUSES_TITLE = "Inspection Clauses Title";
+
+    @FindBy(id = "inspection-main-clause-title")
+    WebElement inspectionMainClauseTitle;
+    public static final String INSPECTION_MAIN_CLAUSES_TITLE = "Inspection Main Clauses Title";
+
+    @FindBy(id = "no-child-clauses-found")
+    WebElement emptyClauses;
+    public static final String EMPTY_CLAUSES = "Empty Clauses";
+
+    @FindBy(id = "child-clause-title")
+    WebElement childClauseTitle;
+    public static final String CHILD_CLAUSE_TITLE = "Child Clause Title";
+
+    @FindBy(id = "inspection-clause-radio-group-{{y}}")
+    WebElement Compliancy;
+    public static final String COMPLIANCY = "Compliancy";
+
+    @FindBy(id = "clause-status-radio-button-complaint-{{y}}")
+    WebElement compliantClause;
+    public static final String COMPLIANT_CLAUSE = "Compliant Clause";
+
+    @FindBy(id = "clause-status-radio-button-non-complaint-{{y}}")
+    WebElement nonCompliantClause;
+    public static final String NON_COMPLIANT_CLAUSE = "Non Compliant Clause";
+
+    @FindBy(id = "clause-status-radio-button-not-applicable-{{y}}")
+    WebElement notApplicableClause;
+    public static final String NOT_APPLICABLE_CLAUSE = "Not Applicable Clause";
+
+    @FindBy(id = "inspection-violation-comments-label")
+    WebElement inspectionViolationCommentsLabel;
+    public static final String INSPECTION_VIOLATION_COMMENTS_LABEL = "Inspection Violation Comments Label";
+
 
     /*************Getters For Visit Details Elements **************/
-
     public String getPageTitle() {
         return Utilities.waitAndGetWebElementText(pageTitle, wait);
     }
@@ -424,21 +456,56 @@ public class VisitDetailsPage extends BasePage {
         return Utilities.waitAndGetWebElementText(notesHeader, wait);
     }
 
-    public MonthlyVisitsViewPage clickOnBackBtn() {
+    public AllVisitsViewPage clickOnBackBtn() {
         Utilities.waitAndClickOnWebElement(visitDetailsBackBtn, wait, driver);
-        return new MonthlyVisitsViewPage (driver);
+        return new AllVisitsViewPage(driver);
     }
 
-    public void clickViewVisitBtn() {
-        Utilities.waitAndClickOnWebElement(viewVisitBtn, wait, driver);
+
+    public String getDisplayMSGText() {
+        return Utilities.waitAndGetWebElementText(displayMsg, wait);
     }
 
-        public String getDisplayMSGText() {
-            return Utilities.waitAndGetWebElementText(displayMsg, wait);
-        }
+    /*************Getters For Visit Clauses Elements **************/
 
-
+    public String getInspectionMainClausesTitle() {
+        return Utilities.waitAndGetWebElementText(inspectionMainClauseTitle, wait);
     }
+
+    public String getInspectionClausesTitle() {
+        return Utilities.waitAndGetWebElementText(inspectionClausesTitle, wait);
+    }
+
+    public String getChildClauseTitle() {
+        return Utilities.waitAndGetWebElementText(childClauseTitle, wait);
+    }
+
+    public String getEmptyClauses() {
+        return Utilities.waitAndGetWebElementText(emptyClauses, wait);
+    }
+
+    public String getCompliancy() {
+        return Utilities.waitAndGetWebElementText(Compliancy, wait);
+    }
+
+    public String getCompliantClause() {
+        return Utilities.waitAndGetWebElementText(compliantClause, wait);
+    }
+
+    public String getNonCompliantClause() {
+        return Utilities.waitAndGetWebElementText(nonCompliantClause, wait);
+    }
+
+    public String getNotApplicableClause() {
+        return Utilities.waitAndGetWebElementText(notApplicableClause, wait);
+    }
+
+    public String getInspectionViolationCommentsLabel() {
+        return Utilities.waitAndGetWebElementText(inspectionViolationCommentsLabel, wait);
+    }
+
+
+}
 
 
 
