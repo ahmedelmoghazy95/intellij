@@ -190,6 +190,10 @@ public class VerifyViewMinistryVisitDetailsPageItemsAndLabelsTest extends BaseTe
                 "ملاحظات",
                 "Inspection Comment Label is Not Correct!");
 
+        softAssert.assertEquals(ministryVisitDetailsPage.getDetailedViolationAttachmentLabel(),
+                "الصور",
+                "Attachment Label is Not Correct!");
+
 //        softAssert.assertEquals(ministryVisitDetailsPage.getEmptyClauses(),
 //                "عفوا، لا يوجد أى بنود تفتيش فرعية مرتبطة ببند التفتيش الرئيسى",
 //                "Notes header is Not Correct!");

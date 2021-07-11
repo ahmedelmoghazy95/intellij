@@ -257,6 +257,9 @@ public class MinistryVisitDetailsPage extends BasePage {
     WebElement inspectionViolationCommentsLabel;
     public static final String INSPECTION_VIOLATION_COMMENTS_LABEL = "Inspection Violation Comments Label";
 
+    @FindBy(id = "detailed-violation-attachments-label")
+    WebElement detailedViolationAttachmentsLabel;
+    public static final String DETAILED_VIOLATION_ATTACHMENT_LABEL = "Detailed Violation Attachments Label";
 
     /*************Getters For Visit Details Elements **************/
     public String getPageTitle() {
@@ -503,7 +506,9 @@ public class MinistryVisitDetailsPage extends BasePage {
     public String getInspectionViolationCommentsLabel() {
         return Utilities.waitAndGetWebElementText(inspectionViolationCommentsLabel, wait);
     }
-
+    public String getDetailedViolationAttachmentLabel() {
+        return Utilities.waitAndGetWebElementText(detailedViolationAttachmentsLabel, wait);
+    }
 
 }
 
