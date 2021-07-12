@@ -188,8 +188,9 @@ public class AllVisitsViewPage extends BasePage {
         return Utilities.waitAndGetWebElementText( visitDateLabel, wait);
     }
 
-    public void clickViewVisitBtn() {
+    public MinistryVisitDetailsPage clickViewVisitBtn() {
         Utilities.waitAndClickOnWebElement(viewMinistryVisitBtn, wait, driver);
+        return new  MinistryVisitDetailsPage (driver);
     }
 
 }

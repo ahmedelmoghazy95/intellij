@@ -105,7 +105,7 @@ public class MinistryVisitDetailsPage extends BasePage {
     WebElement visitInspectorNameLabel;
     public static final String VISIT_INSPECTOR_NAME_LABEL = "Visit Inspector Name Label";
 
-    @FindBy(id = "visit-notes")
+    @FindBy(id = "visit-notes-label")
     WebElement visitNotesLabel;
     public static final String VISIT_NOTES_LABEL = "Visit Notes Label";
 
@@ -225,9 +225,22 @@ public class MinistryVisitDetailsPage extends BasePage {
     WebElement inspectionClausesTitle;
     public static final String INSPECTION_CLAUSES_TITLE = "Inspection Clauses Title";
 
-    @FindBy(id = "inspection-main-clause-title")
-    WebElement inspectionMainClauseTitle;
-    public static final String INSPECTION_MAIN_CLAUSES_TITLE = "Inspection Main Clauses Title";
+    @FindBy(id = "mat-expansion-panel-header-0")
+    WebElement inspection1stMainClauseTitle;
+    public static final String INSPECTION_1ST_MAIN_CLAUSES_TITLE = "Inspection First Main Clauses Title";
+
+    @FindBy(xpath = "//mat-panel-title[@id='inspection-main-clause-title'and contains(text(), 'clause 2' )]")
+    WebElement inspection2ndMainClauseTitle;
+    public static final String INSPECTION_2ND_MAIN_CLAUSES_TITLE = "Inspection Second Main Clauses Title";
+
+
+    @FindBy(xpath = "//mat-expansion-panel-header[@id='mat-expansion-panel-header-0']")
+    WebElement expand1stClause;
+    public static final String EXPAND_1ST_CLAUSE = "Expand 1st Clause";
+
+    @FindBy(xpath = "//mat-expansion-panel-header[@id='mat-expansion-panel-header-1']")
+    WebElement expand2ndClause;
+    public static final String EXPAND_2ND_CLAUSE = "Expand 2nd Clause";
 
     @FindBy(id = "no-child-clauses-found")
     WebElement emptyClauses;
@@ -471,10 +484,12 @@ public class MinistryVisitDetailsPage extends BasePage {
 
     /*************Getters For Visit Clauses Elements **************/
 
-    public String getInspectionMainClausesTitle() {
-        return Utilities.waitAndGetWebElementText(inspectionMainClauseTitle, wait);
+    public String getInspection1stMainClausesTitle() {
+        return Utilities.waitAndGetWebElementText(inspection1stMainClauseTitle, wait);
     }
-
+    public String getInspection2ndMainClausesTitle() {
+        return Utilities.waitAndGetWebElementText(inspection2ndMainClauseTitle, wait);
+    }
     public String getInspectionClausesTitle() {
         return Utilities.waitAndGetWebElementText(inspectionClausesTitle, wait);
     }
@@ -509,7 +524,8 @@ public class MinistryVisitDetailsPage extends BasePage {
     public String getDetailedViolationAttachmentLabel() {
         return Utilities.waitAndGetWebElementText(detailedViolationAttachmentsLabel, wait);
     }
-
+public void clickOnExpand1stClause (){Utilities.waitAndClickOnWebElement(expand1stClause,wait,driver);}
+    public void clickOnExpand2ndClause (){Utilities.waitAndClickOnWebElement(expand2ndClause,wait,driver);}
 }
 
 
