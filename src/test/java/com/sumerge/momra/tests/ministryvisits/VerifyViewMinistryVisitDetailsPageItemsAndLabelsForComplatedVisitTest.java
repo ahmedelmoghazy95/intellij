@@ -40,48 +40,15 @@ public class VerifyViewMinistryVisitDetailsPageItemsAndLabelsForComplatedVisitTe
         softAssert.assertEquals(ministryVisitDetailsPage.getInspectionClausesTitle(),
                 "بنود التفتيش",
                 "Inspection Clauses Title is Not Correct!");
-//ministryVisitDetailsPage.clickOnExpand1stClause();
+
         softAssert.assertEquals(ministryVisitDetailsPage.getInspection1stMainClausesTitle(),
                 "clause 1",
                 "Inspection 1st Main Clauses Title is Not Correct!");
 
-//        softAssert.assertEquals(ministryVisitDetailsPage.getEmptyClauses(),
-//                "عفوا، لا يوجد أى بنود تفتيش فرعية مرتبطة ببند التفتيش الرئيسى",
-//                "Empty Clause MSG is Not Correct!");
 
-//        ministryVisitDetailsPage.clickOnExpand2ndClause();
         softAssert.assertEquals(ministryVisitDetailsPage.getInspection2ndMainClausesTitle(),
                 "clause 2",
                 "Inspection 2nd Main Clauses Title is Not Correct!");
-//        softAssert.assertEquals(ministryVisitDetailsPage.getChildClauseTitle(),
-//                "clause 3",
-//                "Child Clause Title is Not Correct!");
-//
-//        softAssert.assertEquals(ministryVisitDetailsPage.getCompliancy(),
-//                "القرار",
-//                "Elkarar Label is Not Correct!");
-//
-//        softAssert.assertEquals(ministryVisitDetailsPage.getCompliantClause(),
-//                "امتثال",
-//                "Compliant Option is Not Correct!");
-//
-//        softAssert.assertEquals(ministryVisitDetailsPage.getNonCompliantClause(),
-//                "عدم امتثال",
-//                "Non Compliant Option is Not Correct!");
-//
-//        softAssert.assertEquals(ministryVisitDetailsPage.getNotApplicableClause(),
-//                "لا ينطبق",
-//                "Not Applicable Option is Not Correct!");
-//
-//        softAssert.assertEquals(ministryVisitDetailsPage.getInspectionViolationCommentsLabel(),
-//                "ملاحظات",
-//                "Inspection Comment Label is Not Correct!");
-//
-//        softAssert.assertEquals(ministryVisitDetailsPage.getDetailedViolationAttachmentLabel(),
-//                "الصور",
-//                "Attachment Label is Not Correct!");
-
-
 
 
         allVisitsViewPage = ministryVisitDetailsPage.clickOnBackBtn();

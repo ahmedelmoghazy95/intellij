@@ -18,29 +18,26 @@ public class MinistryVisitDetailsPage extends BasePage {
 
     @FindBy(id = "page-title")
     WebElement pageTitle;
-    public static final String PAGE_TITLE = "Page Title";
 
     /****************** Visit Details IDs ******************/
 
     @FindBy(id = "site-name")
     WebElement siteNameLabel;
-    public static final String SITE_NAME_LABEL = "Site Name Label";
+
 
     @FindBy(id = "license-id")
     WebElement LicenseIdLabel;
-    public static final String LICENSE_ID_LABEL = "License Id Label";
+
 
     @FindBy(id = "license-status")
     WebElement licenseStatusLabel;
-    public static final String LICENSE_STATUS_LABEL = "License Status Label";
+
 
     @FindBy(id = "license-issue-date")
     WebElement licenseIssueDateLabel;
-    public static final String LICENSE_ISSUE_DATE_LABEL = "License Issue Date Label";
 
     @FindBy(id = "license-expiry-date")
     WebElement licenseExpiryDateLabel;
-    public static final String LICENSE_EXPIRY_DATE_LABEL = "License Expiry Date Label";
 
     @FindBy(id = "amana-name")
     WebElement amanaNameLabel;
@@ -48,231 +45,110 @@ public class MinistryVisitDetailsPage extends BasePage {
 
     @FindBy(id = "baladya-name")
     WebElement baladyaNameLabel;
-    public static final String BALADYA_NAME_LABEL = "Baladya Name Label";
+
 
     @FindBy(id = "district-name")
     WebElement districtNameLabel;
-    public static final String DISTRICT_NAME_LABEL = "District Name Label";
+
 
     @FindBy(id = "number-of-beds")
     WebElement bedsNumberLabel;
-    public static final String BEDS_NUMBER_LABEL = "Number Of Beds Label";
 
 
     @FindBy(id = "license-owner-name")
     WebElement licenseOwnerNameLabel;
-    public static final String LICENSE_OWNER_NAME_LABEL = "License Owner Name Label";
+
 
     @FindBy(id = "owner-id")
     WebElement ownerIdLabel;
-    public static final String OWNER_ID_LABEL = "Owner Id Label";
+
 
     @FindBy(id = "license-phone")
     WebElement licensePhoneLabel;
-    public static final String LICENSE_PHONE_LABEL = "License Phone Label";
+
 
     @FindBy(id = "address")
     WebElement addressLabel;
-    public static final String ADDRESS_LABEL = "Address Label";
+
 
     /****************** Visit Re/scheduling section IDs ******************/
 
     @FindBy(id = "visit-rescheduling-section-title")
     WebElement scheduleVisitSectionTitle;
-    public static final String SCHEDULE_VISIT_SECTION_TITLE = "Schedule Visit Section Title";
 
     @FindBy(id = "is-visit-rescheduled")
     WebElement isVisitScheduledLabel;
-    public static final String IS_VISIT_SCHEDULED_LABEL = "Is Visit Scheduled Label";
+
 
     @FindBy(id = "visit-status")
     WebElement visitStatusLabel;
-    public static final String VISIT_STATUS_LABEL = "Visit Status Label";
+
 
     @FindBy(id = "visit-scheduled-date")
     WebElement visitScheduledDateLabel;
-    public static final String VISIT_SCHEDULED_DATE_LABEL = "Visit Scheduled Date Label";
+
 
     @FindBy(id = "visit-scheduled-time")
     WebElement visitScheduledTimeLabel;
-    public static final String VISIT_SCHEDULED_TIME_LABEL = "Visit Scheduled Time Label";
+
 
     @FindBy(id = "inspector-allocation-type")
     WebElement inspectorAllocationTypeLabel;
-    public static final String INSPECTOR_ALLOCATION_TYPE_LABEL = "Inspector Allocation Type Label";
 
-    @FindBy(id = "visit-inspector-name")
-    WebElement visitInspectorNameLabel;
-    public static final String VISIT_INSPECTOR_NAME_LABEL = "Visit Inspector Name Label";
 
     @FindBy(id = "visit-notes-label")
     WebElement visitNotesLabel;
-    public static final String VISIT_NOTES_LABEL = "Visit Notes Label";
 
-    @FindBy(xpath = "//textarea [@id ='visit-notes']")
-    WebElement visitNotes;
-    public static final String VISIT_NOTES = "Visit Notes";
-
-    @FindBy(id = "edit-visit-save-btn")
-    WebElement editVisitSaveBtn;
-    public static final String EDIT_VISIT_SAVE_BTN = "Edit Visit Save Btn";
-
-    @FindBy(id = "yes")
-    WebElement isVisitScheduledYes;
-    public static final String IS_VISIT_SCHEDULED_YES = "Is Visit Scheduled YES";
-
-    @FindBy(id = "no")
-    WebElement isVisitScheduledNo;
-    public static final String IS_VISIT_SCHEDULED_NO = "Is Visit Scheduled No";
-
-    @FindBy(id = "unreachable")
-    WebElement isVisitScheduledUnreachable;
-    public static final String IS_VISIT_SCHEDULED_UNREACHABLE = "Is Visit Scheduled Unreachable";
-
-    @FindBy(id = "visit-status-dropdown")
-    WebElement visitStatusDropDown;
-    public static final String VISIT_STATUS_DROPDOWN = "Visit Status Dropdown Field";
-
-    @FindBy(id = "mat-select-value-3")
-    WebElement visitStatusScheduled;
-    public static final String VISIT_STATUS_SCHEDULED = "Visit Status Scheduled";
-
-    @FindBy(id = "rescheduled")
-    WebElement visitStatusRescheduled;
-    public static final String VISIT_STATUS_RESCHEDULED = "Visit Status Rescheduled";
-
-    @FindBy(id = "suspended")
-    WebElement visitStatusSuspended;
-    public static final String VISIT_STATUS_SUSPENDED = "Visit Status Suspended";
-
-    @FindBy(xpath = "//span[contains(@class,'mat-select-min-line') and contains(text(),'مرفوضة')]")
-    WebElement visitStatusRejected;
-    public static final String VISIT_STATUS_REJECTED = "Visit Status Rejected";
-
-    @FindBy(id = "visit-date-input")
-    WebElement visitScheduledDateField;
-    public static final String VISIT_SCHEDULED_DATE_FIELD = "Visit Scheduled Date Field";
-
-    @FindBy(id = "mat-select-value-5")
-    WebElement visitScheduledTimeDropDown;
-    public static final String VISIT_SCHEDULED_TIME_DROPDOWN = "Visit Scheduled Time Dropdown Field";
-
-    @FindBy(id = "visit-time-16")
-    WebElement visitScheduledTime4To5;
-    public static final String VISIT_SCHEDULED_TIME_4_TO_5 = "Visit Scheduled Time 4 to 5";
-
-    @FindBy(id = "manual")
-    WebElement inspectorAllocationTypeManual;
-    public static final String INSPECTOR_ALLOCATION_TYPE_MANUAL = "Inspector Allocation Type Manual";
-
-    @FindBy(id = "automatic-input")
-    WebElement inspectorAllocationTypeAutomatic;
-    public static final String INSPECTOR_ALLOCATION_TYPE_AUTOMATIC = "Inspector Allocation Type Automatic";
-
-    @FindBy(id = "inspectors-dropdown")
-    WebElement visitInspectorDropDown;
-    public static final String VISIT_INSPECTOR_DROPDOWN = "Visit Inspector Dropdown Field";
-
-    //    id represents the inspector id
-    @FindBy(id = "inspector-2")
-    WebElement visitInspectorName;
-    public static final String VISIT_INSPECTOR_NAME = "Visit Inspector Name";
-
-    @FindBy(xpath = "//snack-bar-container//*[@class='mat-simple-snackbar ng-star-inserted']/span")
-    WebElement displayMsg;
-    public static final String DISPLAY_MSG = "Display Msg";
 
     /****************** Visit History IDs ******************/
     @FindBy(id = "visit-history-title")
     WebElement visitHistoryTitle;
-    public static final String VISIT_HISTORY_TITLE = "visitHistoryTitle";
+
 
     @FindBy(id = "timestamp")
     WebElement timestampHeader;
-    public static final String TIMESTAMP_HEADER = "Timestamp Header";
+
 
     @FindBy(id = "user")
     WebElement userHeader;
-    public static final String USER_HEADER = "User Header";
+
 
     @FindBy(id = "scheduling-status")
     WebElement scheduleStatusHeader;
-    public static final String SCHEDULE_STATUS_HEADER = "Schedule Status Header";
+
 
     @FindBy(id = "status")
     WebElement statusHeader;
-    public static final String STATUS_HEADER = "Status Header";
+
 
     @FindBy(id = "visit-date")
     WebElement visitDateHeader;
-    public static final String VISIT_DATE_HEADER = "visit Date Header";
+
 
     @FindBy(id = "inspector-name")
     WebElement inspectorNameHeader;
-    public static final String INSPECTOR_NAME_HEADER = "Inspector Name Header";
+
 
     @FindBy(id = "notes")
     WebElement notesHeader;
-    public static final String NOTES_HEADER = "Notes Header";
+
 
     @FindBy(id = "visit-details-back-btn")
     WebElement visitDetailsBackBtn;
-    public static final String VISIT_DETAILS_BACK_BTN = "visit Details Back Btn";
+
 
     /****************** Visit Clauses Section IDs ******************/
 
     @FindBy(id = "inspection-clauses-title")
     WebElement inspectionClausesTitle;
-    public static final String INSPECTION_CLAUSES_TITLE = "Inspection Clauses Title";
+
 
     @FindBy(id = "mat-expansion-panel-header-0")
     WebElement inspection1stMainClauseTitle;
-    public static final String INSPECTION_1ST_MAIN_CLAUSES_TITLE = "Inspection First Main Clauses Title";
 
     @FindBy(xpath = "//mat-panel-title[@id='inspection-main-clause-title'and contains(text(), 'clause 2' )]")
     WebElement inspection2ndMainClauseTitle;
-    public static final String INSPECTION_2ND_MAIN_CLAUSES_TITLE = "Inspection Second Main Clauses Title";
 
-
-    @FindBy(xpath = "//mat-expansion-panel-header[@id='mat-expansion-panel-header-0']")
-    WebElement expand1stClause;
-    public static final String EXPAND_1ST_CLAUSE = "Expand 1st Clause";
-
-    @FindBy(xpath = "//mat-expansion-panel-header[@id='mat-expansion-panel-header-1']")
-    WebElement expand2ndClause;
-    public static final String EXPAND_2ND_CLAUSE = "Expand 2nd Clause";
-
-    @FindBy(id = "no-child-clauses-found")
-    WebElement emptyClauses;
-    public static final String EMPTY_CLAUSES = "Empty Clauses";
-
-    @FindBy(id = "child-clause-title")
-    WebElement childClauseTitle;
-    public static final String CHILD_CLAUSE_TITLE = "Child Clause Title";
-
-    @FindBy(id = "inspection-clause-radio-group-{{y}}")
-    WebElement Compliancy;
-    public static final String COMPLIANCY = "Compliancy";
-
-    @FindBy(id = "clause-status-radio-button-complaint-{{y}}")
-    WebElement compliantClause;
-    public static final String COMPLIANT_CLAUSE = "Compliant Clause";
-
-    @FindBy(id = "clause-status-radio-button-non-complaint-{{y}}")
-    WebElement nonCompliantClause;
-    public static final String NON_COMPLIANT_CLAUSE = "Non Compliant Clause";
-
-    @FindBy(id = "clause-status-radio-button-not-applicable-{{y}}")
-    WebElement notApplicableClause;
-    public static final String NOT_APPLICABLE_CLAUSE = "Not Applicable Clause";
-
-    @FindBy(id = "inspection-violation-comments-label")
-    WebElement inspectionViolationCommentsLabel;
-    public static final String INSPECTION_VIOLATION_COMMENTS_LABEL = "Inspection Violation Comments Label";
-
-    @FindBy(id = "detailed-violation-attachments-label")
-    WebElement detailedViolationAttachmentsLabel;
-    public static final String DETAILED_VIOLATION_ATTACHMENT_LABEL = "Detailed Violation Attachments Label";
 
     /*************Getters For Visit Details Elements **************/
     public String getPageTitle() {
@@ -357,87 +233,11 @@ public class MinistryVisitDetailsPage extends BasePage {
         return Utilities.waitAndGetWebElementText(inspectorAllocationTypeLabel, wait);
     }
 
-    public String getVisitInspectorNameLabel() {
-        return Utilities.waitAndGetWebElementText(visitInspectorNameLabel, wait);
-    }
 
     public String getVisitNotesLabel() {
         return Utilities.waitAndGetWebElementText(visitNotesLabel, wait);
     }
 
-    public boolean isSaveBtnDisplayed() {
-        return editVisitSaveBtn.isDisplayed();
-    }
-
-    public void clickOnSaveBtn() {
-        Utilities.waitAndClickOnWebElement(editVisitSaveBtn, wait, driver);
-    }
-
-    public void clickOnIsVisitScheduledYes() {
-        Utilities.waitAndClickOnWebElement(isVisitScheduledYes, wait, driver);
-    }
-
-    public void clickOnIsVisitScheduledNo() {
-        Utilities.waitAndClickOnWebElement(isVisitScheduledNo, wait, driver);
-    }
-
-    public void clickOnIsVisitScheduledUnreachable() {
-        Utilities.waitAndClickOnWebElement(isVisitScheduledUnreachable, wait, driver);
-    }
-
-    public void selectVisitStatusSuspended() {
-        Utilities.waitAndClickOnWebElement(visitStatusDropDown, wait, driver);
-        Utilities.waitAndClickOnWebElement(
-                visitStatusDropDown.findElement(By.id("suspended")), wait, driver);
-    }
-
-    public void selectVisitStatusRejected() {
-        Utilities.waitAndClickOnWebElement(visitStatusDropDown, wait, driver);
-        Utilities.waitAndClickOnWebElement(
-                visitStatusDropDown.findElement(By.xpath("//mat-option [@id = 'rejected']")), wait, driver);
-    }
-
-    public String getVisitStatusScheduled() {
-        return Utilities.waitAndGetWebElementText(visitStatusScheduled, wait);
-    }
-
-    public String getVisitStatusRejected() {
-        return Utilities.waitAndGetWebElementText(visitStatusRejected, wait);
-    }
-
-    public String getVisitStatusRescheduled() {
-        return Utilities.waitAndGetWebElementText(visitStatusRescheduled, wait);
-    }
-
-    public void insertVisitScheduledDate(String date) {
-        visitScheduledDateField.sendKeys(date);
-    }
-
-    public void selectVisitTimeFrom11To12() {
-        Utilities.waitAndClickOnWebElement(visitScheduledTimeDropDown, wait, driver);
-        Utilities.waitAndClickOnWebElement(
-                visitStatusDropDown.findElement(By.xpath("//mat-option [@id = 'visit-time-11']")), wait, driver);
-    }
-
-    public void clickOnInspectorAllocationTypeManual() {
-        Utilities.waitAndClickOnWebElement(inspectorAllocationTypeManual,
-                wait, driver);
-    }
-
-    public void clickOnInspectorAllocationTypeAutomatic() {
-        Utilities.waitAndClickOnWebElement(inspectorAllocationTypeAutomatic,
-                wait, driver);
-    }
-
-    public void selectInspectorName() {
-        Utilities.waitAndClickOnWebElement(visitInspectorDropDown, wait, driver);
-        Utilities.waitAndClickOnWebElement(
-                visitInspectorDropDown.findElement(By.xpath("//mat-option [@id = 'inspector-1']")), wait, driver);
-    }
-
-    public void insertNotesText(String notes) {
-        visitNotes.sendKeys(String.valueOf(notes));
-    }
 
     /*************Getters For Visit History Section **************/
     public String getVisitHistoryTitle() {
@@ -478,54 +278,21 @@ public class MinistryVisitDetailsPage extends BasePage {
     }
 
 
-    public String getDisplayMSGText() {
-        return Utilities.waitAndGetWebElementText(displayMsg, wait);
-    }
-
     /*************Getters For Visit Clauses Elements **************/
 
     public String getInspection1stMainClausesTitle() {
         return Utilities.waitAndGetWebElementText(inspection1stMainClauseTitle, wait);
     }
+
     public String getInspection2ndMainClausesTitle() {
         return Utilities.waitAndGetWebElementText(inspection2ndMainClauseTitle, wait);
     }
+
     public String getInspectionClausesTitle() {
         return Utilities.waitAndGetWebElementText(inspectionClausesTitle, wait);
     }
 
-    public String getChildClauseTitle() {
-        return Utilities.waitAndGetWebElementText(childClauseTitle, wait);
-    }
 
-    public String getEmptyClauses() {
-        return Utilities.waitAndGetWebElementText(emptyClauses, wait);
-    }
-
-    public String getCompliancy() {
-        return Utilities.waitAndGetWebElementText(Compliancy, wait);
-    }
-
-    public String getCompliantClause() {
-        return Utilities.waitAndGetWebElementText(compliantClause, wait);
-    }
-
-    public String getNonCompliantClause() {
-        return Utilities.waitAndGetWebElementText(nonCompliantClause, wait);
-    }
-
-    public String getNotApplicableClause() {
-        return Utilities.waitAndGetWebElementText(notApplicableClause, wait);
-    }
-
-    public String getInspectionViolationCommentsLabel() {
-        return Utilities.waitAndGetWebElementText(inspectionViolationCommentsLabel, wait);
-    }
-    public String getDetailedViolationAttachmentLabel() {
-        return Utilities.waitAndGetWebElementText(detailedViolationAttachmentsLabel, wait);
-    }
-public void clickOnExpand1stClause (){Utilities.waitAndClickOnWebElement(expand1stClause,wait,driver);}
-    public void clickOnExpand2ndClause (){Utilities.waitAndClickOnWebElement(expand2ndClause,wait,driver);}
 }
 
 
