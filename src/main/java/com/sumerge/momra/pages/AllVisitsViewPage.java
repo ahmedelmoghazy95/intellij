@@ -1,10 +1,10 @@
 package com.sumerge.momra.pages;
 
 import com.sumerge.momra.utilities.Utilities;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class AllVisitsViewPage extends BasePage {
 
@@ -192,6 +192,15 @@ public class AllVisitsViewPage extends BasePage {
         Utilities.waitAndClickOnWebElement(viewMinistryVisitBtn, wait, driver);
         return new  MinistryVisitDetailsPage (driver);
     }
+
+    public void waitUntilAttachmentLoadingIndicatorDisappear() {
+        try {
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@type='ball-spin-clockwise']")));
+        } catch(TimeoutException | NoSuchElementException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
 

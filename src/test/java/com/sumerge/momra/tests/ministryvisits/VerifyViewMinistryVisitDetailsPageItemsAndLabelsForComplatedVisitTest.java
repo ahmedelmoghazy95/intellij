@@ -34,7 +34,9 @@ public class VerifyViewMinistryVisitDetailsPageItemsAndLabelsForComplatedVisitTe
         softAssert = new SoftAssert();
 
         allVisitsViewPage = new AllVisitsViewPage (driver);
+        allVisitsViewPage.waitUntilAttachmentLoadingIndicatorDisappear();
         allVisitsViewPage.clickOnCompletedVisitsTab();
+        allVisitsViewPage.waitUntilAttachmentLoadingIndicatorDisappear();
       ministryVisitDetailsPage =  allVisitsViewPage.clickViewVisitBtn();
 
         softAssert.assertEquals(ministryVisitDetailsPage.getInspectionClausesTitle(),
