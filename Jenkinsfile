@@ -6,9 +6,9 @@ pipeline {
   }
 
   parameters {
-      choice(name: 'TESTNG', choices: ['engineering-offices', 'appeals', 'reports', 'visits', 'visits-violations'], description: 'Module TestNG XML File')
-      choice(name: 'MODULE_NAME', choices: ['Engineering Offices', 'Appeals', 'Reports', 'Visits', 'Visits Violations'], description: 'Module Name in Extent Reports')
-      choice(name: 'DOCKER_REGISTRY', choices: ['registry.sumerge.local', 'registry.momra.gov.sa'], description: 'Docker Registry')
+      choice(name: 'TESTNG', choices: ['engineering-offices', 'appeals', 'reports', 'visits', 'visits-violations'], defaultValue: 'engineering-offices', description: 'Module TestNG XML File')
+      choice(name: 'MODULE_NAME', choices: ['Engineering Offices', 'Appeals', 'Reports', 'Visits', 'Visits Violations'], defaultValue: 'Engineering Offices', description: 'Module Name in Extent Reports')
+      choice(name: 'DOCKER_REGISTRY', choices: ['registry.sumerge.local', 'registry.momra.gov.sa'], defaultValue: 'registry.sumerge.local', description: 'Docker Registry')
   }
 
 
