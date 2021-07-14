@@ -424,9 +424,9 @@ public class VisitDetailsPage extends BasePage {
         return Utilities.waitAndGetWebElementText(notesHeader, wait);
     }
 
-    public AllVisitsViewPage clickOnBackBtn() {
+    public MonthlyVisitsViewPage clickOnBackBtn() {
         Utilities.waitAndClickOnWebElement(visitDetailsBackBtn, wait, driver);
-        return new AllVisitsViewPage(driver);
+        return new MonthlyVisitsViewPage (driver);
     }
 
     public void clickViewVisitBtn() {

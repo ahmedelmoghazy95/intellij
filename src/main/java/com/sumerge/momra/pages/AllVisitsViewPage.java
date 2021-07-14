@@ -1,10 +1,10 @@
 package com.sumerge.momra.pages;
 
 import com.sumerge.momra.utilities.Utilities;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class AllVisitsViewPage extends BasePage {
 
@@ -120,7 +120,11 @@ public class AllVisitsViewPage extends BasePage {
     WebElement visitRejectedActionsLabel;
     public static final String VISITS_REJECTED_ACTIONS_LABEL = "Visit Rejected Actions Label";
 
+    /*************Page Action Btns **************/
 
+    @FindBy(id = "display-visit-info")
+    WebElement viewMinistryVisitBtn;
+    public static final String VIEW_MINISTRY_VISIT_BTN = "View Ministry Visit Btn";
 
     /*************Getters For Page Elements **************/
 
@@ -184,6 +188,18 @@ public class AllVisitsViewPage extends BasePage {
         return Utilities.waitAndGetWebElementText( visitDateLabel, wait);
     }
 
+    public MinistryVisitDetailsPage clickViewVisitBtn() {
+        Utilities.waitAndClickOnWebElement(viewMinistryVisitBtn, wait, driver);
+        return new  MinistryVisitDetailsPage (driver);
+    }
+
+    public void waitUntilAttachmentLoadingIndicatorDisappear() {
+        try {
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@type='ball-spin-clockwise']")));
+        } catch(TimeoutException | NoSuchElementException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }
