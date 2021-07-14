@@ -6,8 +6,8 @@ pipeline {
   }
 
   environment {
-      POM_VERSION = sh (script: 'mvn org.apache.maven.plugins:maven-help-plugin:evaluate \ -Dexpression=project.version', returnStdout: true).trim()
-      POM_ARTIFACTID = sh (script: 'mvn org.apache.maven.plugins:maven-help-plugin:evaluate \ -Dexpression=project.artifact', returnStdout: true).trim()
+      POM_VERSION = sh (script: 'mvn org.apache.maven.plugins:maven-help-plugin:evaluate -Dexpression=project.version', returnStdout: true).trim()
+      POM_ARTIFACTID = sh (script: 'mvn org.apache.maven.plugins:maven-help-plugin:evaluate -Dexpression=project.artifact', returnStdout: true).trim()
   }
 
   options {
