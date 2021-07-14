@@ -5,6 +5,12 @@ pipeline {
     maven 'maven'
   }
 
+  environment {
+      //Use Pipeline Utility Steps plugin to read information from pom.xml into env variables
+      POM_ARTIFACTID = readMavenPom().getArtifactId()
+      POM_VERSION = readMavenPom().getVersion()
+  }
+
   options {
     skipStagesAfterUnstable()
     disableConcurrentBuilds()
@@ -37,20 +43,20 @@ pipeline {
 
     stage ('K8s Prepare') {
       steps {
-        sh """
+        sh '''
         sed -i "s|DOCKER-REGISTRY|registry.sumerge.local/momra|g" $WORKSPACE/kubernetes/e2e-ui-module-job.yaml
         sed -i "s|VERSION|${POM_VERSION}|g" $WORKSPACE/kubernetes/e2e-ui-module-job.yaml
         sed -i "s|MODULE_NAME|-engineering-offices|g" $WORKSPACE/kubernetes/e2e-ui-module-job.yaml
-        """
+        '''
       }
     }
 
     stage ('K8s Deploy') {
       steps {
-        sh """
+        sh '''
         kubectl delete --ignore-not-found -f $WORKSPACE/kubernetes/e2e-ui-module-job.yaml -n momra-inspections
         kubectl create -f $WORKSPACE/kubernetes/e2e-ui-module-job.yaml -n momra-inspections
-        """
+        '''
       }
     }
   }
