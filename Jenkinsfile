@@ -6,8 +6,8 @@ pipeline {
   }
 
   environment {
-      POM_VERSION = sh (script: 'mvn help:evaluate -Dexpression=project.version', returnStdout: true).trim()
-      POM_ARTIFACTID = sh (script: 'mvn help:evaluate -Dexpression=project.artifactId', returnStdout: true).trim()
+      POM_VERSION
+      POM_ARTIFACTID
   }
 
   options {
@@ -19,6 +19,8 @@ pipeline {
     stage('Maven Prepare') {
       steps {
         sh 'sed -i "s|TEST_SUITE|engineering-offices|g" $WORKSPACE/Dockerfile'
+        POM_VERSION = sh (script: 'mvn help:evaluate -Dexpression=project.version', returnStdout: true).trim()
+        POM_ARTIFACTID = sh (script: 'mvn help:evaluate -Dexpression=project.artifactId', returnStdout: true).trim()
       }
     }
 
