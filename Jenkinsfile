@@ -6,9 +6,8 @@ pipeline {
   }
 
   environment {
-      //Use Pipeline Utility Steps plugin to read information from pom.xml into env variables
-      POM_ARTIFACTID = readMavenPom().getArtifactId()
-      POM_VERSION = readMavenPom().getVersion()
+      POM_VERSION = sh (script: 'mvn org.apache.maven.plugins:maven-help-plugin:evaluate \ -Dexpression=project.version', returnStdout: true).trim()
+      POM_ARTIFACTID = sh (script: 'mvn org.apache.maven.plugins:maven-help-plugin:evaluate \ -Dexpression=project.artifact', returnStdout: true).trim()
   }
 
   options {
