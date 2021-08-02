@@ -121,7 +121,7 @@
             <id>staging</id>
             <properties>
                 <env-name>Staging</env-name>
-                <app-host></app-host>
+                <app-host>http://portal.momra.gov.sa/</app-host>
                 <MongoDB-URL></MongoDB-URL>
             </properties>
             <!--            <activation>-->
