@@ -35,7 +35,7 @@ pipeline {
         sh '''
         export POM_VERSION=`mvn --non-recursive help:evaluate -Dexpression=project.version -q -DforceStdout`
         export POM_ARTIFACTID=`mvn --non-recursive help:evaluate -Dexpression=project.artifactId -q -DforceStdout`
-        docker build -t ${DOCKER_REGISTRY}/momra/${POM_ARTIFACTID}:${POM_VERSION} .
+        docker build -t ${DOCKER_REGISTRY}/momra-inspections/${POM_ARTIFACTID}:${POM_VERSION} .
         '''
       }
     }
@@ -45,7 +45,7 @@ pipeline {
         sh '''
         export POM_VERSION=`mvn --non-recursive help:evaluate -Dexpression=project.version -q -DforceStdout`
         export POM_ARTIFACTID=`mvn --non-recursive help:evaluate -Dexpression=project.artifactId -q -DforceStdout`
-        docker push ${DOCKER_REGISTRY}/momra/${POM_ARTIFACTID}:${POM_VERSION}
+        docker push ${DOCKER_REGISTRY}/momra-inspections/${POM_ARTIFACTID}:${POM_VERSION}
         '''
       }
     }
@@ -54,7 +54,7 @@ pipeline {
       steps {
         sh '''
         export POM_VERSION=`mvn --non-recursive help:evaluate -Dexpression=project.version -q -DforceStdout`
-        sed -i "s|DOCKER-REGISTRY|${DOCKER_REGISTRY}/momra|g" $WORKSPACE/kubernetes/e2e-ui-module-job.yaml
+        sed -i "s|DOCKER-REGISTRY|${DOCKER_REGISTRY}/momra-inspections|g" $WORKSPACE/kubernetes/e2e-ui-module-job.yaml
         sed -i "s|VERSION|${POM_VERSION}|g" $WORKSPACE/kubernetes/e2e-ui-module-job.yaml
         sed -i "s|MODULE_NAME|-${TESTNG}|g" $WORKSPACE/kubernetes/e2e-ui-module-job.yaml
         '''
