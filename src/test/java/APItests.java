@@ -26,7 +26,6 @@ public class APItests {
                 get("https://reqres.in/api/users?page=2").
                 then().
                 statusCode(200);
-        System.out.println("first edit");
-        System.out.println("second edit");
+        System.out.println("1st edit");
     }
 }
