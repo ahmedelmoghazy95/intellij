@@ -27,5 +27,6 @@ public class APItests {
                 then().
                 statusCode(200);
         System.out.println("first edit");
+        System.out.println("2nd edit");
     }
 }
