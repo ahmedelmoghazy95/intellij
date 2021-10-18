@@ -12,6 +12,8 @@ import static org.hamcrest.Matchers.equalTo;
 public class gorest {
 
     static String userid;
+    static Random rand = new Random();
+    static String uniqueNo =String.valueOf(rand.nextInt(1000000));
 
     @Test(priority = 1)
     public void createUser() {
@@ -22,8 +24,8 @@ public class gorest {
 //        request.put("email","kalbaz@sumerge.com");
 //        request.put("status","inactive");
 
-        Random rand = new Random();
-        int uniqueNo = rand.nextInt(1000000);
+
+
 
         String excelpath = "./import from excel/import.xlsx";
         String sheetName = "Sheet1";
@@ -86,10 +88,11 @@ public class gorest {
         }
     @Test(priority = 3)
     public void editUser() {
+
         JSONObject request = new JSONObject();
         request.put("name","monika");
         request.put("gender","female");
-        request.put("email","monika@sumerge.com");
+        request.put("email",uniqueNo+"monika@sumerge.com");
         request.put("status","active");
 
         given().
@@ -117,9 +120,9 @@ public class gorest {
 
         then().
                 statusCode(200).
-                body("data.name", equalTo("monica")).
+                body("data.name", equalTo("monika")).
                 body("data.gender", equalTo("female")).
-                body("data.email", equalTo("monica@sumerge.com")).
+                body("data.email", equalTo(uniqueNo+"monika@sumerge.com")).
                 body("data.status", equalTo("active"));
     }
 }
